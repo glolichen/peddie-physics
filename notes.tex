@@ -5,6 +5,7 @@
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
 \usepackage{graphicx, float}
 \usepackage{mathtools}
+\usepackage{tcolorbox}
 \usepackage{titlesec}
 \usepackage{interval}
 \usepackage{hyperref}
@@ -38,9 +39,10 @@
   }%
 }
 
+\newcommand{\definition}[1]{\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,parbox=true] #1 \end{tcolorbox}}
+
 \newtheorem{lemma}{Lemma}
 
-\renewcommand{\qedsymbol}{\Smiley[1.3]}
 \newcommand*{\problem}[1]{\section*{Problem #1}}
 \newcommand*{\aps}{\section*{AP Corner}}
 \newcommand*{\deriv}[1][x]{\ensuremath{\dfrac{\mathrm{d}}{\mathrm{d}#1}}}
@@ -78,51 +80,51 @@
 
 \subsection{Displacement}
 
-An object's \textbf{position} describes where it is at a given time, relative to a convenient reference frame.
+\definition{An object's \textbf{position} describes where it is at a given time, relative to a convenient reference frame.}
 
-An object's change in position is known as \textbf{displacement}. The displacement $\Delta x=x_f-x_0$, where $x_f$ is the final position, and $x_0$ is the initial position. Displacement has a direction as well as a magnitude.
+\definition{An object's change in position is known as \textbf{displacement}. The displacement $\Delta x=x_f-x_0$, where $x_f$ is the final position, and $x_0$ is the initial position. Displacement has a direction as well as a magnitude.}
 
-\textbf{Distance} is the magnitude of the displacement, and is not signed. \textbf{Distance traveled} is the total length of the path traveled between two positions, even if the path involves a change in direction.
+\definition{\textbf{Distance} is the magnitude of the displacement, and is not signed. \textbf{Distance traveled} is the total length of the path traveled between two positions, even if the path involves a change in direction.}
 
 \subsection{Vectors, Scalars and Coordinate Systems}
 
-In physics, a \textbf{vector} is any quantity with a direction and a magnitude. Vectors in one-dimensional motion can have direction specified by sign ($+,-$). A vector can be represented by an arrow whose length signifies magnitude.
+\definition{In physics, a \textbf{vector} is any quantity with a direction and a magnitude. Vectors in one-dimensional motion can have direction specified by sign ($+,-$). A vector can be represented by an arrow whose length signifies magnitude.}
 
-A \textbf{scalar} is a quantity with only magnitude and no direction.
+\definition{A \textbf{scalar} is a quantity with only magnitude and no direction.}
 
 We must define a coordinate system to describe a vector's direction. Often, positive indicates right or up, and negative indicates left or down. However, this can be defined differently given the problem, but cannot be changed later.
 
 \subsection{Time, Velocity and Speed}
 
-\textbf{Time} is the interval over which change occurs. \textbf{Elapsed time} is the difference between the starting time of a motion and the ending time. The elapsed time $\Delta t=t_f-t_0$.
+\definition{\textbf{Time} is the interval over which change occurs. \textbf{Elapsed time} is the difference between the starting time of a motion and the ending time. The elapsed time $\Delta t=t_f-t_0$.}
 
-\textbf{Velocity} is the speed and direction in which an object moves. The \textbf{average velocity} is displacement (change in position) divided by elapsed time. Because displacement is a vector, velocity is also a vector. In SI units, velocity is measured in meters per second (\si{\meter\per\second}).
+\definition{\textbf{Velocity} is the speed and direction in which an object moves. The \textbf{average velocity} is displacement (change in position) divided by elapsed time. Because displacement is a vector, velocity is also a vector. In SI units, velocity is measured in meters per second (\si{\meter\per\second}).
 \begin{equation*}
     \overline v=\frac{\Delta x}{\Delta y}=\frac{x_f-x_0}{t_f-t_0}
 \end{equation*}
-($\overline v$ denotes the average velocity, indicated by the bar over $v$.)
+($\overline v$ denotes the average velocity, indicated by the bar over $v$.)}
 
-\textbf{Instantaneous velocity} is an object's velocity an any given instant, or over an infinitesimally small time interval.
+\definition{\textbf{Instantaneous velocity} is an object's velocity an any given instant, or over an infinitesimally small time interval.}
 
-\textbf{Speed} is different from velocity in that speed is a scalar and has no direction. At any time, an object's \textbf{Instantaneous speed} is the magnitude of its instanteneous velocity.
+\definition{\textbf{Speed} is different from velocity in that speed is a scalar and has no direction. At any time, an object's \textbf{Instantaneous speed} is the magnitude of its instanteneous velocity.}
 
-\textbf{Average speed} is the distance traveled divided by elapsed time. Distance travaled can be greater than displacement, so average speed can be greater than average velocity.
+\definition{\textbf{Average speed} is the distance traveled divided by elapsed time. Distance travaled can be greater than displacement, so average speed can be greater than average velocity.}
 
 \subsection{Acceleration}
 
-\textbf{Acceleration} is the rate of change of an object's velocity. \textbf{Average acceleration} is given by:
+\definition{\textbf{Acceleration} is the rate of change of an object's velocity. \textbf{Average acceleration} is given by:
 \begin{equation*}
     \overline a=\frac{\Delta v}{\Delta t}=\frac{v_f-v_0}{t_f-t_0}
-\end{equation*}
+\end{equation*}}
 Since acceleration is velocity (\si{\meter\per\second}) divided by time (\si{\second}), the SI unit for acceleration is \si{\meter\per\second^2}.
 
 Since velocity is a vector, acceleration is also a vector. Its direction is the direction of change in velocity, but not necessarily the direction of motion.
 
-\textbf{Deceleration} is when an object's acceleration is opposite to the direction of its motion. This is when the object slows down.
+\definition{\textbf{Deceleration} is when an object's acceleration is opposite to the direction of its motion. This is when the object slows down.}
 
 Deceleration is not negative acceleration. Deceleration always reduces an object's speed, while negative acceleration is acceleration whose direction is negative in the chosen coordinate system.
 
-\textbf{Instantaneous acceleration} is acceleration at a specific instant in time, or acceleration over an infinitesimally small interval of time.
+\definition{\textbf{Instantaneous acceleration} is acceleration at a specific instant in time, or acceleration over an infinitesimally small interval of time.}
 
 \subsection{1D Motion Equations with Constant Acceleration} \label{subsec:1Dkinematics}
 
@@ -206,6 +208,192 @@ From Calculus, we can calculate an object's displacement from its instantaneous 
 
 If air resistance and friction are negligible, all objects fall toward the center of Earth at a constant rate of accleration. The rate of acceleration differs but its average value is $g=9.80 \si{\meter\per\second}$. We can use the equations in \ref{subsec:1Dkinematics} with $a=-g$ if positive is defined as up, or $a=g$ if positive is defined as down.
 
+\section{2D Kinematics}
+
+\subsection{2D Vectors}
+
+Recall from MPS2/Linear Algebra/some other math course.
+
+\subsection{Projectile Motion}
+
+\textbf{Projectile motion} is the motion of an object thrown into the air subject only to acceleration from gravity. The object is called the \textbf{projectile} and its path is called its \textbf{trajectory}. Suppose air resistance is negligible.
+
+Motions along perpendicular axes (such as verticle and horizontal) can be analyzed separately. Let the $y$-axis represent the vertical axis and the $x$-axis represent the horizontal axis.
+
+Let $\mathbf{s}$ be the object/projectile's displacement, and $\mathbf{x},\mathbf{y}$ are its horizontal and vertical components.
+
+First, separate the motion into its horizontal and vertical components. Let $\theta$ be the angle between the vector and the $x$-axis.
+
+We may apply the usual 1D kinematics equations for each component/axes. Let $\mathbf{a}$ and $\mathbf{v}$ be the object's acceleration vector and velocity vector, respectively. We have the following components:
+\begin{alignat*}{2}
+	a_x&=\lVert \mathbf{a} \rVert \cos \theta & \qquad 
+	v_x&=\lVert \mathbf{v} \rVert \cos \theta \\
+	a_y&=\lVert \mathbf{a} \rVert \sin \theta & \qquad 
+	v_y&=\lVert \mathbf{v} \rVert \sin \theta
+\end{alignat*}
+Because the object is affected by gravity, we also have $a_y=-g=-9.80\si{\meter\per\second}$.
+
+Afterwards, we can recombine the vertical and horizontal motion to find displacement $\mathbf{s}$ and velocity $\mathbf{v}$. We can also calculate their magnitude and argument.
+
+\subsubsection{Maximum height of a projectile}
+If air resistance is negligible, the maximum height reached by a projectile projected up can be found from the 1D kinematic equation:
+\begin{equation*}
+	v_y^2=v_{0_y}^2+2a_y(y-y_0)
+\end{equation*}
+Since the object starts at a height of $0$, the object reaches its highest point when velocity is $0$, and $a_y=-g$:
+\begin{equation*}
+	(0)^2=v_{0_y}^2+2(-g)(y-0)
+	\implies 2gy=v_{0_y}^2
+	\implies \boxed{y=\frac{v_{0_y}^2}{2g}}
+\end{equation*}
+where $v_{0_y}$ is the initial velocity in the $y$/upward direction.
+
+\subsubsection{Range of a projectile launched at an angle}
+
+Let $\theta$ be the angle the projectile is launched at (where $\theta=0$ is horizontal). Let $v_0$ be the initial speed of the projectile.
+
+Let $v_{\text{vert}}$ and $v_{\text{hor}}$ be the initial vertical and horizontal speed of the projectile, respectively:
+\begin{align*}
+	v_{\text{vert}}&=v_0 \sin \theta \\
+	v_{\text{hor}}&=v_0 \cos \theta
+\end{align*}
+We calculate the total time the particle is in the air, or the elapsed time $\Delta t$. The change in $y$-position is zero, since we want to find when the object falls to the ground.
+\begin{align*}
+	\Delta y=v_{\text{vert}}(\Delta t)+\frac12a(\Delta t)^2
+	&\implies 0=(\Delta t)(v_{\text{vert}}+\frac12(-g)(\Delta t)) \\
+	&\implies 0=v_{\text{vert}}+\frac12 (-g)(\Delta t) \\
+	&\implies \Delta t= \frac{2 v_{\text{vert}}}{g}=\frac{2v_0\sin \theta}{g}
+\end{align*}
+Since air resistance is negligible, we can easily calculate the horizontal distance traveled.
+\begin{gather*}
+	\Delta x
+	=v_{\text{hor}}(\Delta t)
+	=(v_0\cos\theta)\frac{2v_0\sin\theta}{g}
+	=\frac{2v_0^2 \sin\theta\cos\theta}{g}
+	=\frac{v_0^2 \sin 2\theta}{g} \\
+	\implies \boxed{\text{Range}=\frac{v_0^2\sin2\theta}{g}}
+\end{gather*}
+
+\subsection{Relative Motion}
+
+\definition{\textbf{Relative motion} is when an object has a velocity relative to a medium, and that medium has a velocity relative to an still observer (such as on solid ground).}
+
+Such as if a boat is moving across the flow of a river. We can use vector addition to determine relative velocity.
+
 \section{Forces}
+
+\definition{A \textbf{force} is a vector, with a magnitude and a displacement.}
+
+\definition{An \textbf{external force} acts on a system (one or multiple objects) from outside said system. An \textbf{internal force} are forces between elements of one system, but these will cancel out by Newton's third law.}
+
+\definition{A \textbf{free-body diagram} shows all external forces acting on a body. The body is represented by a single point and forces acting on the body from the outside are shown.}
+
+\begin{center}
+	\includegraphics[width=0.75\linewidth]{freebody.png}
+\end{center}
+
+\subsection{Newton's First Law}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=true]
+	A body at rest remains at rest, or, if in motion, remains in motion at a constant velocity unless acted on by a net external force. 
+\end{tcolorbox}
+
+There must be a net external force to cause an object's velocity to change. Otherwise its current velocity is preserved. Only external forces will affect the object's velocity.
+
+The property of a body to remain at the same velocity (or at rest) is called \textbf{inertia}. Newton's first law is also known as the law of inertia. Some objects have more inertia than others, which is how difficult/how much force is required to change its velocity.
+
+The inertia of an object is determined by its \textbf{mass}. Weight is dependent on the object's location, but mass is constant everywhere.
+
+\subsection{Newton's Second Law}
+
+Acceleration is the change in an object's velocity. By Newton's first law, a net external force must cause acceleration. Acceleration also has the same direction (and is directly proportional) to the net external force that brought it about.
+
+However, the acceleration is also affected by the mass of the object acted upon by the net external force. If the object is heavier (has more mass), it would require more force to accelerate it by the same amount than an object with lower mass.
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=true]
+	The acceleration of a system is directly proportional to and in the same direction as the net external force acting on the system, and inversely proportional to its mass.
+	\begin{equation*}
+		\mathbf{a}=\frac{\mathbf{F}_{\text{net}}}{m}
+		\iff
+		\mathbf{F}_{\text{net}}=m \mathbf{a}
+	\end{equation*}
+	where $\mathbf{a}$ is acceleration, $\mathbf{F}_{\text{net}}$ is the net external force and $m$ is the mass of the system. Note that mass is a scalar, while force and acceleration are vectors.
+\end{tcolorbox}
+In $\mathbf{F}_{\text{net}}=m \mathbf{a}$, mass is measured in kilograms (kg) and acceleration is measured in meters per second squared (\si{\meter\per\second\squared}). The SI unit of force is the \textbf{newton}:
+\begin{equation*}
+	1\,\si{\newton}=1\,\si[inter-unit-product =\cdot]{\kilo\gram\meter\per\second\squared}
+\end{equation*}
+
+\subsection{Weight and Gravitational Force}
+
+If air resistance is negligible, the net force acting on a falling object is \textbf{weight}. All objects fall with the same acceleration of $g$. The magnitude of weight is denoted $w$, and we do not need to consider weight as a vector because the direction is always downward.
+
+$F_{\text{net}}$ is the net force acting upon a falling object. By definition, $w$ is the net force. By Newton's second law:
+\begin{align*}
+	F_{\text{net}}=
+	w&=ma
+	\intertext{We know accleration is the gravitational constant $g$.}
+	\implies \Aboxed{w&=mg}
+\end{align*}
+
+An object is in \textbf{free-fall} if the net external force on an object is exactly equivalent to its weight. The only force acting on the object is gravity.
+
+The gravitational constant varies by location, so the weight of an object will vary by location. Since weight is a force, it is measured in newtons (N). Mass is always the same however.
+
+\subsection{Newton's Third Law}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=true]
+	Whenever one body exerts a force on a second body, the first body experiences a force that is equal in magnitude and opposite in direction to the force that it exerts.
+\end{tcolorbox}
+
+For example, when a swimmer's feet pushing against the wall of a swimming pool, the swimming pool wall will also exert a force of the same magnitude onto the swimmer, pushing them forward.
+
+\subsection{Normal Force}
+
+Weight acts on objects at all times, and therefore must be conteracted to keep an object stationary (and prevent it from falling further).
+
+If an object is placed on a table, the force of gravity on the object will push down on the table. In turn, the table exerts a force of the same magnitude back onto the object due to Newton's third law.
+
+\definition{The \textbf{normal force} is the force that surfaces exert to prevent solid objects from passing through each other.}
+
+Normal force is often denoted with the symbol $\mathbf{N}$, which is \underline{\textbf{not}} the same as newtons (N).
+
+\subsection{Tension}
+
+\definition{\textbf{Tension} is force along the length of a medium, especially a force carried along a flexible medium.}
+
+Consider a mass attached to a rope. The tension in the rope must equal the force of gravity from the supported weight. (If the mass is stationary, then its acceleration is zero, then by Newton's second law $F_{\text{net}}=T-w=0\iff T=w=mg$ where $T$ is tension and $w$ is weight.)
+
+\subsection{Friction}
+
+\definition{\textbf{Friction} is a force that opposes relative motion between surfaces in contact.}
+
+\definition{\textbf{Static friction} is friction between objects that are stationary relative to each other. \textbf{Kinetic friction} is friction between two surfaces that are moving relative to each other.}
+
+Static friction is usually greater than kinetic friction.
+
+Static friction is denoted $\mathbf{f}_{\text{s}}$. When there is no motion between surfaces, then:
+\begin{equation*}
+	\lVert \mathbf{f}_{\text{s}}\rVert =f_{\text{s}}\leq \mu_{\text{s}} N
+\end{equation*}
+where $N=\lVert \mathbf N \rVert $ is the magnitude of the normal force, and $\mu_{\text{s}}$ is the coefficient of static friction.
+
+Static friction is a responsive force, its magnitude increases to be equal to whatever force is exerted onto the object. Once the applied force equals a maximum $f_{\text{s(max)}}$, the object will move, where $f_{\text{s(max)}}=\mu_{\text s}N$.
+
+When the object is in motion, the magnitude of kinetic friction, denoted $\mathbf{f}_{\text{k}}$, is given by:
+\begin{equation*}
+	\lVert \mathbf{f}_{\text{k}}\rVert =f_{\text{k}}=\mu_{\text{k}} N
+\end{equation*}
+where $\mu_{\text{k}}$ is the coefficient of kinetic friction. If this is true, then the system is one where friction behaves simply.
+
+The magnitude of kinetic friction is the same regardless of the force applied to the object. In order to move an object with an acceleration $a$, the magnitude of the force applied has to be:
+\begin{align*}
+	F
+	&=\lVert \mathbf{f}_{\text{k}} \rVert +ma
+	=\mu_{\text{k}}N+ma \\
+	\intertext{If the surface the object is on is flat, i.e. there is no incline, then $N=w=mg$.}
+	&=\mu_{\text{k}}mg+ma
+\end{align*}
+
+\section{Energy}
 
 \end{document}
