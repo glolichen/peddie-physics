@@ -5,6 +5,7 @@
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
 \usepackage{graphicx, float}
 \usepackage{suffix}
+\usepackage{mdframed}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
 \usepackage{hyperref}
@@ -27,7 +28,7 @@
 \WithSuffix\newcommand\theorem*[1]{\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=false] #1 \end{tcolorbox}}
 
 \title{\vspace*{-40pt}AP Physics C -- Summer Notes}
-\author{hello}
+\author{Jayden Li}
 \date{\today}
 
 \begin{document}
@@ -565,10 +566,189 @@ The SI unit for work is the \textbf{watt} (W), which is equivalent to joules (un
 
 \section{Momentum}
 
+\subsection{Linear Momentum}
 
+\definition{The \textbf{linear momentum} ($\mathbf p$) of a system is its the product of its mass and its velocity. Linear momentum is a vector.
+\begin{equation*}
+	\mathbf{p}=m \mathbf{v}
+\end{equation*}
+where scalar $m$ is mass and vector $\mathbf{v}$ is velocity.}
+The SI unit for momentum is \si{\kilogram\cdot\meter\per\second}. Momentum $\mathbf{p}$ has the same direction as velocity $\mathbf{v}$.
+
+\theorem{Newton's second law in terms of momentum}{Net external force equals the change in momentum of a system divided by the time over which it changes.
+\begin{equation*}
+	\mathbf{F}_\text{net}=\frac{\Delta \mathbf{p}}{\Delta t}
+\end{equation*}
+}
+
+$\mathbf{F}_\text{net}=m \mathbf{a}$ is a special case when mass $m$ is constant. If mass $m$ is constant, then $\Delta \mathbf{p}=\Delta (m \mathbf{v})$ becomes $m \Delta \mathbf{v}$:
+\begin{align*}
+	\mathbf{F}_\text{net}&=\frac{m\Delta \mathbf{v}}{\Delta t}
+	\intertext{Acceleration $\mathbf{a}$ is the change of velocity over time: $\mathbf{a}=\Delta \mathbf{v}/\Delta t$.}
+	\mathbf{F}_\text{net}&=m \mathbf{a}
+\end{align*}
+
+\subsection{Impulse}
+
+The ability of a force to change an object's momentum depends on the magnitude of the force and the time over which it acts. From Newton's second law:
+\begin{equation*}
+	\mathbf{F}_\text{net}=\frac{\Delta \mathbf{p}}{\Delta t}
+	\implies
+	\Delta \mathbf{p}=\mathbf{F}_\text{net}\Delta t
+\end{equation*}
+
+\definition{Change in momentum is the total net external force applied over time. If the net external force $\mathbf{F}_\text{net}$ is constant:
+\begin{equation*}
+	\Delta \mathbf{p}=\mathbf{F}_\text{net}\Delta t
+\end{equation*}
+If it varies, then the change in momentum between time $t=a$ and time $t=b$ is given by:
+\begin{equation*}
+	\Delta \mathbf{p}=\int_{a}^{b}\mathbf{F}_\text{net}\,\mathrm{d}t
+\end{equation*}
+These equal each other if $\mathbf{F}_\text{net}$ is constant. The quantity $\int_{a}^{b}\mathbf{F}_\text{net}\,\mathrm{d}t \stackrel{?}{=} \mathbf{F}_\text{net}\Delta t$ is the \textbf{impulse}.}
+
+\subsection{Conservation of momentum}
+
+\definition{An \textbf{isolated system} is one where the net external force $\mathbf{F}_\text{net}=0$.}
+
+\theorem{Conservation of momentum}{The total momentum $\mathbf{p}_\text{tot}$ (the sum of the momentum of each object in the system) of any isolated system is conserved. $\mathbf{p}_\text{tot}'$ is the total momentum of the system some time later.
+\begin{align*}
+	\mathbf{p}_\text{tot}&=\text{constant} \\
+	\mathbf{p}_\text{tot}&=\mathbf{p}_\text{tot}'
+\end{align*}}
+
+If the system is isolated and $\mathbf{F}_\text{net}=0$, then from Newton's second law, there is no change in momentum:
+\begin{equation*}
+	\mathbf{F}_\text{net}=\frac{\Delta \mathbf{p}_\text{tot}}{\Delta t}
+	\implies \frac{\Delta \mathbf{p}_\text{tot}}{\Delta t}=0
+	\implies \Delta \mathbf{p}_\text{tot}=0
+\end{equation*}
 
 
 \section{Collisions}
+
+\subsection{1D Elastic Collisions}
+
+\definition{The \textbf{internal kinetic energy} of a system is the sum of the kinetic energies of all objects in the system. An \textbf{elastic collision} is one that conserves internal kinetic energy.}
+
+Consider two objects with masses $m_1,m_2$ and traveling at velocity $v_1,v_2$. They will have kinetic energy $\text{KE}_1,\text{KE}_2$:
+\begin{equation*}
+	\text{KE}_1=\frac12 m_1(v_1)^2
+	\qquad
+	\text{KE}_2=\frac12 m_2(v_2)^2
+\end{equation*}
+$v_1',v_2'$ are the objects' velocities after the collision. They will have kinetic energy $\text{KE}_1',\text{KE}_2'$:
+\begin{equation*}
+	\text{KE}_1'=\frac12 m_1(v_1')^2
+	\qquad
+	\text{KE}_2'=\frac12 m_2(v_2')^2
+\end{equation*}
+Since the collision is elastic, the internal kinetic energies are conserved:
+\begin{align*}
+	\text{KE}_1+\text{KE}_2&=\text{KE}_1'+\text{KE}_2' \\
+	\Aboxed{\frac12 m_1(v_1)^2+\frac12 m_2(v_2)^2&=\frac12 m_1(v_1')^2+\frac12 m_2(v_2')^2}
+\end{align*}
+If there is no net external force $\mathbf{F}_ \text{net}t=0$, then momentum is also conserved. Total momentum $\mathbf{p}_\text{tot}=\mathbf{p}_1+\mathbf{p}_2$, where $\mathbf{p}_1,\mathbf{p}_2$ are the momentum of each object before the collision.
+\begin{align*}
+    \mathbf{p}_ \text{tot}&=\mathbf{p}_ \text{tot}' \\
+	\mathbf{p}_1+\mathbf{p}_2&=\mathbf{p}_1'+\mathbf{p}_2'
+	\intertext{By definition of momentum, $\mathbf{p}_x=m_x \mathbf{v}_x$. Supposing mass does not change from the collision.}
+	\Aboxed{m_1\mathbf{v}_1+m_2\mathbf{v}_2&=m_1\mathbf{v}_1'+m_2\mathbf{v}_2'}
+\end{align*}
+
+\subsection{1D Inelastic Collisiosn}
+
+\definition{An \textbf{inelastic collision} is one where internal kinetic energy changes and is not conserved.}
+
+In an inelastic collision, forces between may add or remove internal kinetic energy (changing the total energy of objects in the system), such as dissipating some kinetic energy into heat.
+
+\definition{A \textbf{perfect inelastic collision} is one where the objects stick together after a collision (the objects' relative velocities to each other is $0$).}
+
+A perfect inelastic collision reduces the internal kinetic energy of a system by as much as possible while still conserving momentum.
+
+\subsection{2D Collisions of Point Masses Where One is Stationary}
+
+\definition{A \textbf{point mass} is a hypothetical object with mass but cannot rotate or spin.}
+
+We consider point masses only for now because we do not want to consider rotation. Similar to kinematics, we can consider the $x$ and $y$ components of each object and the collision separately.
+
+Suppose there are two point masses. The second object is stationary (with $v_2=0$). We define the coordinate system such that the first object's momentum in the $y$ direction $p_y=0$ and $p_x$ equals its momentum. Let $m_1,m_2$ be the masses of the two point masses.
+
+Define angles $\theta_1$ and $\theta_2$ be the angle between object 1's initial velocity vector $v_1$ and $v_1'$ and $v_2'$, where $v_1',v_2'$ are the velocities of the two point masses after the collision.
+
+Also suppose that $\mathbf{F}_ \text{net}=0$ so that momentum is conserved.
+
+\begin{center}
+	\includegraphics[width=0.8\linewidth]{2dcollision.png}
+\end{center}
+
+By conservation of momentum:
+\begin{align*}
+	\mathbf{p}_ \text{tot}&=\mathbf{p}_ \text{tot}'
+	\intertext{In the $x$ direction (defined such that object 1 is only moving in this direction):}
+	p_{1x}+p_{2x}&=p_{1x}'+p_{2x}' \\
+	m_1v_{1x}+m_2v_{2x}&=m_1v_{1x}'+m_2v_{2x}'
+	\intertext{where $p_{1x}$ is object 1's momentum in the $x$ direction, $v_{1x}$ is object 1's velocity in the $x$ direction, etc. Since object 2 is stationary, $v_{2x}=0$.}
+	m_1v_{1x}&=m_1v_{1x}'+m_2v_{2x}'
+	\intertext{The coordinate system is defined such that all of object 1's initial velocity is in the $x$ direction, so $v_1=v_{1x}$. We do not know this for $v_{1x}'$ and $v_{2x}'$, as those are after the collision. These can be determined by trigonometry.}
+	\Aboxed{m_1v_1&=m_1v_1'\cos\theta_1+m_2v_2'\cos\theta_2}
+\end{align*}
+This is the conservation of momentum in the $x$ direction/along the $x$-axis. Similarly in the $y$ direction (noting that the coordinate system is defined so that $v_{1y}=0$):
+\begin{align*}
+	p_{1y}+p_{2y}&=p_{1y}'+p_{2y}' \\
+	0&=m_1v_{1y}'+m_2v_{2y}' \\
+	\Aboxed{0&=m_1v_1'\sin\theta_1+m_2v_2'\sin\theta_2}
+\end{align*}
+
+\subsubsection{Elastic collisions between two objects of equal mass}
+
+We find the cases when the collision is elastic, i.e. the internal kinetic energy is conserved. As before, suppose object 2 starts at rest. As before, the coordinate system is defined such that $p_{1x}=p_1$ and $p_{1y}=0$. The two objects are of equal mass $m$. From before (conservation of momentum):
+\begin{align}
+	m_1v_1&=m_1v_1'\cos\theta_1+m_2v_2'\cos\theta_2 \notag \\
+	0&=m_1v_1'\sin\theta_1+m_2v_2'\sin\theta_2 \notag
+	\intertext{The masses are equal: $m_1=m_2=m$. Since $m\neq0$, divide both sides by $m$.}
+	v_1&=v_1'\cos\theta_1+v_2'\cos\theta_2 \\
+	0&=v_1'\sin\theta_1+v_2'\sin\theta_2
+\end{align}
+We calculate the internal kinetic energy before the collision is (call this $\text{KE}$, which equals the kinetic energy of object 1), and do some algebraic manipulations to write it into a form that we can determine when $\text{KE}$ equals the internal kinetic energy after the collision $\text{KE}'$.
+\begin{align*}
+	\text{KE}
+	&=\frac12 mv_1^2 \\
+	&=\frac12m\left(v_1'\cos\theta_1+v_2'\cos\theta_2\right)^2 \\
+	&=\frac12m\left((v_1')^2\cos^2\theta_1+2(v_1')(v_2')\cos\theta_1\cos\theta_2+(v_2')^2\cos^2\theta_2\right) \\
+	&=\frac12m(v_1')^2\cos^2\theta_1+\frac12m(v_2')^2\cos^2\theta_2+m(v_1')(v_2')\cos\theta_1\cos\theta_2 \\
+	&=\frac12m(v_1')^2 \left( 1-\sin^2\theta_1 \right)+\frac12m(v_2')^2 \left( 1-\sin^2\theta_2 \right)+m(v_1')(v_2')\cos\theta_1\cos\theta_2 \\
+	&=\frac12 m(v_1')^2+\frac12m(v_2')^2-\frac12m(v_1')^2\sin^2\theta_1-\frac12m(v_2')^2\sin^2\theta_2+m(v_1')(v_2')\cos\theta_1\cos\theta_2 \\
+	&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m\left((v_1')(v_2')\cos\theta_1\cos\theta_2-\frac12(v_1')^2\sin^2\theta_1-\frac12(v_2')^2\sin^2\theta_2\right) \\
+	\intertext{We consider the last two terms, $-(v_1')^2\sin^2\theta_1/2-(v_2')^2\sin^2\theta_2/2$ separately. We use equation (2) from earlier.
+	\begin{mdframed}
+		$\begin{aligned}[t]
+			&-\frac12(v_1')^2\sin^2\theta_1-\frac12(v_2')^2\sin^2\theta_2
+			=(-1/2)\left((v_1')^2\sin^2\theta_1+(v_2')^2\sin^2\theta_2\right) \\
+			={}&(-1/2)\left((v_1')^2\sin^2\theta_1+2(v_1')(v_2')\sin\theta_1\sin\theta_2+(v_2')^2\sin^2\theta_2-2(v_1')(v_2')\sin\theta_1\sin\theta_2\right) \\
+			={}&(-1/2)\left(\left( v_1'\sin\theta_1+v_2'\sin\theta_2 \right)^2-2(v_1')(v_2')\sin\theta_1\sin\theta_2\right)
+			=(-1/2)\left(-2(v_1')(v_2')\sin\theta_1\sin\theta_2\right) \\
+			={}&(v_1')(v_2')\sin\theta_1\sin\theta_2
+		\end{aligned}$
+	\end{mdframed}}
+	&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m\left((v_1')(v_2')\cos\theta_1\cos\theta_2+(v_1')(v_2')\sin\theta_1\sin\theta_2\right) \\
+	&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m(v_1')(v_2')\left(\cos\theta_1\cos\theta_2+\sin\theta_1\sin\theta_2\right) \\
+	\intertext{By cosine substraction identity $\cos(a-b)=\cos a\cos b+\sin a\sin b$:}
+	\Aboxed{\text{KE}&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m(v_1')(v_2')\cos(\theta_1-\theta_2)}
+	\intertext{Next, we calculate the internal kinetic energy of the two objects after the collision $\text{KE}'$:}
+	\Aboxed{\text{KE}'&=\frac12 m(v_1')^2+\frac12m(v_2')^2}
+\end{align*}
+
+We aim to find when the collision is elastic, i.e. the internal kinetic energy is not changed by the collision: $\text{KE}=\text{KE}'$. This is exactly when:
+\begin{equation*}
+    m(v_1')(v_2')\cos(\theta_1-\theta_2)=0
+\end{equation*}
+The cases where this is true are:
+\begin{itemize}
+    \item $v_1'=0$: object 1 transfers all its momentum to object 2, causing object 1 to come to a stop. This occurs when there is a head-on collision between two balls of equal mass, as we have spcified.
+	\item $v_2'=0$: object 2 is still stationary, meaning no momentum has been transferred and there is actually no collision at all.
+	\item $\cos(\theta_1-\theta_2)=0 \impliedby \theta_1-\theta_2=\pi/2=90^\circ$: the angle of separation between the two objects after the collision is $90^\circ$.
+\end{itemize}
 
 
 
