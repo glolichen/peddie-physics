@@ -5,6 +5,8 @@
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
 \usepackage{graphicx, float}
 \usepackage{suffix}
+\usepackage{multicol}
+\usepackage{cancel}
 \usepackage{mdframed}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
@@ -400,12 +402,12 @@ Consider a net force pushing an object in one direction. The direction of the fo
 	W_{\text{net}}
 	&=F_{\text{net}}d\cos\theta=F_{\text{net}}d
 	\intertext{Substituting $F_{\text{net}}=ma$ by Newton's second law:}
-	\implies W_{\text{net}}
+	W_{\text{net}}
 	&=mad
 	\intertext{where $m$ is mass, $a$ is acceleration and $d$ is displacement. We can find $a$ in terms of $v_0$ and $v$, the initial and final velocity. From the kinematic equation $v^2=v_0^2+2ad \implies a=(v^2-v_0^2)/(2d)$.}
-	\implies W_{\text{net}}
+	W_{\text{net}}
 	&=m \left( \frac{v^2-v_0^2}{2d} \right)d \\
-	\implies \Aboxed{W_{\text{net}}
+	\Aboxed{W_{\text{net}}
 	&=\frac12mv^2-\frac12mv_0^2}
 \end{align*}
 
@@ -750,18 +752,226 @@ The cases where this is true are:
 	\item $\cos(\theta_1-\theta_2)=0 \impliedby \theta_1-\theta_2=\pi/2=90^\circ$: the angle of separation between the two objects after the collision is $90^\circ$.
 \end{itemize}
 
-
-
-
 \section{Circular Motion}
 
+\definition{When an object rotates around an axis: $\Delta \theta$ is used for \textbf{rotation angle}, $\Delta s$ for \textbf{arc length} and $r$ for \textbf{radius of curvature}.}
 
+Rotation angle $\Delta \theta$ is measured in radians (\si{rad}).
 
+\definition{\textbf{Angular velocity} is the rate of change of an angle, denoted $\omega$ (lowercase Greek letter omega).
+\begin{equation*}
+    \omega=\frac{\Delta \theta}{\Delta t}
+\end{equation*}
+where an angular rotation $\Delta \theta$ takes place in time $\Delta t$.}
+
+Angular velocity is measured in radians per second (\si{\radian\per\second}).
+
+The angular velocity is related to the same object's linear velocity. The linear velocity is the rate of change of arc length $\Delta s$ with respect to time:
+\begin{equation*}
+    v=\frac{\Delta s}{\Delta t}
+\end{equation*}
+But also, arc length can be given in terms of radius of curvature $r$ and the rotation angle $\Delta \theta$:
+\begin{equation*}
+    \Delta s=r\Delta\theta
+\end{equation*}
+So we can write the linear velocity in terms of the angular velocity, and vice versa:
+\begin{equation*}
+    v=\frac{r\Delta \theta}{\Delta t}=r \left( \frac{\Delta\theta}{\Delta t} \right)=r\omega
+	\iff 
+	\omega=\frac{v}{r}
+\end{equation*}
+
+\theorem*{If an object is rotating around some axis with radius of curvature $r$, then the relationship between linear velocity and angular velocity is:
+\begin{equation*}
+	v=r\omega \qquad \omega=\frac{v}{r}
+\end{equation*}}
+Thus, the linear velocity $v$ is proportional to the distance to the center of rotation. Both $v$ and $\omega$ have directions (since they are velocity, not speed), the directions are clockwise and counterclockwise.
+
+\subsection{Centripetal Acceleration}
+
+\definition{An object is in \textbf{Uniform circular motion} if travels at a constant speed on a circular path. \textbf{Centripetal acceleration} $\mathbf{a}_ \text{c}$ is the acceleration of an object in uniform circular motion.}
+
+Centripetal acceleration is a vector. By handwavery, at any time, an object's centripetal acceleration/the vector $\mathbf{a}_ \text{c}$ points to the center of curvature. The magnitude of centripetal acceleration is given by:
+\begin{equation*}
+    \lVert \mathbf{a}_ \text{c} \rVert 
+	=a_ \text{c}
+	=\frac{v^2}{r}
+	=r \omega^2
+\end{equation*}
+where $v$ is the magnitude of the object's linear velocity (given by $v=\Delta s/\Delta t$), $r$ is the radius of curvature and $\omega$ is the object's angular velocity (given by $\omega=\Delta \theta/\Delta \theta=v/r$).
+
+\subsection{Centripetal Force}
+
+\definition{\textbf{Centripetal force} is a net force causing uniform circular motion.}
+
+When an object is in uniform circular motion, the same object's direction of centripetal force is towards the center of curvature, which is the same as the direction of centripetal acceleration $\mathbf{a}_ \text{c}$.
+
+Centripetal force is denoted $\mathbf{F}_\text{c}$. The magnitude of centripetal force can be found from Newton's second law:
+\begin{align*}
+	\lVert \mathbf{F}_\text{c} \rVert =F_\text{c}
+	&=ma_\text{c}
+	\intertext{We know from before that the magnitude of centripetal acceleration $a_\text{c}=v^2/r=r\omega^2$.}
+	\Aboxed{F_\text{c}
+	&=\frac{mv^2}{r}
+	=mr\omega^2}
+	\intertext{Rearranging and solving for radius of curvature $r$ gives:}
+	r
+	&=\frac{mv^2}{F_\text{c}}
+\end{align*}
+Since the radius of curvature is inversely proportional to centripetal force, a higher centripetal force results in a smaller radius of curvature, and a tighter curve/motion.
+
+\subsubsection{Banked curves}
+
+This is an exmaple application of centripetal force. In the free body diagram below, the car is traveling on a banked road. We want to calculate the angle $\theta$ such that the car can drive the curve without using tire friction. This occurs when the net external force is exactly the centripetal force needed to put the car in uniform circular motion.
+\begin{center}
+	\includegraphics[width=0.6\linewidth]{centripetalcar.png}
+\end{center}
+$\mathbf{N}$ is normal force, $\mathbf{w}$ is weight and $\mathbf{F}_\text{c}$ is centripetal force. Non-bold denotes magnitude.
+
+First, the car stays on the ground, meaning the vertical component of the normal force (the normal force has a horizontal component, since the ground is inclined) must equal weight/force of gravity.
+\begin{align*}
+	N\cos\theta&=w=mg 
+	\intertext{There is also a component of normal force pushing the car left, an amount which equals the centripetal force.}
+	N\sin\theta&=F_\text{c}=\frac{mv^2}{r}
+\end{align*}
+Dividing these equations, we have:
+\begin{equation*}
+	\frac{N\sin\theta}{N\cos\theta}=\frac{\cancel{m}v^2}{\cancel{m}gr}
+	\implies \tan\theta=\frac{v^2}{gr}
+	\implies \boxed{\theta=\arctan\left(\frac{v^2}{gr}\right)}
+\end{equation*}
+This is the angle the road must be banked in order for the car to enter circular motion of radius $r$ at velocity $v$ without using any other external forces like tire friction.
 
 \section{Rotational Kinematics}
 
+\subsection{Torque}
 
+\definition{\textbf{Torque} $\boldsymbol{\tau}$ is the rotational equivalent of force. Torque is a vector quantity. Torque measures how effectively a force is able to change the angular velocity of an object. The magnitude of torque $\tau$ is defined as:
+\begin{equation*}
+	\tau=rF\sin\theta
+\end{equation*}
+where $F$ is the magnitude of the force applied, $r$ is the distance between the pivot point and where the force is applied, $\theta$ is the angle between the force vector and the vector between the pivot point and where the force is applied.}
+\begin{center}
+	\includegraphics[width=0.8\linewidth]{torque.png}
+\end{center}
+\definition{The \textbf{perpendicular lever arm} $r_\perp$ is the shortest distance from the pivot point to the line created by extending the force vector $\mathbf{F}$. By trigonometry, the formula for $r_\perp$ is:
+\begin{equation*}
+    r_\perp=r\sin\theta
+\end{equation*}
+where $r,\theta$ are the same as defined previously. Torque can also be written as:
+\begin{equation*}
+    \tau=r_\perp F
+\end{equation*}}
+Torque is proportional to the perpendicular lever arm. If the magnitude of force remains the same, torque is highest when $\theta=90^\circ\implies \sin\theta=1$, which is also the maximum length of the perpendicular lever arm.
 
+It is common to define counterclockwise torque as positive and clockwise as negative (same as unit circle).
+
+\subsection{Equilibrium}
+
+\definition{\textbf{Equilibrium} is a state when the forces acting on an object that is stationary (not moving) or moving at a constant velocity are balanced.}
+
+It is necessary for the net external force $\mathbf{F}_\text{net}=0$. However, it is not sufficient. In this case, $\mathbf{F}_\text{net}=0$, but the object's rotation will accelerate, meaning it is not in equilibrium (forces are not balanced).
+\begin{center}
+	\includegraphics[width=0.5\linewidth]{notequilibrium.png}
+\end{center}
+
+Therefore, net torque $\boldsymbol{\tau}_\text{net}$ must also be $0$.
+
+\theorem*{For an object to be in equilibrium, both net force and net torque must be zero:
+\begin{equation*}
+	\mathbf{F}_ \text{net}=0 \qquad \boldsymbol{\tau}_\text{net}=0
+\end{equation*}}
+
+\subsection{Stability}
+
+\definition{A system is in \textbf{stable equilibrium} if once displaced, it experiences a net force or torque opposite to the direction of displacement, resulting in a restoring force moving it back toward the equilibrium position.}
+
+Most systems are in stable equilibrium, especially for small displacements.
+
+\definition{A system is in \textbf{unstable equilibrium} if once displaceed, it experiences a net force or torque in teh same direction of displacement. It will accelerate away from the equilibrium position even for small displacements.}
+
+\definition{A system is in \textbf{neutral equilibrium} if its equilibrium is independent of displacement from original position. The object will remain at its new position.}
+
+It is possible to have a combination of these situations, i.e. neutral equilibrium in one direction, but stable or unstable in another.
+
+\subsection{Angular Acceleration}
+
+Angular velocity $\omega$ is the rate at which the rotation angle $\theta$ changes. There is also a relationship between rotation velocity and linear velocity $v$:
+\begin{equation*}
+    \omega=\frac{\Delta \theta}{\Delta t}=\frac{v}{r} \qquad v=r\omega
+\end{equation*}
+
+\definition{\textbf{Angular acceleration} $\alpha$ is the rate at which angular velocity changes.
+\begin{equation*}
+    \alpha=\frac{\Delta\omega}{\Delta t}
+\end{equation*}
+where $\Delta\omega$ is the change in angular velocity and $\Delta t$ is elapsed time.}
+
+Angular acceleration is measured in radians per second square (\si{\radian\per\second\squared}).
+
+If $\omega\neq0$, then the object is also experiencing tangential acceleration. This is another component of the linear acceleration on the object, in addition to centripetal acceleration. Tangential acceleration is denoted $a_\text{t}$:
+
+\begin{center}
+	\includegraphics[width=0.3\linewidth]{circularacceleration.png}
+\end{center}
+
+Tangential acceleration is a function of angular acceleration, and $a_\text{t}=0 \iff \alpha=0$. This is unlike centripetal acceleration, which is present even if there is no angular acceleration. The magnitude of tangential acceleration $a_\text{t}=\lVert \mathbf{a}_\text{t}\rVert $ is the rate of change in the magnitude of linear velocity, denoted $\Delta v$:
+\begin{align*}
+	a_\text{t}&=\frac{\Delta v}{\Delta t}
+	\intertext{From before, we know that linear velocity $v=r\omega$, where $r$ is the radius of rotation and $\omega$ is angular velocity:}
+	a_\text{t}&=\frac{\Delta (r\omega)}{\Delta t}
+\end{align*}
+Since radius $r$ is constant, and by definition of angular acceleration $\alpha=\Delta \omega/\Delta t$:
+\begin{equation*}
+	a_\text{t}=r\alpha
+	\iff \alpha=\frac{a_\text{t}}{r}
+\end{equation*}
+
+\definition{\textbf{Tangential acceleration}, or \textbf{linear accleration}, ($\mathbf{a}_\text{t}$) is the component of an object's acceleration at any time, orthogonal to its centripetal acceleration. Its direction is the same as the object's linear velocity $\mathbf{v}$ and tangent to the circular path on which the object moves. Its magnitude is given by:
+\begin{equation*}
+	a_\text{t}=r\alpha
+\end{equation*}
+where $r$ is radius of rotation and $\alpha$ is angular acceleration (given by $\alpha=\Delta \omega/\Delta t$ where $\Delta \omega$ is change in angular velocity and $\Delta t$ is change in time).}
+
+In fact, tangential acceleration is directly proportional to angular acceleration.
+
+\subsection{Equations}
+
+From linear kinematics, where $v$ is final velocity, $v_0$ is initial velocity, $t$ is time and $a$ is constant acceleration:
+\begin{align*}
+	v&=v_0+at
+	\intertext{We know $v=r\omega$. $a$ is tangential/linear accleration $a_\text{t}=r\alpha$.}
+	r\omega&=r\omega_0+r\alpha t
+	\intertext{where $\omega$ is final angular velocity and $\omega_0$ is initial angular velocity.}
+	\Aboxed{\omega&=\omega_0+\alpha t}
+\end{align*}
+
+We can similarly derive other kinematic equations.
+
+\theorem{Linear and rotational kinematics equations}{
+	\begin{alignat*}{2}
+		\Delta x&=v\Delta t & \qquad
+		\Delta\theta&=\omega \Delta t \\
+		v&=v_0+a\Delta t & \qquad
+		\omega&=\omega_0+\alpha\Delta t \\
+		\Delta x&=v_0\Delta t+\frac12a(\Delta t)^2 & \qquad
+		\Delta \theta&=\omega_0\Delta t+\frac12\alpha (\Delta t)^2 \\
+		v^2&=v_0^2+2a\Delta x & \qquad
+		\omega^2&=\omega_0^2+2\alpha\Delta \theta
+	\end{alignat*}
+	where:
+	\begin{alignat*}{2}
+		\Delta x&=\text{Change in position} & \qquad
+		\Delta \theta&=\text{Change in rotation angle} \\
+		v&=\text{Linear velocity} & \qquad
+		\omega&=\text{Angular velocity} \\
+		v_0&=\text{Initial linear velocity} & \qquad
+		\omega_0&=\text{Initial angular velocity} \\
+		a&=\text{Linear acceleration} & \qquad
+		\alpha&=\text{Angular acceleration} \\
+		\Delta t&=\text{Elapsed time}
+	\end{alignat*}
+}
 
 \section{Gravitation}
 
