@@ -800,6 +800,8 @@ Centripetal acceleration is a vector. By handwavery, at any time, an object's ce
 \end{equation*}
 where $v$ is the magnitude of the object's linear velocity (given by $v=\Delta s/\Delta t$), $r$ is the radius of curvature and $\omega$ is the object's angular velocity (given by $\omega=\Delta \theta/\Delta \theta=v/r$).
 
+Centripetal acceleration/centripetal force affects the object's direction of motion, but not the magnitude of velocity/speed.
+
 \subsection{Centripetal Force}
 
 \definition{\textbf{Centripetal force} is a net force causing uniform circular motion.}
@@ -862,9 +864,17 @@ where $r,\theta$ are the same as defined previously. Torque can also be written 
 \begin{equation*}
     \tau=r_\perp F
 \end{equation*}}
+Torque is measured in newton-meters (\si{\newton\cdot\meter}). In the formula for magnitude of torqur $\tau=rF\sin\theta$, radius $r$ is measured in meters, magnitude of force $F$ is measured in newtons, and $\sin\theta$ is a scalar.
+
 Torque is proportional to the perpendicular lever arm. If the magnitude of force remains the same, torque is highest when $\theta=90^\circ\implies \sin\theta=1$, which is also the maximum length of the perpendicular lever arm.
 
 It is common to define counterclockwise torque as positive and clockwise as negative (same as unit circle).
+
+\theorem{Torque and angular acceleration}{The relationship between torque and angular acceleration is:
+\begin{equation*}
+    \tau=\frac12 mr^2\alpha=I\alpha
+\end{equation*}
+where $m$ is the object's mass, $r$ is the radius/distance from where the force is applied to the pivot point, and $\alpha$ is angular acceleration. The quantity $I=mr^2/2$ is called the \textbf{moment of inertia}.}
 
 \subsection{Equilibrium}
 
@@ -933,7 +943,7 @@ Since radius $r$ is constant, and by definition of angular acceleration $\alpha=
 \end{equation*}
 where $r$ is radius of rotation and $\alpha$ is angular acceleration (given by $\alpha=\Delta \omega/\Delta t$ where $\Delta \omega$ is change in angular velocity and $\Delta t$ is change in time).}
 
-In fact, tangential acceleration is directly proportional to angular acceleration.
+In fact, tangential acceleration is directly proportional to angular acceleration. Tangential acceleration affects the magnitude of the object's linear velocity, but does not affect direction of motion.
 
 \subsection{Equations}
 
@@ -950,8 +960,10 @@ We can similarly derive other kinematic equations.
 
 \theorem{Linear and rotational kinematics equations}{
 	\begin{alignat*}{2}
-		\Delta x&=v\Delta t & \qquad
-		\Delta\theta&=\omega \Delta t \\
+		\Delta x&=\overline v\Delta t & \qquad
+		\Delta\theta&=\overline\omega \Delta t \\
+		\overline v&=\frac{v_0+v}{2} & \qquad
+		\overline \omega&=\frac{\omega_0+\omega}{2} \\
 		v&=v_0+a\Delta t & \qquad
 		\omega&=\omega_0+\alpha\Delta t \\
 		\Delta x&=v_0\Delta t+\frac12a(\Delta t)^2 & \qquad
@@ -963,10 +975,12 @@ We can similarly derive other kinematic equations.
 	\begin{alignat*}{2}
 		\Delta x&=\text{Change in position} & \qquad
 		\Delta \theta&=\text{Change in rotation angle} \\
-		v&=\text{Linear velocity} & \qquad
-		\omega&=\text{Angular velocity} \\
+		v&=\text{Final linear velocity} & \qquad
+		\omega&=\text{Final angular velocity} \\
 		v_0&=\text{Initial linear velocity} & \qquad
 		\omega_0&=\text{Initial angular velocity} \\
+		\overline v&=\text{Average linear velocity} & \qquad
+		\overline\omega&=\text{Average angular velocity} \\
 		a&=\text{Linear acceleration} & \qquad
 		\alpha&=\text{Angular acceleration} \\
 		\Delta t&=\text{Elapsed time}
@@ -975,6 +989,24 @@ We can similarly derive other kinematic equations.
 
 \section{Gravitation}
 
+\subsection{Newton's Universal Law of Gravitation}
+
+\theorem{Newton's universal law of gravitation}{\textbf{Newton's universal law of gravitation} states that every particle attracts every other particle with a force along the line between the two. The magnitude of the force is directly porportional to the product of the masses of the two objects and inversely proportional to the square of the distance between them. By Newton's third law, the force exerted by particle 1 on particle 2 has the same magnitude as that exerted by particle 2 on particle 1. The magnitude of the force $F$ is given by:
+\begin{equation*}
+    F=G \frac{mM}{r^2}
+\end{equation*}
+where $m,M$ are the masses of the two particles, and $r$ is the distance between their centers of mass. $G$ is the universal gravitational constant, a proportionality factor thought to be the same everywhere and experimentally determined to be approximately:
+\begin{equation*}
+	G\approx 6.674\times 10^{-11} \,\frac{\si{\newton\cdot\meter\squared}}{\si{\kilogram\squared}}
+\end{equation*}}
+
+The magnitude of weight/force of gravity is $F=w=mg$, where $m$ is the mass of the object. Substituting this into Newnton's universal law of gravitation:
+\begin{equation*}
+    mg=G \frac{mM}{r^2}
+	\implies 
+    g=\frac{GM}{r^2}
+\end{equation*}
+Where $M$ is the Earth's mass and $r$ is the Earth's radius. This will show that $g\approx 9.81\,\si{\meter\per\second}$.
 
 
 
