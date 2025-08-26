@@ -43,6 +43,7 @@
 \maketitle
 
 \tableofcontents
+\newpage
 
 \section{1D Kinematics}
 
@@ -353,7 +354,7 @@ The magnitude of kinetic friction is the same regardless of the force applied to
 	F
 	&=\lVert \mathbf{f}_{\text{k}} \rVert +ma
 	=\mu_{\text{k}}N+ma \\
-	\intertext{If the surface the object is on is flat, i.e. there is no incline, then $N=w=mg$.}
+	\intertext{If the surface the object is on is flat, i.e. There is no incline, then $N=w=mg$.}
 	&=\mu_{\text{k}}mg+ma
 \end{align*}
 
@@ -658,7 +659,7 @@ If there is no net external force $\mathbf{F}_ \text{net}t=0$, then momentum is 
 	\Aboxed{m_1\mathbf{v}_1+m_2\mathbf{v}_2&=m_1\mathbf{v}_1'+m_2\mathbf{v}_2'}
 \end{align*}
 
-\subsection{1D Inelastic Collisiosn}
+\subsection{1D Inelastic Collisions}
 
 \definition{An \textbf{inelastic collision} is one where internal kinetic energy changes and is not conserved.}
 
@@ -735,7 +736,7 @@ We calculate the internal kinetic energy before the collision is (call this $\te
 	\end{mdframed}}
 	&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m\left((v_1')(v_2')\cos\theta_1\cos\theta_2+(v_1')(v_2')\sin\theta_1\sin\theta_2\right) \\
 	&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m(v_1')(v_2')\left(\cos\theta_1\cos\theta_2+\sin\theta_1\sin\theta_2\right) \\
-	\intertext{By cosine substraction identity $\cos(a-b)=\cos a\cos b+\sin a\sin b$:}
+	\intertext{By cosine subtraction identity $\cos(a-b)=\cos a\cos b+\sin a\sin b$:}
 	\Aboxed{\text{KE}&=\frac12 m(v_1')^2+\frac12m(v_2')^2+m(v_1')(v_2')\cos(\theta_1-\theta_2)}
 	\intertext{Next, we calculate the internal kinetic energy of the two objects after the collision $\text{KE}'$:}
 	\Aboxed{\text{KE}'&=\frac12 m(v_1')^2+\frac12m(v_2')^2}
@@ -747,7 +748,7 @@ We aim to find when the collision is elastic, i.e. the internal kinetic energy i
 \end{equation*}
 The cases where this is true are:
 \begin{itemize}
-    \item $v_1'=0$: object 1 transfers all its momentum to object 2, causing object 1 to come to a stop. This occurs when there is a head-on collision between two balls of equal mass, as we have spcified.
+    \item $v_1'=0$: object 1 transfers all its momentum to object 2, causing object 1 to come to a stop. This occurs when there is a head-on collision between two balls of equal mass, as we have specified.
 	\item $v_2'=0$: object 2 is still stationary, meaning no momentum has been transferred and there is actually no collision at all.
 	\item $\cos(\theta_1-\theta_2)=0 \impliedby \theta_1-\theta_2=\pi/2=90^\circ$: the angle of separation between the two objects after the collision is $90^\circ$.
 \end{itemize}
@@ -824,7 +825,7 @@ Since the radius of curvature is inversely proportional to centripetal force, a 
 
 \subsubsection{Banked curves}
 
-This is an exmaple application of centripetal force. In the free body diagram below, the car is traveling on a banked road. We want to calculate the angle $\theta$ such that the car can drive the curve without using tire friction. This occurs when the net external force is exactly the centripetal force needed to put the car in uniform circular motion.
+This is an example application of centripetal force. In the free body diagram below, the car is traveling on a banked road. We want to calculate the angle $\theta$ such that the car can drive the curve without using tire friction. This occurs when the net external force is exactly the centripetal force needed to put the car in uniform circular motion.
 \begin{center}
 	\includegraphics[width=0.6\linewidth]{centripetalcar.png}
 \end{center}
@@ -864,7 +865,7 @@ where $r,\theta$ are the same as defined previously. Torque can also be written 
 \begin{equation*}
     \tau=r_\perp F
 \end{equation*}}
-Torque is measured in newton-meters (\si{\newton\cdot\meter}). In the formula for magnitude of torqur $\tau=rF\sin\theta$, radius $r$ is measured in meters, magnitude of force $F$ is measured in newtons, and $\sin\theta$ is a scalar.
+Torque is measured in newton-meters (\si{\newton\cdot\meter}). In the formula for magnitude of torque $\tau=rF\sin\theta$, radius $r$ is measured in meters, magnitude of force $F$ is measured in newtons, and $\sin\theta$ is a scalar.
 
 Torque is proportional to the perpendicular lever arm. If the magnitude of force remains the same, torque is highest when $\theta=90^\circ\implies \sin\theta=1$, which is also the maximum length of the perpendicular lever arm.
 
@@ -872,9 +873,27 @@ It is common to define counterclockwise torque as positive and clockwise as nega
 
 \theorem{Torque and angular acceleration}{The relationship between torque and angular acceleration is:
 \begin{equation*}
-    \tau=\frac12 mr^2\alpha=I\alpha
+    \tau=I\alpha
 \end{equation*}
-where $m$ is the object's mass, $r$ is the radius/distance from where the force is applied to the pivot point, and $\alpha$ is angular acceleration. The quantity $I=mr^2/2$ is called the \textbf{moment of inertia}.}
+where $\alpha$ is angular acceleration and $I$ is the \textbf{moment of inertia}. Usually (but not always), the moment of inertia $I=mr^2/2$, where $m$ is the object's mass and $r$ is the radius/distance from where the force is applied to the pivot point.}
+
+\theorem{Rotational kinetic energy}{The kinetic energy of an object moving at angular velocity $\omega$ is:
+\begin{equation*}
+	\text{KE}_\text{rotational}=\frac12I\omega^2
+\end{equation*}
+where $I$ is the moment of inertia. An object's total kinetic energy is the sum of rotational kinetic energy and linear kinetic energy:
+\begin{equation*}
+	\text{KE}=\frac12mv^2+\frac12I\omega^2=\frac12mv^2+\frac12 \frac{v^2}{r^2}I
+\end{equation*}}
+
+\subsection{Angular Momentum}
+
+\theorem{Angular momentum}{The equation for angular momentum $L$ and change in angular momentum $\Delta L$ are:
+\begin{equation*}
+	L=I\omega \qquad
+	\Delta L=\tau_\text{avg}\Delta t
+\end{equation*}
+where $I$ is the moment of inertia, $\omega$ is angular velocity, $\tau_\text{avg}$ is average torque, $\Delta t$ is elapsed time.}
 
 \subsection{Equilibrium}
 
@@ -898,7 +917,7 @@ Therefore, net torque $\boldsymbol{\tau}_\text{net}$ must also be $0$.
 
 Most systems are in stable equilibrium, especially for small displacements.
 
-\definition{A system is in \textbf{unstable equilibrium} if once displaceed, it experiences a net force or torque in teh same direction of displacement. It will accelerate away from the equilibrium position even for small displacements.}
+\definition{A system is in \textbf{unstable equilibrium} if once displaced, it experiences a net force or torque in the same direction of displacement. It will accelerate away from the equilibrium position even for small displacements.}
 
 \definition{A system is in \textbf{neutral equilibrium} if its equilibrium is independent of displacement from original position. The object will remain at its new position.}
 
@@ -937,7 +956,7 @@ Since radius $r$ is constant, and by definition of angular acceleration $\alpha=
 	\iff \alpha=\frac{a_\text{t}}{r}
 \end{equation*}
 
-\definition{\textbf{Tangential acceleration}, or \textbf{linear accleration}, ($\mathbf{a}_\text{t}$) is the component of an object's acceleration at any time, orthogonal to its centripetal acceleration. Its direction is the same as the object's linear velocity $\mathbf{v}$ and tangent to the circular path on which the object moves. Its magnitude is given by:
+\definition{\textbf{Tangential acceleration}, or \textbf{linear acceleration}, ($\mathbf{a}_\text{t}$) is the component of an object's acceleration at any time, orthogonal to its centripetal acceleration. Its direction is the same as the object's linear velocity $\mathbf{v}$ and tangent to the circular path on which the object moves. Its magnitude is given by:
 \begin{equation*}
 	a_\text{t}=r\alpha
 \end{equation*}
@@ -950,7 +969,7 @@ In fact, tangential acceleration is directly proportional to angular acceleratio
 From linear kinematics, where $v$ is final velocity, $v_0$ is initial velocity, $t$ is time and $a$ is constant acceleration:
 \begin{align*}
 	v&=v_0+at
-	\intertext{We know $v=r\omega$. $a$ is tangential/linear accleration $a_\text{t}=r\alpha$.}
+	\intertext{We know $v=r\omega$. $a$ is tangential/linear acceleration $a_\text{t}=r\alpha$.}
 	r\omega&=r\omega_0+r\alpha t
 	\intertext{where $\omega$ is final angular velocity and $\omega_0$ is initial angular velocity.}
 	\Aboxed{\omega&=\omega_0+\alpha t}
@@ -991,7 +1010,7 @@ We can similarly derive other kinematic equations.
 
 \subsection{Newton's Universal Law of Gravitation}
 
-\theorem{Newton's universal law of gravitation}{\textbf{Newton's universal law of gravitation} states that every particle attracts every other particle with a force along the line between the two. The magnitude of the force is directly porportional to the product of the masses of the two objects and inversely proportional to the square of the distance between them. By Newton's third law, the force exerted by particle 1 on particle 2 has the same magnitude as that exerted by particle 2 on particle 1. The magnitude of the force $F$ is given by:
+\theorem{Newton's universal law of gravitation}{\textbf{Newton's universal law of gravitation} states that every particle attracts every other particle with a force along the line between the two. The magnitude of the force is directly proportional to the product of the masses of the two objects and inversely proportional to the square of the distance between them. By Newton's third law, the force exerted by particle 1 on particle 2 has the same magnitude as that exerted by particle 2 on particle 1. The magnitude of the force $F$ is given by:
 \begin{equation*}
     F=G \frac{mM}{r^2}
 \end{equation*}
@@ -1000,7 +1019,7 @@ where $m,M$ are the masses of the two particles, and $r$ is the distance between
 	G\approx 6.674\times 10^{-11} \,\frac{\si{\newton\cdot\meter\squared}}{\si{\kilogram\squared}}
 \end{equation*}}
 
-The magnitude of weight/force of gravity is $F=w=mg$, where $m$ is the mass of the object. Substituting this into Newnton's universal law of gravitation:
+The magnitude of weight/force of gravity is $F=w=mg$, where $m$ is the mass of the object. Substituting this into Newton's universal law of gravitation:
 \begin{equation*}
     mg=G \frac{mM}{r^2}
 	\implies 
@@ -1064,7 +1083,153 @@ Hence, we have the relationship between the orbital periods and radii of two obj
 
 \section{Harmonic Motion and Oscillations}
 
+\subsection{Hooke's Law}
 
+\definition{\textbf{Deformation} is the displacement from an object's equilibrium position.}
+
+\theorem{Hooke's law}{An object oscillating back and force is experiencing a force, otherwise Newton's first law implies it would continue moving in one direction. This force is known as a \textbf{restoring force}, denoted $F$.
+\begin{equation*}
+    F=-kx
+\end{equation*}
+where $k$ is the spring constant $x$ is deformation. Negative sign indicates that the restoring force is in the opposite direction of deformation.}
+
+The potential energy stored in a spring, as stated earlier, is:
+\begin{equation*}
+	\text{PE}_\text{s}=\frac12kx^2
+\end{equation*}
+
+\subsection{Period and Frequency}
+
+\definition{\textbf{Periodic motion} is motion that repeats itself at regular time intervals. The time to complete one such motion, or oscillation, is the \textbf{period} $T$. \textbf{Frequency} $f$ in periodic motion is the number of oscillations or repeated motions per unit time.}
+
+The SI unit of frequency is a Hertz, which is an inverse second.
+\begin{equation*}
+	1\,\si{\hertz}
+	=1\,\frac{\text{cycle}}{\si{\sec}}
+	=1\,\frac{1}{\si{\sec}}
+\end{equation*}
+
+\theorem*{The relationship between frequency $f$ and period $T$ in period motion is:
+\begin{equation*}
+    f=\frac{1}{T}
+	\implies T=\frac{1}{f}
+\end{equation*}}
+Then period (time) is measured in $1/\si{\hertz}=1/(1/\si{\sec})=\si{\sec}$, which makes sense.
+
+\subsection{Simple Harmonic Motion}
+
+\definition{\textbf{Simple harmonic motion} (SHM) describes an oscillatory motion where the system's net force is given by Hooke's law $F=-kx$. Such a system is called a \textbf{simple harmonic oscillator}. The maximum displacement from equilibrium position is the \textbf{amplitude}, denoted $X$.}
+
+In a simple harmonic oscillator, there are no damping forces, such as friction or another nonconservative force, that reduces an object's maximum displacement from equilibrium. Hence, the local maximum of displacement to equilibrium does not change with time. This value is the amplitude $X$.
+
+\theorem{Period and frequency of a simple harmonic oscillator}{In simple harmonic motion, the motion's frequency $f$ and period $T$ do not depend on amplitude. They are a function of the system's mass and the spring constant $k$.
+\begin{equation*}
+	T=2\pi \sqrt{\frac mk}
+	\iff f=\frac{1}{2\pi} \sqrt{\frac km}
+\end{equation*}}
+
+The displacement of a simple harmonic oscillator at any given time is modeled by a wave:
+\begin{equation*}
+	x(t)=X\cos \left( \frac{2\pi t}{T} \right)
+\end{equation*}
+Let $v_\text{max}$ be the object's maximum velocity. At that time, it has kinetic energy $\text{KE}=\text{PE}_\text{s}$. The total spring potential energy is when displacement is at its maximum, i.e. the amplitude $X$.
+\begin{equation*}
+	\cancel{\frac12}mv_\text{max}^2=\cancel{\frac12}kX^2
+	\implies v_\text{max}^2=\frac{kX^2}{m}
+	\implies v_\text{max}=X \sqrt{\frac km}
+\end{equation*}
+From the above theorem, we also know that $\sqrt{k/m}=2\pi f=2\pi/T$, so we can also write $v_\text{max}$ as:
+\begin{equation*}
+	v_\text{max}=X \sqrt{\frac km}=2\pi f X=\frac{2\pi X}{T}
+\end{equation*}
+Taking the derivative of the displacement function, and applying the scaling factor $v_\text{max}$, we have the system's velocity at any time:
+\begin{equation*}
+	v(t)=-v_\text{max} \sin\left(\frac{2\pi t}{T}\right)
+\end{equation*}
+The system's maximum acceleration can be calculated from Newton's second law. From Hooke's law, the maximum force is exerted at the highest displacement (amplitude $X$), so the maximum force is $F=kX$ (no negative sign because magnitude of force is positive). Applying $F=ma$:
+\begin{equation*}
+	F=ma=kX
+	\implies a= \frac{kX}{m}
+\end{equation*}
+Again, scaling the derivative of the velocity function $v$ by the maximum acceleration:
+\begin{equation*}
+    a(t)=-\frac{kX}{m} \cos\left(\frac{2\pi t}{T}\right)
+\end{equation*}
+
+\theorem{Position, velocity and acceleration of a simple harmonic oscillator}{The simple harmonic oscillator's position, velocity and acceleration as a function of time $t$:
+\begin{align*}
+	x(t)&=X \cos\left(\frac{2\pi t}{T}\right) \\
+	v(t)&=-v_\text{max} \sin\left(\frac{2\pi t}{T}\right) \\
+	a(t)&= -\frac{kX}{m}\cos\left(\frac{2\pi t}{T}\right)
+\end{align*}
+where $v_\text{max}$ is the maximum velocity obtained by the system:
+\begin{equation*}
+	v_\text{max}=X \sqrt{\frac km}=2\pi fX=\frac{2\pi X}{T}
+\end{equation*}
+where:
+\begin{alignat*}{2}
+	k&=\text{Spring constant} &\qquad 
+	m&=\text{Mass} \\
+	f&=\text{Frequency} &\qquad 
+	T&=\text{Period} \\
+	X&=\text{Amplitude}
+\end{alignat*}}
+
+By conservation of energy, the total energy in the system must be constant. Since we know consider kinetic energy and elastic potential energy:
+\begin{align*}
+	\text{KE}+\text{PE}_ \text{s}
+	&=\text{constant}
+	\intertext{The total energy in the system in a simple harmonic oscillator can be found by calculating the elastic potential energy in the system when the displacement is at its highest, and velocity (and therefore kinetic energy) is zero. This amount is $kX^2/2$. At any displacement from the equilibrium (deformation) $x$, we know kinetic energy and spring potential energy:}
+	\frac12mv^2+\frac12kx^2&=\frac12kX^2
+\end{align*}
+where $m$ is the system's mass, $k$ is the spring constant, $X$ is amplitude, $x$ is current deformation and $v$ is current velocity. Solving for velocity $v$:
+\begin{equation*}
+    v=\pm\sqrt{\frac{kX^2-kx^2}{m}}
+	=\pm \sqrt{\frac km}\sqrt{X^2 \left( 1-\frac{x^2}{X^2} \right)}
+	=\pm \left( X \sqrt{\frac km} \right) \sqrt{1-\frac{x^2}{X^2}}
+\end{equation*}
+Notice that the maximum velocity $v_\text{max}=X \sqrt{k/m}$. Substituting:
+\begin{equation*}
+	\boxed{v=\pm v_\text{max} \sqrt{1-\frac{x^2}{X^2}}}
+\end{equation*}
+Actually, this is the same as the formula for velocity stated earlier. If we take the position $x=X \cos\left(2\pi t/T\right)$:
+\begin{equation*}
+	v
+	=\pm v_\text{max} \sqrt{1-\frac{X^2\cos^2 \left( 2\pi t/T \right)}{X^2}}
+	=\pm v_\text{max} \sqrt{1-\cos^2 \left( 2\pi t/T \right)}
+	=\pm v_\text{max} \left| \sin\left(\frac{2\pi t}{T} \right)\right|
+	=-v_\text{max} \sin\left(\frac{2\pi t}{T}\right)
+\end{equation*}
+$\pm$ and absolute value become just a negative sign to indicate the velocity is in the opposite direction of displacement. If that sounds like hand-waving we can simply apply ``\textit{proof by convenience}.''
+
+\subsection{Simple Pendulum}
+
+\definition{A \textbf{simple pendulum} is an object with a small mass, known as the \textbf{pendulum bob}, suspended by a string or wire to a pivot point.}
+
+\begin{center}
+	\includegraphics[width=0.5\linewidth]{pendulum.png}
+\end{center}
+
+The above pendulum is angle $\theta$ away from its equilibrium position, and its displacement from equilibrium is the arc length $L\theta$, where $L$ is the constant displacement between the mass and the pivot point.
+
+There is a force of gravity upon the pendulum bob of magnitude $w=mg$. Weight has two components, one of which is in the direction towards the pivot point from the bob ($mg\sin\theta$), and a restoring force which is tangent to the arc:
+\begin{equation*}
+    F=-mg \sin\theta
+\end{equation*}
+where $F$ is the restoring force tangent to the arc causing the bob to to swing, $m$ is the mass of the bob and $g$ is the gravitational constant. The negative sign indicates the force is opposite to displacement from equilibrium.
+
+For small angles $\theta$, we can use the small angle approximation $\sin\theta\approx\theta$. Since $s$ is the arc length with $s=L\theta\implies \theta=s/L$:
+\begin{equation*}
+    F=-mg\theta
+	\implies F=-\frac{mg}{L}s
+\end{equation*}
+which is Hooke's law with the spring constant $k=mg/L$. Hence, for simple pendulums with a small angle ($\theta<15^\circ$), we can use equations for simple harmonic motion derived in the previous section, with $k=mg/L$. For example, the amplitude of a pendulum with small angle:
+\begin{equation*}
+    T
+	=2\pi \sqrt{\frac mk}
+	=2\pi \sqrt{\frac{\cancel{m}}{\cancel{m}g/L}}
+	=2\pi \sqrt{\frac Lg}
+\end{equation*}
 
 
 \end{document}
