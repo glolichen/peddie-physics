@@ -1,0 +1,76 @@
+% JUMP TO LINE 60, 75
+\documentclass{article}
+\usepackage[letterpaper,portrait,top=0.4in, left=0.6in, right=0.6in, bottom=1in]{geometry}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{graphicx, float}
+\usepackage{suffix}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{mdframed}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage[per-mode=symbol]{siunitx}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{mlmodern}
+
+\newcommand{\alignedintertext}[1]{%
+  \noalign{%
+    \vtop{\hsize=\linewidth#1\par
+    \expandafter}%
+    \expandafter\prevdepth\the\prevdepth
+  }%
+}
+
+\newcommand{\definition}[1]{\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,parbox=false] #1 \end{tcolorbox}}
+\newcommand{\theorem}[2]{\begin{tcolorbox}[title={#1},colback=blue!5!white,colframe=blue!75!black,parbox=false] #2 \end{tcolorbox}}
+\WithSuffix\newcommand\theorem*[1]{\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=false] #1 \end{tcolorbox}}
+
+\title{\vspace*{-40pt}AP Physics C -- Class Notes}
+\author{Jayden Li}
+\date{\today}
+
+\begin{document}
+\setstretch{1.25}
+\fontsize{11pt}{12pt}\selectfont
+\setlength{\abovedisplayskip}{\abovedisplayskip/2}
+\setlength{\belowdisplayskip}{\belowdisplayskip/2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\maketitle
+
+\tableofcontents
+% \newpage
+
+\section{Introduction}
+
+\subsection{Jumping Monsters}
+
+See Figure 1.1 in Notebook.
+
+We investigate the relationship between the mass of the toy $m$ and the change in height $\Delta h$. Equipment:
+\begin{itemize}
+	\item Meter stick (not ruler, since ruler is only 30cm long)
+	\item Phone (to record video)
+	\item Balance (to measure mass in grams and kilograms, a scale measures weight in Newtons)
+	\item Washers, paper clips and tape (to increase mass of toy)
+\end{itemize}
+
+We collect many data points. We will collect 5 data points, which is 5 conditions, which is 5 different masses to test.  We want to repeat every mass a few times too; we will test every mass 3 times (``3 trials''). In total, the toy will jump $5\cdot 3=15$ times. Trial means that conditions/masses are the same.
+
+Results/data are in Table 1.2 in Notebook.
+
+Based on conservation of energy:
+\begin{equation*}
+    \text{PE}_ \text{s}= \text{PE}_ \text{g}
+	\implies \frac12kx^2=mgh
+	\implies h=\frac{kx^2}{2mg}=\frac{kx^2}{2g}\cdot\frac1m
+\end{equation*}
+If we graph mass $m$ against height $\Delta h$, this is an inverse relationship, as $kx^2/2g$ is a constant (the spring distance $x$ does not change for one toy, $k$ is spring constant, and $g$ is acceleration due to gravity).
+
+Because we want a linear relationship, we can graph inverse mass $1/m$ against height $\Delta h$. This becomes a line with slope $kx^2/2g$.
+
+\end{document}
