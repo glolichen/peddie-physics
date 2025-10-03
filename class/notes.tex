@@ -1,4 +1,3 @@
-% JUMP TO LINE 60, 75
 \documentclass{article}
 \usepackage[letterpaper,portrait,top=0.4in, left=0.6in, right=0.6in, bottom=1in]{geometry}
 
@@ -173,6 +172,8 @@ Maximum friction $\lVert \vec{F}_f \rVert =\lVert \mu \vec{F}_N \rVert $ tells u
 
 \section{Calculus}
 
+\subsection{Calculus-Based Equations}
+
 \theorem{Kinematics}{
 	\begin{alignat*}{2}
 		v&=\diff xt &\qquad \Delta x=\int v\,\mathrm{d}t \\
@@ -249,8 +250,9 @@ Must have negative sign. So, we can also have potential energy in terms of force
 \begin{equation*}
     F_y=-\diff Uy
 	\implies -F_y \,\mathrm{d}y=\mathrm{d}U
-	\implies U=-\int F_y\,\mathrm{d}y
+	\implies \Delta U=-\int F_y\,\mathrm{d}y
 \end{equation*}
+\remark*{In nature, objects want to lower their potential energy. (NOTE: lower the number, NOT the magnitude of kinetic energy.)}
 
 \theorem{Potential energy}{
 	The relationship between potential energy and force is, where $x$ is position:
@@ -261,11 +263,13 @@ Must have negative sign. So, we can also have potential energy in terms of force
 	\end{equation*}
 }
 
+In simple harmonic motion, the potential energy-displacement from equilibrium graph is a positive parabola passing through the origin. There is no potential energy at equilibrium ($x=0$) and potential energy is maximized at the highest displacement.
+
+Total energy is the sum of kinetic energy and potential energy: $K+U$. By conservation of energy, the total energy is constant for all displacement.
+
 \definition{The work done by a \textbf{conservative force} only depends on the initial and final position of the object, not on the path taken.}
 
-A lot of forces are path-dependent. For example, friction depends on the length of the path, so it is not conservative.
-
-Forces associated with change in potential energy are conservative.
+A lot of forces are path-dependent. For example, friction depends on the length of the path, so it is not conservative. Forces associated with change in potential energy are conservative.
 
 \example{Gravitional potential}{
 	Change in gravitational potential energy is $\Delta U_g=mgy$. We can calculate the force:
@@ -278,13 +282,13 @@ Forces associated with change in potential energy are conservative.
 \example{Spring potential}{
 	Change in spring potential is $U_s=kx^2/2$:
 	\begin{equation*}
-		F_s=-\diff{U_s}{x}=-\deriv[x](\frac12kx^2)=-kx
+		F_s=-\diff{U_s}{x}=-\deriv[x]\left(\frac12kx^2\right)=-kx
 	\end{equation*}
 }
 
-\subsection{Perfect Ideal Spring}
+\subsection{Springs}
 
-Formulas like $F_s=-kx$ and $U_s=kx^2/2$ depend on a perfect, ideal spring, which requires some assumptions.
+Formulas like $F_s=-kx$ and $U_s=kx^2/2$ depend on a \textbf{perfect, ideal spring}, which requires some assumptions.
 \begin{itemize}
 	\item The mass of the spring itself is negligible; the mass of the system is exactly the mass of the object attachde to the spring.
 	\item Force exerted is $F_s=-kx$: force-displacement graph is linear and passes through the origin. From this, formula for kinetic energy follows: $U_s=-\int F_s\,\mathrm{d}x=-\int -kx\,\mathrm{d}x=kx^2/2$.
@@ -293,10 +297,100 @@ Formulas like $F_s=-kx$ and $U_s=kx^2/2$ depend on a perfect, ideal spring, whic
 
 Figure 2.6 shows the energy position graph of an ideal spring. By conservation of energy, total energy $\text{TE}=U_s+K$.
 
-\subsection{Non-Ideal Springs}
+Real springs are non-ideal.
 
-Real springs are non-ideal, obviously.
+\section{Conservation of Momentum}
 
+\subsection{Explosions}
 
+\definition{An explosion is when two objects separate after being together.}
+
+Cart of mass $m_1$ and mass $m_2$ separate after a compressed spring between them, and they move at velocity $v_1$ and $v_2$. $m_1>m_2$. By conservation of momentum:
+\begin{equation*}
+    m_1v_1=m_2v_2
+	\implies v_2=\frac{m_1v_1}{m_2}
+\end{equation*}
+We calculate each object's kinetic energy:
+\begin{align*}
+	K_1&=\frac12m_1v_1^2 \\
+	K_2&=\frac12m_2v_2^2
+	   =\frac12m_2 \left( \frac{m_1v_1}{m_2} \right)^2
+	   =\frac12 m_1\left(\frac{m_1}{m_2}\right)v_1^2
+	   =\frac{m_1}{m_2}K_1
+\end{align*}
+Since $m_1>m_2$: $m_1/m_2>1\implies K_2>K_1$
+
+\theorem*{If momentum is conserved after a collision or explosion, then the object with the lower mass (and therefore higher velocity) has higher kinetic energy.}
+
+\subsection{Elastic Head-On Collisions}
+
+\definition{In a head-on collisions, both objects are moving in a straight line. In a glancing collision, objects will go in different angles after the collision.}
+
+Suppose that two objects collide head on. The objects are initially traveling at velocities $v_1,v_2$, and have velocities $v_1',v_2'$ after the collision.
+
+By conservation of momentum and conservation of kinetic energy (because collision is elastic):
+\begin{align*}
+	\Sigma p&=\Sigma p' \\
+	m_1v_1+m_2v_2&=m_1(v_1')+m_2(v_2') \tag{1} \\
+	\frac12m_1v_1^2+\frac12m_2v_2^2&=\frac12m_1(v_1')^2+\frac12m_2(v_2')^2 \tag{2}
+\end{align*}
+We can use this to derive another equation:
+\begin{align*}
+	(2)
+	&\implies \frac12m_1v_1^2+\frac12m_2v_2^2=\frac12m_1(v_1')^2+\frac12m_2(v_2')^2
+	\implies m_1v_1^2+m_2v_2^2=m_1(v_1')^2+m_2(v_2')^2 \\
+	&\implies m_1 v_1^2-m_1(v_1')^2=m_2(v_2')^2-m_2v_2^2
+	\implies m_1 \left( v_1^2-(v_1')^2 \right)=m_2 \left( (v_2')^2-v_2^2 \right) \\
+	&\implies m_1(v_1+v_1')(v_1-v_1')=m_2(v_2'+v_2)(v_2'-v_2) \\
+	(1)
+	&\implies m_1v_1-m_1(v_1')=m_2(v_2')-m_2v_2
+	\implies m_1 \left( v_1-v_1' \right)=m_2 \left( v_2'-v_2 \right) \\
+	\frac{(2)}{(1)}
+	&\implies \frac{\bcancel{m_1}(v_1+v_1')(\cancel{v_1-v_1'})}{\bcancel{m_1}(\cancel{v_1-v_1'})}=\frac{\bcancel{m_2}(v_2'+v_2)(\cancel{v_2'-v_2})}{\bcancel{m_2}(\cancel{v_2'-v_2})}
+	\implies v_1+v_1'=v_2+v_2'
+\end{align*}
+
+\theorem{Equations for a head-on elastic collision}{
+	\begin{align*}
+		m_1v_1+m_2v_2&=m_1(v_1')+m_2(v_2') \tag{Conservation of Momentum} \\
+		\frac12m_1v_1^2+\frac12m_2v_2^2&=\frac12m_1(v_1')^2+\frac12m_2(v_2')^2 \tag{Conservation of Kinetic Energy} \\
+		v_1+v_1'&=v_2+v_2'
+	\end{align*}
+}
+
+\subsection{Ballistic Pendulum}
+
+Bullet of mass $m$ into a block of mass $M$ at velocity $v$. The bullet lodges into the mass and travels with the block. This is a completely inelastic collision.
+
+We can calculate the final velocity of the block by conservation of momentum $mv=(M+m)V$. From $V$ we can calculate the kinetic energy $K$, and gravitational potential energy when the block is shot is $0$. So the total mechanical energy is $K+0=K$.
+
+The highest point in the pendulum is reached when the gravitational potential energy equals the total energy:
+\begin{equation*}
+	\frac12(\cancel{M+m})V^2=(\cancel{M+m})g\Delta h
+	\implies \Delta h=\frac{V^2}{2g}
+\end{equation*}
+
+\subsection*{Free Response Questions}
+
+\remark{Free response}{\begin{itemize}
+	\item Use pencil or black/blue pen.
+	\item Start by writing known equation.
+	\item Substitution (substitute numbers with no units).
+	\item Final answer clearly indicated such as \boxed{\text{boxed}}.
+		\begin{itemize}
+			\item If numerical, do not keep infinite number of significant figures: no square root, fraction, constants; \textbf{always 2 or 3 significant figures, never 1 s.f.!!!!!}
+			\item If symbolic, leave square roots, fractions, constants:
+		\end{itemize}
+	\item Graphing: label axes with units:
+		\begin{itemize}
+			\item Name of graph is ``[value on $y$ axis] vs [value on $x$ axis]'' or ``[value on $y$] wrt [value on $x$]''.
+			\item Line of best fit: equal number of points above and below the line.
+			\item When determining slope of line of best fit, do not choose original values: $\text{Slope}=\Delta y/\Delta x=(y_1-y_0)/(x_1-x_0)$. \textbf{The slope has units.}
+		\end{itemize}
+	\item Integrals: must have limits of integration and differential.
+\end{itemize}}
+
+\subsection{Center of Mass}
 
 \end{document}
+
