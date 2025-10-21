@@ -10,10 +10,11 @@
 \usepackage{mdframed}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
-\usepackage{hyperref}
+\usepackage[colorlinks, linkcolor=blue]{hyperref}
 \usepackage[per-mode=symbol]{siunitx}
 \usepackage{setspace}
 \usepackage{parskip}
+\usepackage{enumitem}
 \usepackage{titling}
 \usepackage{mlmodern}
 
@@ -38,7 +39,7 @@
 \newcommand*{\deriv}[1][x]{\ensuremath{\dfrac{\mathrm{d}}{\mathrm{d}#1}}}
 \newcommand*{\floor}[1]{\ensuremath{\lfloor #1\rfloor}}
 
-\title{\vspace*{-40pt}AP Physics C -- Class Notes}
+\title{\vspace*{-40pt}AP Physics C: Mechanics -- Class Notes}
 \author{Jayden Li}
 \date{\today}
 
@@ -53,6 +54,15 @@
 
 \tableofcontents
 % \newpage
+
+\begin{tcolorbox}[title={Summative Assessment Topics},colback=green!5!white,colframe=green!75!black,parbox=false]
+	\begin{enumerate}[label={SA\arabic*.}]
+		\item Honors Physics topics from summer work.
+		\item \hyperref[sec:calculus]{Calculus (2)}
+		\item \hyperref[sec:momentum]{Conservation of Momentum (3)}, \hyperref[sec:centerofmass]{Center of Mass (4)}, \hyperref[sec:rotation]{Rotation (5)}
+	\end{enumerate}
+\end{tcolorbox}
+
 
 \section{Introduction}
 
@@ -171,6 +181,7 @@ Maximum friction $\lVert \vec{F}_f \rVert =\lVert \mu \vec{F}_N \rVert $ tells u
 \end{itemize}
 
 \section{Calculus}
+\label{sec:calculus}
 
 \subsection{Calculus-Based Equations}
 
@@ -300,6 +311,7 @@ Figure 2.6 shows the energy position graph of an ideal spring. By conservation o
 Real springs are non-ideal.
 
 \section{Conservation of Momentum}
+\label{sec:momentum}
 
 \subsection{Explosions}
 
@@ -390,7 +402,310 @@ The highest point in the pendulum is reached when the gravitational potential en
 	\item Integrals: must have limits of integration and differential.
 \end{itemize}}
 
-\subsection{Center of Mass}
+\subsection{Equilibrium}
+
+\begin{itemize}
+	\item In stable equilibrium, when a small external force is exerted, the object will move, and when the external force is removed, the system will return to its equilibrium position.
+	\item In unstable equilibrium, the system will not return to equilibrium when the external force is removed.
+	\item In neutral equilibrium, the object remains at the new location after the external force is removed.
+\end{itemize}
+
+\section{Center of Mass}
+\label{sec:centerofmass}
+
+\definition{The \textbf{center of mass} of a system is the average location of mass of a system or object. If the system/object is in a gravitational field then this is also called the center of gravity because we consider that is where the force of gravity/weight acts on the system.}
+
+\begin{itemize}
+	\item Object will rotate around its center of mass if force is applied
+	\item If a normal force/support is applied at its center of mass, it will balance.
+	\item The center of mass will change if the object's mass distribution changes.
+	\item A system can be modeled as a single object located at the system's center of mass.
+	\item If an object is symmetrical, then the center of mass is on a line of symmetry.
+\end{itemize}
+
+\theorem{Center of mass of system of particles}{The center of mass of a system of particles $( x_\text{cm}, y_\text{cm})$, each particle having mass $m_i$ and location $(x_i,y_1)$ is:
+\begin{equation*}
+     x_\text{cm}=\frac{\sum m_ix_i}{\sum m_i}
+	\qquad  y_\text{cm}=\frac{\sum m_i y_i}{\sum m_i}
+\end{equation*}
+If we are asked to calculate the center of mass of a shape, we can try to reduce the shape into particles, and use these equations. These equations for $ x_\text{cm}, y_\text{cm}$ can be extended to any number of dimensions.}
+
+As with torque, the reference point from which positions $x_i$ are measured is completely arbitrary.
+
+The velocity of the whole system (from the center of mass position) is:
+\begin{equation*}
+	 v_\text{cm}
+	=\diff{ x_\text{cm}}{t}
+	=\deriv[t] \frac{\sum m_ix_i}{\sum m_i}
+	=\frac{\sum m_i \diff{x_i}{t}}{M}
+	=\boxed{\frac{\sum m_i v_i}{M}}
+	\implies M v_\text{cm}=\boxed{p_\text{cm}=\sum m_iv_i} \\
+\end{equation*}
+The velocity of the center of mass is a weighted average of the velocities of the objects that make up the system. The momentum of the system at the center of mass is the sum of the momenta of each object in the system, of which the center of mass is measured.
+\begin{equation*}
+	a_\text{cm}
+	=\diff[2]{ x_\text{cm}}{t}
+	=\frac{\sum m_ia_i}{\sum m_i}
+	=\frac{\sum F}{M}
+	\implies \boxed{\Sigma F=Ma_\text{cm}}
+\end{equation*}
+Is Newton's second law for the center of mass.
+
+\theorem{Center of mass, velocity, acceleration, momentum and force}{
+	\begin{align*}
+		v_\text{cm}&=\diff{x_\text{cm}}{t}=\frac{\sum m_iv_i}{\sum m_i}=\frac{\sum p_i}{M} \\
+		p_\text{cm}&=\sum m_iv_i=\sum p_i \\
+		a_\text{cm}&=\diff{v_\text{cm}}{t}=\frac{\sum m_ia_i}{\sum m_i}=\frac{\sum F_i}{M} \\
+		\implies \Sigma F&=Ma_\text{cm}
+	\end{align*}
+	where $p_\text{cm}$ is the momentum at the center of mass, $p_i$ are individual momenta and $M=\sum m_i$ is the total mass of the system.
+
+	The sum of the momenta of each object in the system ($\sum p_i$) is the  momentum of the system $p_\text{sys}$. Velocity of center of mass $v_\text{cm}=p_\text{sys}/M$.
+
+	After an explosion, the system's center of mass continues along the original projectile's trajectory.
+
+	If only internal forces act on a system, the center of mass does not move: $\Sigma F=Ma_\text{cm}=0 \implies a_\text{cm}=0$.
+}
+
+\remark{Center of mass and internal forces}{
+	If only internal forces act on a system, then the net external force $\Sigma F=0$, so the center of mass does not move. This appears in problems involving two objects in a system, asking for the position of both objects after one moves relative to the other. The center of mass of the system does not change, so we can solve for the positions by setting the center of mass before equal to the center of mass after the movement.
+}
+
+\subsection{Density}
+
+Volume density is defined as mass per volume: $\rho=m/V$ with units \si{\kilo\gram\per\meter^3}.
+
+In physics we use length density. Length density is mass per unit length: $\lambda=m/L$ where $L$ is length, and measured in \si{\kilo\gram\per\meter}.
+
+Consider a solid that is not of uniform length density. These objects do not have its center of mass at their center.
+
+Recall our original definition of center of mass for a system of particles, and change the discrete sum into a continuous integral:
+\begin{equation*}
+    x_ \text{cm}=\frac{\sum m_ix_i}{\sum m_i}
+	=\frac{\int x\,\mathrm{d}m}{\int \,\mathrm{d}m}
+\end{equation*}
+where $\mathrm{d}m$ is the differential of mass (an infinitesimally small mass), by dividing the object into an infinite number of particles, each with mass $\mathrm{d}m$.
+
+\theorem{Generalized center of mass}{
+	The center of mass of a system with total mass $M$ is:
+	\begin{equation*}
+		x_\text{cm}=\frac{\int x\,\mathrm{d}m}{\int \,\mathrm{d}m}=\frac1M\int x\,\mathrm{d}m=\frac1M \int x\cdot\lambda\,\mathrm{d}x
+	\end{equation*}
+	where $\lambda$ is the linear mass density:
+	\begin{equation*}
+		\lambda = \diff mx
+		\implies \mathrm{d}m=\lambda \,\mathrm{d}x
+		\implies m=\int \lambda\,\mathrm{d}x
+	\end{equation*}
+}
+
+\example{Rod with uniform linear density}{
+	See Figure 4.1 for diagram. The mass of the rod is $M$ and the length of the rod is $L$. The linear mass density of the rod is $\lambda=M/L$.
+
+	We divide the rod into small slices, each of mass $\mathrm{d}m$ and height/thickness $\mathrm{d}x$. Since the rod is of uniform linear density:
+	\begin{equation*}
+	    \lambda=\frac{M}{L}=\frac{\mathrm{d}m}{\mathrm{d}x}
+		\implies \boxed{\mathrm{d}m=\lambda \,\mathrm{d}x}
+	\end{equation*}
+	The mass of the rod is the integral from the left of the rod to the right (bounds $0$ and $L$):
+	\begin{equation*}
+	    M=\int \,\mathrm{d}m=\int \lambda\,\mathrm{d}x=\lambda \int_{0}^{L}\,\mathrm{d}x
+		=\lambda \left[x\right]_{0}^{L}
+		=L\lambda
+		=L \left( \frac ML \right)
+		=M
+	\end{equation*}
+	So the denominator $\int \,\mathrm{d}m$ does equal the total mass $M$. Now we can determine the center of mass:
+	\begin{equation*}
+	    x_ \text{cm}
+		=\frac{\int x\,\mathrm{d}m}{\int \,\mathrm{d}m}
+		=\frac1M \int_{0}^{L}x\cdot\lambda\,\mathrm{d}x
+		=\frac{\lambda}{M}\int_{0}^{L}x\,\mathrm{d}x
+		=\frac{\lambda}{M} \left[\frac{x^2}{2}\right]_{0}^{L}
+		=\frac ML \frac 1M \frac{L^2}{2}
+		=\frac{L}{2}
+	\end{equation*}
+}
+
+\example{Rod with non-uniform linear density}{
+	Consider a rod with linear density $\lambda=ax+b$. The linear density of the rod varies by position, and is not uniform. The units for constants $a,b$ are \si{\kilo\gram\per\meter^2}, the unit for $\lambda$ is \si{\kilo\gram\per\meter} and the unit for $x$ is \si{\meter}. This is correct after cancelling out all units with dimensional analysis.
+
+	We can determine the total mass of the rod:
+	\begin{equation*}
+	    M
+		=\int \,\mathrm{d}m
+		=\int \lambda\,\mathrm{d}x
+		=\int_{0}^{L}(ax+b)\,\mathrm{d}x
+		=\left[\frac{ax^2}{2}+bx\right]_{0}^{L}
+		=\frac{aL^2}{2}+bL
+	\end{equation*}
+	The center of mass is at:
+	\begin{align*}
+	    x_ \text{cm}
+		&=\frac1M \int x\,\mathrm{d}m
+		=\frac1M \int_{0}^{L}x\cdot\lambda\,\mathrm{d}x
+		=\frac1M \int_{0}^{L}x(ax+b)\,\mathrm{d}x
+		=\frac1M \int_{0}^{L}\left( ax^2+bx \right)\mathrm{d}x \\
+		&=\frac1M \left[\frac{ax^3}{3}+\frac{bx^2}{2}\right]_{0}^{L}
+		=\frac1M \left( \frac{aL^3}{3}+\frac{bL^2}{2} \right)
+		=\frac{aL^3}{3M}+\frac{bL^2}{2M}
+	\end{align*}
+
+	For a rod of length $0.3\,\si{\meter}$ and with density given by $\lambda=ax+b$ where $a=6,b=10$:
+	\begin{align*}
+		M&=\frac{6(0.3)^2}{2}+10(0.3)=3.27\,\si{\kilo\gram} \\
+		x_\text{cm}&=\frac{6(0.3)^3}{3(3.27)}+\frac{10(0.3)^2}{2(3.27)}=0.154\,\si{\meter}
+	\end{align*}
+}
+
+\section{Rotation}
+\label{sec:rotation}
+
+\subsection{Circular Motion}
+
+In uniform circular motion (UCM), a particle moves at constant speed (but not constant velocity, since direction changes). Centripetal acceleration $a_\text{c}$ and centripetal force $F_\text{c}$ are:
+\begin{equation*}
+	a_\text{c}=\frac{v^2}{r}
+	\implies F_\text{c}=\frac{mv^2}{r}
+\end{equation*}
+where $v$ is speed/magnitude of velocity, $r$ is the radius of rotation and $m$ is the particle's mass. Acceleration and force are normal to the circle and point towards the radius.
+
+If an object is resting on a spinning disk, the centripetal force needed to keep the object in circular motion is $F_c=mv^2/r$. The maximum static friction on the object $F_s=\mu mg$. If:
+\begin{equation*}
+    F_c>F_s
+	\implies \frac{mv^2}{r}>\mu mg
+	\implies a_c=\frac{v^2}{r}>\mu g
+\end{equation*}
+Then the object will not move in a circular pattern. $a_c$ is centripetal acceleration and can be written a number of different ways by substituting values for velocity $v$.
+
+Tangential acceleration is acceleration normal to the vector to the center of rotation and is the same as linear acceleration: $a_\text{tangential}=\Delta v/\Delta t= \mathrm{d}v/\mathrm{d}t$.
+
+The magnitude of the total acceleration is:
+\begin{equation*}
+	a_ \text{total}=\sqrt{(a_\text{c})^2+(a_ \text{tangential})^2}
+\end{equation*}
+
+Weight $w=mg$ resolves into two vectors, one tangent to the circle and one normal to it.
+
+\subsubsection{Banked Curve}
+
+On a flat curve, the force pushing the vehicle towards the center of the curve and preventing it from sliding off the road is static friction, because the wheels of the car are stationary relative to the road.
+
+In a banked curve, there is a component of the normal force towards the center of the curve, which helps keep the vehicle on the road. Figure 5.1 is a free body diagram of a car on a banked curve.
+
+The net force in the $x$ direction (parallel to the center of the curve) equals $ma$ by Newton's second law. Acceleration is centripetal acceleration $a_ \text{c}=v^2/r$:
+\begin{align*}
+	\Sigma F_x&=ma
+	\implies N_x=\frac{mv^2}{r}
+	\implies N\sin\theta=\frac{mv^2}{r} \\
+	\intertext{And in the $y$ direction, the net force is $0$ since the car remains on the ground:}
+	\Sigma F_y&=0
+	\implies N_y=w=mg
+	\implies N\cos\theta=mg
+\end{align*}
+Dividing these two equations:
+\begin{equation*}
+    \tan\theta=\frac{mv^2}{rmg}=\frac{v^2}{rg}
+	\implies v_ \text{critical}= \sqrt{rg\tan\theta}
+\end{equation*}
+Without friction (which includes wheel turning), $v_ \text{critical}$ is the exact speed such that the car will travel in circular motion around the curve without sliding.
+
+If there is friction, the force of friction $F_ \text{f}$ is parallel to the banked curve. If $v<v_ \text{critical}$, the friction is up the banked curve, and down the banked curve if $v> v_ \text{critical}$. See Figure 5.2.
+
+\subsection{Orbital Motion}
+
+Gravitational force $F_g$ is equal to centripetal force $F_c$ on the orbiting object:
+\begin{equation*}
+    F_g
+	=\frac{GMm}{r^2}
+    =\frac{mv^2}{r}
+	=F_c
+\end{equation*}
+Solving for velocity $v$ of the orbiting object from above, and by dividing circumference $2\pi r$ with period $T$:
+\begin{equation*}
+	v=\sqrt{\frac{GM}{r}}
+	=\frac{2\pi r}{T}
+	=2\pi r f
+\end{equation*}
+Multiplying these equations:
+\begin{equation*}
+    \frac{r^3}{T^2}
+	=\frac{GM}{4\pi^2}
+\end{equation*}
+$T^2$ is proportional to $r^3$.
+
+\subsection{Rotational Kinematics}
+
+\theorem{Rotational kinematics basics}{$\theta$ is angular position, $\omega$ is angular velocity, and $\alpha$ is angular acceleration. Linear kinematics equations can be applied; $\theta$ is $x$, $\omega$ is $v$, and $\alpha$ is $a$.
+\begin{alignat*}{2}
+	v
+	&=\frac{\Delta x}{\Delta t}=\diff xt
+	&\qquad\qquad
+	\omega
+	&=\frac{\Delta \theta}{\Delta t}=\diff \theta t \\
+	a
+	&=\frac{\Delta v}{\Delta t}=\diff vt
+	&\qquad\qquad
+	\alpha
+	&=\frac{\Delta \omega}{\Delta t}=\diff \omega t
+\end{alignat*}
+Where acceleration $a,\alpha$ is constant:
+\begin{alignat*}{2}
+	v 
+	&=v_0+at
+	&\qquad\qquad
+	\omega 
+	&=\omega_0+\alpha t \\
+	v^2
+	&=v_0^2+2a\Delta x
+	&\qquad\qquad
+	\omega^2
+	&=\omega_0^2+2\alpha \Delta \theta \\
+	\Delta x
+	&=v_0t+\frac12at^2
+	&\qquad\qquad
+	\Delta \theta
+	&=\omega_0t +\frac12\alpha t^2
+\end{alignat*}
+}
+
+As before, change in angular position $\Delta \theta=\theta_ \text{f}- \theta_ \text{i}$. If $\theta$ is measured in radians, then the arc length $s$ is $r\theta$, by definition of radians. The change in arc length $\Delta s=r\Delta \theta$, since radius $r$ does not change. Radius $r$ is the distance from the center of rotation to the point of interest.
+\begin{equation*}
+    \Delta s=r\Delta \theta=r\Delta x
+	\implies \Delta x=\Delta \theta=\frac{\Delta s}{r}
+\end{equation*}
+Recall from previously that $\omega=\Delta \theta/\Delta t$. Change in arc length $\Delta s$ is change in linear position $\Delta x$.
+\begin{equation*}
+    \omega
+	=\frac{\Delta \theta}{\Delta t}
+	=\frac{\Delta s/r}{\Delta t}
+	=\frac 1r \frac{\Delta s}{\Delta t}
+	=\frac{v}{r}
+	\implies v=\omega r
+\end{equation*}
+Similarly, for acceleration:
+\begin{equation*}
+    a=\alpha r
+	\implies 
+	\alpha=\frac{a}{r}
+\end{equation*}
+In circular motion, centripetal acceleration $a_ \text{c}$ is:
+\begin{equation*}
+    a_ \text{c}
+	=\frac{v^2}{r}
+	=\frac{(r\omega)^2}{r}
+	=\frac{r^2\omega^2}{r}
+	=r\omega^2
+\end{equation*}
+\theorem{Connection between rotational and linear quantities}{
+	\begin{equation*}
+		\Delta x=\Delta s=r\Delta \theta
+		\qquad
+		v=r \omega 
+		\qquad
+		a=r \alpha
+	\end{equation*}
+}
 
 \end{document}
 
