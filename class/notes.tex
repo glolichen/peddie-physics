@@ -689,14 +689,6 @@ Similarly, for acceleration:
 	\implies 
 	\alpha=\frac{a}{r}
 \end{equation*}
-In circular motion, centripetal acceleration $a_ \text{c}$ is:
-\begin{equation*}
-    a_ \text{c}
-	=\frac{v^2}{r}
-	=\frac{(r\omega)^2}{r}
-	=\frac{r^2\omega^2}{r}
-	=r\omega^2
-\end{equation*}
 \theorem{Connection between rotational and linear quantities}{
 	\begin{equation*}
 		\Delta x=\Delta s=r\Delta \theta
@@ -706,6 +698,22 @@ In circular motion, centripetal acceleration $a_ \text{c}$ is:
 		a=r \alpha
 	\end{equation*}
 }
+In circular motion, centripetal acceleration $a_ \text{c}$ is:
+\begin{equation*}
+    a_ \text{c}
+	=\frac{v^2}{r}
+	=\frac{(r\omega)^2}{r}
+	=\frac{r^2\omega^2}{r}
+	=r\omega^2
+\end{equation*}
+Recall from before, that the magnitude of total acceleration of a particle in circular motion is:
+\begin{align*}
+	a_ \text{total}
+	&=\sqrt{(a_\text{c})^2+(a_ \text{tangential})^2} \\
+	\intertext{Tangential acceleration $a$ can be written in terms of angular acceleration: $a=r\alpha$.}
+	&=\sqrt{\left( r\omega^2 \right)^2+(r\alpha)^2}
+	=r \sqrt{\omega^4+\alpha^2t}
+\end{align*}
 
 \end{document}
 
