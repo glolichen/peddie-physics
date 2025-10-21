@@ -634,6 +634,10 @@ Multiplying these equations:
 \end{equation*}
 $T^2$ is proportional to $r^3$.
 
+\theorem{Kepler's third law}{
+
+}
+
 \subsection{Rotational Kinematics}
 
 \theorem{Rotational kinematics basics}{$\theta$ is angular position, $\omega$ is angular velocity, and $\alpha$ is angular acceleration. Linear kinematics equations can be applied; $\theta$ is $x$, $\omega$ is $v$, and $\alpha$ is $a$.
@@ -713,6 +717,69 @@ Recall from before, that the magnitude of total acceleration of a particle in ci
 	\intertext{Tangential acceleration $a$ can be written in terms of angular acceleration: $a=r\alpha$.}
 	&=\sqrt{\left( r\omega^2 \right)^2+(r\alpha)^2}
 	=r \sqrt{\omega^4+\alpha^2t}
+\end{align*}
+
+\subsection{Rotational Inertia}
+
+\definition{Inertia is a property of a body or object that defines its resistance to change.}
+
+Inertia is related to mass; the greater the mass, the greater the inertia. Newton's second for linear motion is:
+\begin{equation*}
+    \Sigma F=ma
+\end{equation*}
+\theorem{Newton's second law for rotation}{
+	\begin{equation*}
+	    \Sigma \tau=I \alpha
+	\end{equation*}
+	where $\tau$ is torque, $\alpha$ is angular acceleration and $I$ is the moment of inertia/rotational inertia.
+}
+
+The moment of inertia $I$ is a property of the body that defines its resistance to change in angular velocity about an axis of motion. It takes mass, distribution of mass and position of rotation axis.
+
+Suppose we have a point mass of mass $m$, $r$ units away from the axis of rotation. Starting with Newton's second law, multiply by $r$, and recall that linear acceleration $a=\alpha r$:
+\begin{equation*}
+    r\Sigma F=mar
+	\implies
+	\Sigma \tau=m(\alpha r)r
+	=\left( mr^2 \right)\alpha
+\end{equation*}
+So the moment of inertia $I$ for this point mass is $mr^2$.
+
+\theorem*{
+	The moment of inertia of a point mass with mass $m$ and distance $r$ from the axis of rotation is:
+	\begin{equation*}
+		I=mr^2
+	\end{equation*}
+	Mmoment of inertia $I_ \text{total}$ of a system is the sum of the moments of inertia of the objects within the system:
+	\begin{align*}
+		I_ \text{total}&=\sum I_i \\
+		\intertext{For a system composed of point masses:}
+		I_ \text{total}&=\sum m_ir_i^2
+	\end{align*}
+}
+
+\begin{equation*}
+    \Sigma \tau = I\alpha
+	\implies I=\frac{\Sigma \tau}{\alpha}
+\end{equation*}
+The units of torque is newton meter (\si{\newton\meter}). The units of angular acceleration is radian per second square (\si{\radian\per\second^2}). So the units for moment of inertia $I$ is:
+\begin{equation*}
+	\left[\frac{\si{\newton\meter}}{\si{\radian\per\second^2}}\right]
+	=\left[\frac{\si{(\kilo\gram\cdot\meter\per\second^2)\cdot\meter\cdot\second^2}}{\si{\radian}}\right]
+	=\left[\si{\kilo\gram\cdot\meter^2}\right]
+\end{equation*}
+
+\subsubsection{Extended Objects}
+
+A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its central axis. Its moment of inertia is:
+\begin{align*}
+    I&=\frac12MR^2 \\
+	\intertext{A rod/stick has length $L$ has negligible thickness and is rotating horizontally about its center.}
+    I&=\frac{1}{12}ML^2 \\
+	\intertext{A solid sphere of radius $R$ and mass $M$ is rotating about its central axis.}
+    I&=\frac25MR^2 \\
+	\intertext{A ring/hoop is a hollow cylinder without bases, and has height $H$, one radius $R$ (the thickness of the surface is negligible) and mass $M$.}
+	I&=MR^2
 \end{align*}
 
 \end{document}
