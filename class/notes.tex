@@ -210,7 +210,7 @@ Connecting energy and kinematics by kinetic energy $K=mv^2/2$.
 \theorem{Work and force-position graphs}{
 	Consider a force-position graph (Figure 2.2). The area under the curve is the work done, or change in energy: $W=\Delta E$. The relationship is as follows, where $\Sigma F$ is the net force:
 	\begin{equation*}
-	    \Delta E=\int\Sigma  F\,\mathrm{d}x
+	    W=\Delta E=\int\Sigma  F\,\mathrm{d}x
 		\qquad \Sigma F=\diff Ex
 	\end{equation*}
 }
@@ -282,7 +282,7 @@ Total energy is the sum of kinetic energy and potential energy: $K+U$. By conser
 
 A lot of forces are path-dependent. For example, friction depends on the length of the path, so it is not conservative. Forces associated with change in potential energy are conservative.
 
-\example{Gravitional potential}{
+\example{Gravitational potential}{
 	Change in gravitational potential energy is $\Delta U_g=mgy$. We can calculate the force:
 	\begin{equation*}
 		F_g=-\diff{U_g}{y}=-\deriv[y](mgy)=-mg
@@ -301,7 +301,7 @@ A lot of forces are path-dependent. For example, friction depends on the length 
 
 Formulas like $F_s=-kx$ and $U_s=kx^2/2$ depend on a \textbf{perfect, ideal spring}, which requires some assumptions.
 \begin{itemize}
-	\item The mass of the spring itself is negligible; the mass of the system is exactly the mass of the object attachde to the spring.
+	\item The mass of the spring itself is negligible; the mass of the system is exactly the mass of the object attached to the spring.
 	\item Force exerted is $F_s=-kx$: force-displacement graph is linear and passes through the origin. From this, formula for kinetic energy follows: $U_s=-\int F_s\,\mathrm{d}x=-\int -kx\,\mathrm{d}x=kx^2/2$.
 	\item No internal friction and losses. If there are, \textit{damping} occurs. This is drawn in Figure 2.5. Even though the period does not change, each successive crest and trough decreases in magnitude.
 \end{itemize}
@@ -454,9 +454,9 @@ Is Newton's second law for the center of mass.
 \theorem{Center of mass, velocity, acceleration, momentum and force}{
 	\begin{align*}
 		v_\text{cm}&=\diff{x_\text{cm}}{t}=\frac{\sum m_iv_i}{\sum m_i}=\frac{\sum p_i}{M} \\
-		p_\text{cm}&=\sum m_iv_i=\sum p_i \\
+		p_\text{cm}&=\sum m_iv_i=\sum p_i=Mv_ \text{cm} \\
 		a_\text{cm}&=\diff{v_\text{cm}}{t}=\frac{\sum m_ia_i}{\sum m_i}=\frac{\sum F_i}{M} \\
-		\implies \Sigma F&=Ma_\text{cm}
+		\Sigma F&=Ma_\text{cm}
 	\end{align*}
 	where $p_\text{cm}$ is the momentum at the center of mass, $p_i$ are individual momenta and $M=\sum m_i$ is the total mass of the system.
 
@@ -528,7 +528,7 @@ where $\mathrm{d}m$ is the differential of mass (an infinitesimally small mass),
 }
 
 \example{Rod with non-uniform linear density}{
-	Consider a rod with linear density $\lambda=ax+b$. The linear density of the rod varies by position, and is not uniform. The units for constants $a,b$ are \si{\kilo\gram\per\meter^2}, the unit for $\lambda$ is \si{\kilo\gram\per\meter} and the unit for $x$ is \si{\meter}. This is correct after cancelling out all units with dimensional analysis.
+	Consider a rod with linear density $\lambda=ax+b$. The linear density of the rod varies by position, and is not uniform. The units for constants $a,b$ are \si{\kilo\gram\per\meter^2}, the unit for $\lambda$ is \si{\kilo\gram\per\meter} and the unit for $x$ is \si{\meter}. This is correct after canceling out all units with dimensional analysis.
 
 	We can determine the total mass of the rod:
 	\begin{equation*}
@@ -632,10 +632,13 @@ Multiplying these equations:
     \frac{r^3}{T^2}
 	=\frac{GM}{4\pi^2}
 \end{equation*}
-$T^2$ is proportional to $r^3$.
 
 \theorem{Kepler's third law}{
-
+	If an object is orbiting a larger of mass $M$, the period $T$ and radius of its orbit $r$ are related by, where $G$ is the gravitational constant:
+	\begin{equation*}
+		\frac{r^3}{T^2}=\frac{GM}{4\pi^2}
+	\end{equation*}
+	$T^2$ is proportional to $r^3$.
 }
 
 \subsection{Rotational Kinematics}
@@ -750,7 +753,7 @@ So the moment of inertia $I$ for this point mass is $mr^2$.
 	\begin{equation*}
 		I=mr^2
 	\end{equation*}
-	Mmoment of inertia $I_ \text{total}$ of a system is the sum of the moments of inertia of the objects within the system:
+	Moment of inertia $I_ \text{total}$ of a system is the sum of the moments of inertia of the objects within the system:
 	\begin{align*}
 		I_ \text{total}&=\sum I_i \\
 		\intertext{For a system composed of point masses:}
