@@ -722,7 +722,7 @@ Recall from before, that the magnitude of total acceleration of a particle in ci
 	=r \sqrt{\omega^4+\alpha^2t}
 \end{align*}
 
-\subsection{Rotational Inertia}
+\section{Rotational Inertia}
 
 \definition{Inertia is a property of a body or object that defines its resistance to change.}
 
@@ -748,7 +748,7 @@ Suppose we have a point mass of mass $m$, $r$ units away from the axis of rotati
 \end{equation*}
 So the moment of inertia $I$ for this point mass is $mr^2$.
 
-\theorem*{
+\theorem{Moment of inertia}{
 	The moment of inertia of a point mass with mass $m$ and distance $r$ from the axis of rotation is:
 	\begin{equation*}
 		I=mr^2
@@ -759,6 +759,13 @@ So the moment of inertia $I$ for this point mass is $mr^2$.
 		\intertext{For a system composed of point masses:}
 		I_ \text{total}&=\sum m_ir_i^2
 	\end{align*}
+	where $m_i,r_i$ are the mass and radius of each point mass.
+
+	Moment of inertia as an integral is:
+	\begin{equation*}
+	    I
+		=\int r^2\,\mathrm{d}m
+	\end{equation*}
 }
 
 \begin{equation*}
@@ -772,7 +779,21 @@ The units of torque is newton meter (\si{\newton\meter}). The units of angular a
 	=\left[\si{\kilo\gram\cdot\meter^2}\right]
 \end{equation*}
 
-\subsubsection{Extended Objects}
+\theorem{Rotation about the center of mass}{
+	In Figure 6.3, The moment of inertia of rotation about the center of mass is:
+	\begin{equation*}
+		I_\text{cm}=\frac12mL^2
+	\end{equation*}
+}
+
+\theorem{Parallel axis theorem}{
+	\begin{equation*}
+		I_\text{new}=I'=I_\text{cm}+Mx^2
+	\end{equation*}
+	where $I_\text{cm}$ is the moment of inertia for a rotation axis through the center of mass, $M$ is the total mass of the system and $x$ is the distance frm the center of mass to the new axis of rotation.
+}
+
+\subsection{Extended Objects}
 
 A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its central axis. Its moment of inertia is:
 \begin{align*}
@@ -784,6 +805,171 @@ A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its centra
 	\intertext{A ring/hoop is a hollow cylinder without bases, and has height $H$, one radius $R$ (the thickness of the surface is negligible) and mass $M$.}
 	I&=MR^2
 \end{align*}
+
+\subsection{Moment of Inertia of a Uniform Rod}
+
+See Figure 6.4.
+
+We have linear mass density $\lambda=\mathrm{d}m/\mathrm{d}x\implies \mathrm{d}m=\lambda \,\mathrm{d}x$. Since the rod is uniform, $\mathrm{d}m=(M/L)\,\mathrm{d}x$.
+\begin{equation*}
+	\int r^2\,\mathrm{d}m
+	=\int r^2 \left( \frac{M}{L} \right)\mathrm{d}x
+	=\int x^2 \left( \frac{M}{L} \right)\mathrm{d}x
+\end{equation*}
+where $r$ is distance from axis of rotation, so $r$ is $x$.
+
+The length of the rod is $L$, so the bounds of integration are $-L/2$ and $L/2$.
+\begin{equation*}
+	\int_{-L/2}^{L/2}x^2 \left( \frac ML \right)\mathrm{d}x
+	=\frac ML \left[\frac{x^3}{3}\right]_{-L/2}^{L/2}
+	=\frac13 \frac ML \left( \frac{L^3}{8}- \left( -\frac{L^3}{8} \right) \right)
+	=\frac13 \frac ML \frac{L^3}{4}
+	=\boxed{\frac{1}{12}ML^2}
+\end{equation*}
+
+Application of parallel axis theorem are also in the notebook.
+
+\subsection{Moment of Inertia of a Non-Uniform Rod}
+
+Suppose we have linear mass density $\lambda$ as a function of $x$. As before, we have $\mathrm{d}m=\lambda \,\mathrm{d}x$. Distance $r$ is equal to $x$. Then the moment of inertia is given by:
+\begin{equation*}
+    I
+	=\int_a^b r^2\,\mathrm{d}m
+	=\int_a^b \lambda x^2 \,\mathrm{d}x
+\end{equation*}
+
+\subsection{Rotational Kinetic Energy}
+
+\theorem{Rotational kinetic energy}{
+	\begin{equation*}
+	    K_ \text{rot}=\frac12 I\omega^2
+	\end{equation*}
+	where $I$ is moment of inertia and $\omega$ is angular velocity.
+}
+Checking units:
+\begin{align*}
+	K_ \text{rot}&=\left[ \si{\joule} \right]=\left[ \si{N\cdot m} \right]= \left[ \si{\kilo\gram\cdot \frac{\meter}{\second^2}\cdot \meter} \right]=\left[ \si{\kilo\gram\cdot \frac{\meter^2}{\second^2}} \right] \\
+	I&=\left[ \si{\kilo\gram\cdot\meter^2} \right] \\
+	\omega=\frac{v}{r}
+	&=\left[ \si{\frac{\meter\per\second}{\meter}} \right]
+	=\left[ \si{\frac{1}{\second}} \right] \\
+	\frac12 I\omega^2
+	&= \left[ \si{\kilo\gram\cdot\meter^2\cdot \frac{1}{\second^2}} \right]
+	= \left[ \si{\kilo\gram\cdot \frac{\meter^2}{\second^2}} \right]
+\end{align*}
+
+\theorem{Rotational work}{
+	For constant torque:
+	\begin{equation*}
+	    w=\tau\cdot\Delta\theta
+	\end{equation*}
+}
+
+\example{Energy and kinematics}{
+	A pulley of radius $R=0.15\,\si{\meter}$ and mass $M=8\,\si{\kilo\gram}$ is connected by a string to a block of mass $m=5\si{\kilo\gram}$.
+
+	Using kinematics: let $a$ be the acceleration of the block and the linear acceleration of the pulley, which are the same. The weight is $w=mg=50$ and $T$ is tension in the string. Force accelerating the block is $w-T$:
+	\begin{equation*}
+	    w-T=ma \implies T=w-ma=mg-ma
+	\end{equation*}
+	Tension accelerates the pulley. Torque on the pullet is $TR$. Linear acceleration $a$ (which equals acceleration of the block) is related to angular acceleration by $a=\alpha R$. The angular acceleration of the pulley is:
+	\begin{equation*}
+	    \tau=I\alpha
+		\implies \tau=TR=\frac12MR^2\cdot \left( \frac{a}{R} \right)
+		\implies TR=\frac12 MRa
+		\implies T=\frac12 Ma
+	\end{equation*}
+	Combining these equations:
+	\begin{equation*}
+	    mg-ma=T=\frac12Ma
+		\implies 50-5a=\frac12(8)a=4a
+		\implies 9a=50
+		\implies a=5.56
+	\end{equation*}
+	We can then use kinematics to solve for the final velocity.
+
+	Using energy: gravitational potential energy $U_g$ only depends on the block, and equals the sum of kinetic energy of the block on impact and the rotational kinetic energy of the pulley on impact
+	\begin{equation*}
+		U_g=K_ \text{block}+K_ \text{rot,pulley}
+		\implies mg\Delta h=\frac12mv^2+\frac12I \left( \frac vr \right)^2
+	\end{equation*}
+	Substiting the moment of inertia $I=MR^2/2$ and solving for $v$ gives the final velocity.
+}
+
+\section{Rolling}
+
+If the velocity at center of mass $v_ \text{cm}=\omega R$, the object is rolling without slipping. If $v_ \text{cm}\neq\omega R$, the object is rolling with slipping.
+
+Rolling is a combination of pure rotation and translation. Connecting equations for rolling:
+\begin{align*}
+	v_ \text{cm}&=\omega R \tag{Condition for rolling} \\
+	\Delta x_ \text{cm}&=\Delta \theta R \\
+	a_ \text{cm}&=\alpha R
+\end{align*}
+Kinetic energy of a rolling object is a combination of linear kinetic energy and rotational kinetic energy:
+\begin{equation*}
+    K_ \text{rolling}= K_ \text{linear}+ K_ \text{rot}=\frac12m v_ \text{cm}^2+\frac12I_ \text{cm}\omega^2
+\end{equation*}
+Consider an object rolling on an inclined plane (Figure x.y). We want to calculate the final velocity of the object at the bottom of the plane. The initial kinetic energy equals the final kinetic energy due to rolling:
+\begin{align*}
+    U_ \text{g,i}=K_ \text{rolling,f}
+	&\implies MgH=\frac12M v_ \text{cm}^2+\frac12 I_ \text{cm}\omega^2
+	\intertext{Since we are working with a disk, the moment of inertia is $I_ \text{cm}=MR^2/2$, and angular velocity $\omega=v_ \text{cm}/R$.}
+	&\implies MgH=\frac12Mv_ \text{cm}^2+\frac12 \left( \frac12MR^2 \right)\left( \frac{v_ \text{cm}}{R} \right)^2 \\
+	&\implies gH=\frac12v_ \text{cm}^2+\frac14v_ \text{cm}^2 \cancel{\frac{R^2}{R^2}} \\
+	&\implies gH=\frac34v_ \text{cm}^2
+	\implies \boxed{v_ \text{cm}=\sqrt{\frac{4}{3}gH}}
+\end{align*}
+In general, for an object of moment of inertia $I=x MR^2$:
+\begin{align*}
+    mgH=
+    U_ \text{g,i}=K_ \text{rolling,f}
+	&\implies MgH=\frac12M v_ \text{cm}^2+\frac12 I_ \text{cm}\omega^2 \\
+	&\implies MgH=\frac12M v_ \text{cm}^2+\frac12 \left( xMR^2 \right) \left( \frac{v_\text{cm}}{R} \right)^2 \\
+	&\implies MgH=\frac12M v_ \text{cm}^2+\frac12 xMv_\text{cm}^2\cancel{\frac{R^2}{R^2}} \\
+	&\implies gH=\frac12 v_ \text{cm}^2+\frac12 xv_\text{cm}^2 \\
+	&\implies gH=\left( \frac12+\frac12x \right) v_ \text{cm}^2 xv_\text{cm}^2 \\
+	&\implies gH=\left( \frac12+\frac12x \right) v_ \text{cm}^2 \\
+	&\implies v_ \text{cm}=\sqrt{\frac{gH}{\frac12+\frac12x}}
+\end{align*}
+For a solid sphere, $I_ \text{cm}=2MR^2/5$:
+\begin{align*}
+	v_ \text{cm}
+	&=\sqrt{\frac{gH}{\frac12+\frac12\frac25}}
+	=\sqrt{\frac{gH}{\frac{5}{10}+\frac{2}{10}}}
+	=\sqrt{\frac{10}{7}gH}
+	\intertext{For a hoop, $I_ \text{cm}=MR^2$:}
+	v_ \text{cm}
+	&=\sqrt{\frac{gH}{\frac12+\frac12(1)}}
+	=\sqrt{\frac{gH}{1}}
+	=\sqrt{gH}
+	\intertext{For a hollow sphere, $I_ \text{cm}=2MR^2/3$:}
+	v_ \text{cm}
+	&=\sqrt{\frac{gH}{\frac12+\frac12\frac23}}
+	=\sqrt{\frac{gH}{\frac36+\frac26}}
+	=\sqrt{\frac65gH}
+\end{align*}
+The final velocity only depends on the shape of the object. The greater the moment of inertia, the slower the object will be. The more the mass is away from the center of rotation, the less translational kinetic energy there will be at the bottom of the slope. A larger portion of energy is used to rotate the object, because $I$ is greater (recall $\tau=I\alpha\implies \alpha=\tau/I$ is inversely proportional to $I$).
+
+Consider the forces acting on disk ($I=MR^2/2$ rolling down an inclined sphere (Figure x.y). As shown, net torque causing rotation is from static friction $F_s$:
+\begin{equation*}
+    \Sigma \tau=I\omega
+	\implies F_sR=\left( \frac12MR^2 \right)\left( \frac{a}{R} \right)
+	\implies F_sR=\frac12MRa
+	\implies F_s=\frac12Ma
+\end{equation*}
+For translation, net force in the $x$ direction (parallel to the slope):
+\begin{equation*}
+    \Sigma F_x=ma
+	\implies mg\sin\theta-F_s=ma
+\end{equation*}
+Combining these two equations:
+\begin{equation*}
+    mg\sin\theta-\frac12Ma=ma
+	\implies \sin\theta=\frac32a
+	\implies a=\frac23g\sin\theta
+\end{equation*}
+Similar procedure for other objects with different moments of inertia $I$.
 
 \end{document}
 
