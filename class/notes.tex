@@ -39,9 +39,9 @@
 \newcommand*{\deriv}[1][x]{\ensuremath{\dfrac{\mathrm{d}}{\mathrm{d}#1}}}
 \newcommand*{\floor}[1]{\ensuremath{\lfloor #1\rfloor}}
 
-\title{\vspace*{-40pt}AP Physics C: Mechanics -- Class Notes}
+\title{\vspace*{-40pt}AP Physics C: Mechanics Class Notes}
 \author{Jayden Li}
-\date{\today}
+\date{Fall Trimester, 2025}
 
 \begin{document}
 \setstretch{1.25}
@@ -766,6 +766,10 @@ So the moment of inertia $I$ for this point mass is $mr^2$.
 	    I
 		=\int r^2\,\mathrm{d}m
 	\end{equation*}
+	where $r$ is distance to the axis of rotation. The linear mass density function $\lambda$ may also be given: $\lambda=\mathrm{d}m/\mathrm{d}r \implies \mathrm{d}m=\lambda \,\mathrm{d}r$:
+	\begin{equation*}
+	    I=\int r^2\lambda \,\mathrm{d}r
+	\end{equation*}
 }
 
 \begin{equation*}
@@ -790,7 +794,7 @@ The units of torque is newton meter (\si{\newton\meter}). The units of angular a
 	\begin{equation*}
 		I_\text{new}=I'=I_\text{cm}+Mx^2
 	\end{equation*}
-	where $I_\text{cm}$ is the moment of inertia for a rotation axis through the center of mass, $M$ is the total mass of the system and $x$ is the distance frm the center of mass to the new axis of rotation.
+	where $I_\text{cm}$ is the moment of inertia for a rotation axis through the center of mass, $M$ is the total mass of the system and $x$ is the distance from the center of mass to the new axis of rotation.
 }
 
 \subsection{Extended Objects}
@@ -802,6 +806,8 @@ A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its centra
     I&=\frac{1}{12}ML^2 \\
 	\intertext{A solid sphere of radius $R$ and mass $M$ is rotating about its central axis.}
     I&=\frac25MR^2 \\
+	\intertext{A hollow sphere of radius $R$ and mass $M$ is rotating about its central axis.}
+	I&=\frac23MR^2
 	\intertext{A ring/hoop is a hollow cylinder without bases, and has height $H$, one radius $R$ (the thickness of the surface is negligible) and mass $M$.}
 	I&=MR^2
 \end{align*}
@@ -872,7 +878,7 @@ Checking units:
 	\begin{equation*}
 	    w-T=ma \implies T=w-ma=mg-ma
 	\end{equation*}
-	Tension accelerates the pulley. Torque on the pullet is $TR$. Linear acceleration $a$ (which equals acceleration of the block) is related to angular acceleration by $a=\alpha R$. The angular acceleration of the pulley is:
+	Tension accelerates the pulley. Torque on the pulley is $TR$. Linear acceleration $a$ (which equals acceleration of the block) is related to angular acceleration by $a=\alpha R$. The angular acceleration of the pulley is:
 	\begin{equation*}
 	    \tau=I\alpha
 		\implies \tau=TR=\frac12MR^2\cdot \left( \frac{a}{R} \right)
@@ -893,10 +899,12 @@ Checking units:
 		U_g=K_ \text{block}+K_ \text{rot,pulley}
 		\implies mg\Delta h=\frac12mv^2+\frac12I \left( \frac vr \right)^2
 	\end{equation*}
-	Substiting the moment of inertia $I=MR^2/2$ and solving for $v$ gives the final velocity.
+	Substituting the moment of inertia $I=MR^2/2$ and solving for $v$ gives the final velocity.
 }
 
-\section{Rolling}
+\subsection{Rolling}
+
+Rolling is a combination of pure translation and pure rotation, and there is no velocity at the point of contact: Figure 6.5.
 
 If the velocity at center of mass $v_ \text{cm}=\omega R$, the object is rolling without slipping. If $v_ \text{cm}\neq\omega R$, the object is rolling with slipping.
 
@@ -906,21 +914,28 @@ Rolling is a combination of pure rotation and translation. Connecting equations 
 	\Delta x_ \text{cm}&=\Delta \theta R \\
 	a_ \text{cm}&=\alpha R
 \end{align*}
-Kinetic energy of a rolling object is a combination of linear kinetic energy and rotational kinetic energy:
+
+\subsubsection{Kinetic Energy in Rolling}
+
+\theorem{Rolling kinetic energy}{Kinetic energy of a rolling object is a combination of linear kinetic energy and rotational kinetic energy:
 \begin{equation*}
     K_ \text{rolling}= K_ \text{linear}+ K_ \text{rot}=\frac12m v_ \text{cm}^2+\frac12I_ \text{cm}\omega^2
 \end{equation*}
-Consider an object rolling on an inclined plane (Figure x.y). We want to calculate the final velocity of the object at the bottom of the plane. The initial kinetic energy equals the final kinetic energy due to rolling:
+This quantity can be equated to gravitational potential energy $U_g=mg\Delta h$ to find kinetic energy at the bottom of an inclined slope.}
+
+\example{Rolling disk}{
+Consider an object rolling on an inclined plane (Figure 6.6). We want to calculate the final velocity of the object at the bottom of the plane. The initial kinetic energy equals the final kinetic energy due to rolling:
 \begin{align*}
     U_ \text{g,i}=K_ \text{rolling,f}
-	&\implies MgH=\frac12M v_ \text{cm}^2+\frac12 I_ \text{cm}\omega^2
+	&\implies \boxed{MgH=\frac12M v_ \text{cm}^2+\frac12 I_ \text{cm}\omega^2}
 	\intertext{Since we are working with a disk, the moment of inertia is $I_ \text{cm}=MR^2/2$, and angular velocity $\omega=v_ \text{cm}/R$.}
 	&\implies MgH=\frac12Mv_ \text{cm}^2+\frac12 \left( \frac12MR^2 \right)\left( \frac{v_ \text{cm}}{R} \right)^2 \\
 	&\implies gH=\frac12v_ \text{cm}^2+\frac14v_ \text{cm}^2 \cancel{\frac{R^2}{R^2}} \\
 	&\implies gH=\frac34v_ \text{cm}^2
 	\implies \boxed{v_ \text{cm}=\sqrt{\frac{4}{3}gH}}
 \end{align*}
-In general, for an object of moment of inertia $I=x MR^2$:
+}
+\example{Moment of inertia of rolling object}{In general, for an object of moment of inertia $I=x MR^2$:
 \begin{align*}
     mgH=
     U_ \text{g,i}=K_ \text{rolling,f}
@@ -949,9 +964,12 @@ For a solid sphere, $I_ \text{cm}=2MR^2/5$:
 	=\sqrt{\frac{gH}{\frac36+\frac26}}
 	=\sqrt{\frac65gH}
 \end{align*}
+}
 The final velocity only depends on the shape of the object. The greater the moment of inertia, the slower the object will be. The more the mass is away from the center of rotation, the less translational kinetic energy there will be at the bottom of the slope. A larger portion of energy is used to rotate the object, because $I$ is greater (recall $\tau=I\alpha\implies \alpha=\tau/I$ is inversely proportional to $I$).
 
-Consider the forces acting on disk ($I=MR^2/2$ rolling down an inclined sphere (Figure x.y). As shown, net torque causing rotation is from static friction $F_s$:
+\subsubsection{Friction and Torque}
+
+Consider the forces acting on disk ($I=MR^2/2$ rolling down an inclined sphere (Figure 6.7). As shown, net torque causing rotation is from static friction $F_s$:
 \begin{equation*}
     \Sigma \tau=I\omega
 	\implies F_sR=\left( \frac12MR^2 \right)\left( \frac{a}{R} \right)
@@ -970,6 +988,120 @@ Combining these two equations:
 	\implies a=\frac23g\sin\theta
 \end{equation*}
 Similar procedure for other objects with different moments of inertia $I$.
+\theorem{Rolling linear acceleration}{
+	Static friction exerts a force distance $R$ from the center of the rolling object, producing a torque of $F_sR$. Acceleration down the slope depends on the horizontal net force $\Sigma F_x$, which is the horizontal component of gravity $mg\sin\theta$ minus static friction $F_s$.
+}
+If there is no friction, the object will not roll, and will only slide down the slope.
+
+\subsection{Determining Moment of Inertia}
+
+In Figure 6.8, we have a rotational and a translational part:
+\begin{alignat*}{2}
+	\Delta \tau&=I\alpha
+	&\qquad
+	\Delta F_y&=ma \\
+	Tr&=I\alpha
+	&\qquad
+	mg-T&=ma \\
+	&&\qquad
+	T&=mg-ma
+\end{alignat*}
+\begin{equation*}
+    Tr=I\alpha
+	\implies (mg-ma)r=I \left( \frac{a}{r} \right)
+	\implies \boxed{I=\frac{mr^2(g-a)}{a}}
+\end{equation*}
+
+\subsection{Angular Momentum}
+
+\remark{Review of linear momentum}{
+	\begin{equation*}
+	    p=mv
+	\end{equation*}
+	Units of linear momentum are \si{\kilo\gram\cdot\meter\per\second} or \si{\newton\cdot\second}. Momentum is related to impulse $J$:
+	\begin{equation*}
+	    J=\Sigma F\cdot\Delta t=\Delta p=m\Delta v=\int F\,\mathrm{d}t
+		\implies \Delta F=\diff pt
+	\end{equation*}
+	When there are multiple objects, if there is no external force acting on the system, momentum is conserved:
+	\begin{equation*}
+	    \Delta p_ \text{system}=0
+		\iff
+		\sum p_ \text{initial}=\sum p_ \text{final}
+	\end{equation*}
+	In AP Physics C we assume $\Delta F_ \text{ext}=0$ and momentum is conserved.
+}
+
+From the equation of linear momentum $p=mv$, the rotational equivalent of mass is moment of inertia $I$ and the equivalent of linear velocity $v$ is angular velocity $\omega$. Therefore angular momentum $L=I\omega$.
+
+Alternatively, recall the impulse-change in momentum equation:
+\begin{equation*}
+    J=\Delta p=\Sigma F\cdot \Delta t=\Delta(mv)
+\end{equation*}
+Multiplying by $r\sin\theta$, the lever arm length, on both sides:
+\begin{equation*}
+	\underbrace{(r\sin\theta)\Sigma F}_{\Sigma \tau}\cdot \Delta t
+	=\underbrace{(r\sin\theta)\Delta (mv)}_{\text{change in $L$}}
+	\implies \Sigma \tau \cdot \Delta t=\Delta (mvr\sin\theta)
+\end{equation*}
+Conservation of angular momentum:
+\begin{align*}
+	m_1v_1r_1\sin(\theta_1)
+	&=m_2v_2r_2\sin(\theta_2)
+	\intertext{If $\theta=\theta_1=\theta_2=90^\circ$, then $\sin\theta=1$:}
+	m_1v_1r_1
+	&=m_2v_2r_2
+	\intertext{And if mass does not change; $m_1=m_2$:}
+	v_1r_1
+	&=v_2r_2
+\end{align*}
+By this principle, in orbital mechanics, objects are faster if their orbit is lower (see Kepler's laws).
+
+\theorem{Angular momentum}{
+	\begin{equation*}
+	    L=I\omega=mvr\sin\theta
+	\end{equation*}
+	where $L$ is angular momentum, $I$ is moment of inertia and $\omega$ is angular velocity. Angular momentum has units of \si{\kilo\gram\cdot\meter^2\per\second}. Angular momentum is conserved (recall $\sum p_i=\sum p_f$):
+	\begin{equation*}
+		\sum L_\text{i}=\sum L_\text{f}
+		\iff \sum I_\text{i}\omega_\text{i}=\sum I_\text{f}\omega_\text{f}
+	\end{equation*}
+}
+
+So we can still calculate angular momentum for an object moving in a straight line for a chosen reference point.
+
+Dimensional analysis on $L=I\omega=mvr\sin\theta$ yields equal units:
+\begin{equation*}
+    I\omega
+	=\left[ \si{\kilo\gram\cdot\meter^2}\cdot \si{1/\second} \right]
+	=\left[ \si{\kilo\gram\cdot\meter^2\per\second} \right]
+	=\Bigl[ \si{\kilo\gram\cdot\meter\per\second\cdot\meter} \Bigr]
+	=mvr\sin\theta
+\end{equation*}
+
+\theorem{Angular impulse}{
+	\begin{align*}
+	    \Delta L 
+		&=\int_{t_0}^{t_1}\tau\,\mathrm{d}t \\
+		&=\Sigma \tau \cdot \Delta t
+		=\Sigma \tau \cdot (t_1-t_0) \tag{Constant torque}
+	\end{align*}
+	This is similar to the definition of change in linear momentum $\Delta p=\int_{t_0}^{t_1}F\,\mathrm{d}t$.
+}
+
+\subsection{Kepler's Laws}
+
+\theorem{Kepler's laws}{
+	\begin{enumerate}
+		\item Planetary orbits are elliptical with the sun at a focus point.
+		\item An imaginary line between the planet and the sun ($r$) sweeps equal areas in equal time intervals.
+		\item For a given object, $T^2$ is directly proportional to $r^3$, where $T$ is the orbit's period. Furthermore:
+		\begin{equation*}
+			\frac{T^2}{r^3}=\frac{4\pi^2}{GM}
+		\end{equation*}
+		where $G$ is the universal gravitational constant, and $M$ is the mass of the object being orbited.
+	\end{enumerate}
+}
 
 \end{document}
 
