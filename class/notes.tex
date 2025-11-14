@@ -471,6 +471,10 @@ Is Newton's second law for the center of mass.
 	If only internal forces act on a system, then the net external force $\Sigma F=0$, so the center of mass does not move. This appears in problems involving two objects in a system, asking for the position of both objects after one moves relative to the other. The center of mass of the system does not change, so we can solve for the positions by setting the center of mass before equal to the center of mass after the movement.
 }
 
+\remark{Center of mass, rotation and translation}{
+	If a force is applied on a free object, it will only translate if the force is in line with the center of mass, and will rotate and translate otherwise.
+}
+
 \subsection{Density}
 
 Volume density is defined as mass per volume: $\rho=m/V$ with units \si{\kilo\gram\per\meter^3}.
@@ -1044,6 +1048,18 @@ Multiplying by $r\sin\theta$, the lever arm length, on both sides:
 	=\underbrace{(r\sin\theta)\Delta (mv)}_{\text{change in $L$}}
 	\implies \Sigma \tau \cdot \Delta t=\Delta (mvr\sin\theta)
 \end{equation*}
+Another way of thinking of this is realizing that like how linear momentum $p=mv$ is the derivative with respect to time of force $F=ma$, angular momentum is the derivative of torque with respect to time.
+\begin{equation*}
+	\vec L
+	=\diff{\tau}{t}
+	=\deriv[t](r\times F)
+	=r\times \diff Ft
+	=r\times p
+	=r\times (mv)
+	\implies
+	L=rmv\sin\theta
+\end{equation*}
+
 Conservation of angular momentum:
 \begin{align*}
 	m_1v_1r_1\sin(\theta_1)
@@ -1059,9 +1075,9 @@ By this principle, in orbital mechanics, objects are faster if their orbit is lo
 
 \theorem{Angular momentum}{
 	\begin{equation*}
-	    L=I\omega=mvr\sin\theta
+	    L=I\omega=\lVert r\times p \rVert=\lVert r\times (mv) \rVert =mvr\sin\theta
 	\end{equation*}
-	where $L$ is angular momentum, $I$ is moment of inertia and $\omega$ is angular velocity. Angular momentum has units of \si{\kilo\gram\cdot\meter^2\per\second}. Angular momentum is conserved (recall $\sum p_i=\sum p_f$):
+	where $L$ is angular momentum, $I$ is moment of inertia and $\omega$ is angular velocity. Angular momentum has units of \si{\kilo\gram\cdot\meter^2\per\second}. Angular momentum is conserved (conservation of linear momentum $\sum p_i=\sum p_f$):
 	\begin{equation*}
 		\sum L_\text{i}=\sum L_\text{f}
 		\iff \sum I_\text{i}\omega_\text{i}=\sum I_\text{f}\omega_\text{f}
@@ -1080,14 +1096,20 @@ Dimensional analysis on $L=I\omega=mvr\sin\theta$ yields equal units:
 \end{equation*}
 
 \theorem{Angular impulse}{
-	\begin{align*}
+	\begin{equation*}
 	    \Delta L 
-		&=\int_{t_0}^{t_1}\tau\,\mathrm{d}t \\
-		&=\Sigma \tau \cdot \Delta t
-		=\Sigma \tau \cdot (t_1-t_0) \tag{Constant torque}
-	\end{align*}
+		=\int_{t_0}^{t_1}\tau\,\mathrm{d}t \\
+		=\underbrace{\Sigma \tau \cdot \Delta t
+		=\Sigma \tau \cdot (t_1-t_0)}_{\text{constant torque}}
+	\end{equation*}
 	This is similar to the definition of change in linear momentum $\Delta p=\int_{t_0}^{t_1}F\,\mathrm{d}t$.
 }
+
+\subsubsection{Conservation of Momentum}
+
+In general, linear momentum and angular momentum are both conserved. Kinetic energy is not always conserved.
+
+If one point of the stick is anchored at one point, linear momentum is not conserved because the anchor exerts a net external force on the ball-stick system. Angular momentum is conserved because the anchor exerts no torque (lever arm length is $0$).
 
 \subsection{Kepler's Laws}
 
