@@ -4,6 +4,7 @@
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
 \usepackage{graphicx, float}
 \usepackage{suffix}
+\usepackage{soul}
 \usepackage{esdiff}
 \usepackage{multicol}
 \usepackage{cancel}
@@ -35,6 +36,8 @@
 
 \newcommand{\remark}[2]{\begin{tcolorbox}[title={#1},colback=black!5!white,colframe=black!75!black,parbox=false] #2 \end{tcolorbox}}
 \WithSuffix\newcommand\remark*[1]{\begin{tcolorbox}[colback=black!5!white,colframe=black!75!black,parbox=false] #1 \end{tcolorbox}}
+
+\newcommand{\hlc}[2][yellow]{\sethlcolor{#1}\hl{#2}}
 
 \newcommand*{\deriv}[1][x]{\ensuremath{\dfrac{\mathrm{d}}{\mathrm{d}#1}}}
 \newcommand*{\floor}[1]{\ensuremath{\lfloor #1\rfloor}}
@@ -1015,6 +1018,29 @@ In Figure 6.8, we have a rotational and a translational part:
 	\implies (mg-ma)r=I \left( \frac{a}{r} \right)
 	\implies \boxed{I=\frac{mr^2(g-a)}{a}}
 \end{equation*}
+And $a$ can be calculated by recording the time for the mass to fall to the ground, with a known $\Delta y$, which can be found by the kinematics equation:
+\begin{equation*}
+	\Delta y
+	=\cancelto{0}{v_0t}+\frac12at^2
+	=\frac12at^2
+	\implies 
+	a=\frac{2\Delta y}{t^2}
+\end{equation*}
+Experimental errors:
+\begin{itemize}
+	\item Unwinding of string: Radius $R$ is not constant (string is ``on top'' of the wound string), and there is friction associated with unwinding.
+	\item String may not leave perpendicular, or $\theta\neq90^\circ$ and $\Sigma\tau\neq TR$
+	\item String may not be completely horizontal, or only a component of tension is providing torque.
+	\item Mass is swinging.
+\end{itemize}
+Improvements:
+\begin{itemize}
+	\item Make sure eye level with mass and meter stick to calculate $\Delta y$ more accurately.
+	\item Use automated method of timing.
+	\item Increase $\Delta y$: reduces the error involved with starting and stopping the stopwatch (calculation of $\Delta t$), since error is smaller relative to $\Delta t$.
+	\item \hlc{Increase the number of trials with constant experimental conditions.}
+	\item Increase the number of experimental conditions (by using more masses).
+\end{itemize}
 
 \subsection{Angular Momentum}
 
