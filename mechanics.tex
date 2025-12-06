@@ -58,15 +58,6 @@
 \tableofcontents
 % \newpage
 
-\begin{tcolorbox}[title={Summative Assessment Topics},colback=green!5!white,colframe=green!75!black,parbox=false]
-	\begin{enumerate}[label={SA\arabic*.}]
-		\item Honors Physics topics from summer work.
-		\item \hyperref[sec:calculus]{Calculus (2)}
-		\item \hyperref[sec:momentum]{Conservation of Momentum (3)}, \hyperref[sec:centerofmass]{Center of Mass (4)}, \hyperref[sec:rotation]{Rotation (5)}
-	\end{enumerate}
-\end{tcolorbox}
-
-
 \section{Introduction}
 
 \subsection{Jumping Monsters}
@@ -318,7 +309,7 @@ Real springs are non-ideal.
 
 \subsection{Explosions}
 
-\definition{An explosion is when two objects separate after being together.}
+\definition{An \textbf{explosion} is when two objects separate after being together.}
 
 Cart of mass $m_1$ and mass $m_2$ separate after a compressed spring between them, and they move at velocity $v_1$ and $v_2$. $m_1>m_2$. By conservation of momentum:
 \begin{equation*}
@@ -339,7 +330,7 @@ Since $m_1>m_2$: $m_1/m_2>1\implies K_2>K_1$
 
 \subsection{Elastic Head-On Collisions}
 
-\definition{In a head-on collisions, both objects are moving in a straight line. In a glancing collision, objects will go in different angles after the collision.}
+\definition{In a \textbf{head-on collisions}, both objects are moving in a straight line. In a \textbf{glancing collision}, objects will go in different angles after the collision.}
 
 Suppose that two objects collide head on. The objects are initially traveling at velocities $v_1,v_2$, and have velocities $v_1',v_2'$ after the collision.
 
@@ -731,7 +722,7 @@ Recall from before, that the magnitude of total acceleration of a particle in ci
 
 \section{Rotational Inertia}
 
-\definition{Inertia is a property of a body or object that defines its resistance to change.}
+\definition{\textbf{Inertia} is a property of a body or object that defines its resistance to change.}
 
 Inertia is related to mass; the greater the mass, the greater the inertia. Newton's second for linear motion is:
 \begin{equation*}
@@ -1150,6 +1141,207 @@ If one point of the stick is anchored at one point, linear momentum is not conse
 		where $G$ is the universal gravitational constant, and $M$ is the mass of the object being orbited.
 	\end{enumerate}
 }
+
+\section{Simple Harmonic Motion}
+
+\definition{
+	\textbf{Periodic motion} is motion that repeats over a fixed period of time.
+
+	\textbf{Oscillatory motion} is periodic motion where an object moves back and forth about a mean/equilibrium.
+
+	\textbf{Simple harmonic motion} is oscillatory motion where there is a restoring force that is directly proportional to the displacement of the oscillator.
+}
+
+In a spring, the storing force is $k\Delta x$, which is directly proportional to displacement.
+
+In a pendulum, the restoring force is $mg\sin\theta$. It is not directly proportional to displacement, so it is not simple harmonic motion. (For small angles, use the small angle approximation $\sin\theta\approx\tan\theta\approx\theta$.)
+
+\subsection{Sine and Cosine Equation}
+
+Position, velocity, acceleration and force can be written as sine and cosine equations. The position $x$ can be generally written as:
+\begin{equation*}
+    x=x_ \text{max} \cos\left(\omega t+\varphi_0\right)
+\end{equation*}
+where $\varphi_0$ is the phase shift, $x_ \text{max}$ is the amplitude or radius (maximum displacement, since cosine is bound between $-1$ and $1$), and $\omega$ is angular velocity: $\omega=\Delta\theta/\Delta t=2\pi/T=2\pi f$.
+
+To properly describe uniform circular motion, we need an $x$ as a cosine equation and a $y$ as a sine equation.
+
+The general sine equation is:
+\begin{equation*}
+    y=A\sin(\omega t+\varphi_0)
+\end{equation*}
+where:
+\begin{align*}
+	y&=\text{position of oscillator on the $y$-axis (m)} \\
+	A&=\text{amplitude/radius/$y_\text{max}$ (m)} \\
+	\omega&=\text{angular velocity or angular frequency (rad/s or 1/s)} \\
+	\varphi_0&=\text{initial phase (angle) (rad)}
+\end{align*}
+At time $t=0$, $y=A\sin(\omega (0)+\varphi_0)=A\sin\varphi_0$ from which the phase shift $\varphi_0$ can be found.
+
+The period is $2\pi/\omega$.
+
+\subsection{Springs In Series and In Parallel}
+
+A spring is like a string in that the tension is constant throughout the spring. If we divide a spring into smaller springs, they will have the same restoring force, which means the smaller springs will have a higher spring constant.
+
+In series: Suppose we have two springs attached to each other, the lower attached to a mass $m$ with forces $F_1,F_2$ and spring constant $k_1,k_2$. We have another single spring attached to the same mass $m$ with forces $F_\text{equivalent}$ and spring constant $k_\text{equivalent}$. As before, the forces are all equal: $F_1=F_2=F_\text{equivalent}$. The displacement is also the same: $\Delta x_1+\Delta x_2=\Delta x_\text{equivalent}$. From Hooke's law $F=k\Delta x\implies x=F/k$, and since all the forces are equal:
+\begin{equation*}
+	\frac{F_1}{k_1}+\frac{F_2}{k_2}=\frac{F_\text{equivalent}}{k_\text{equivalent}}
+	\implies \boxed{\frac{1}{k_1}+\frac{1}{k_2}=\frac{1}{k_\text{equivalent}}}
+\end{equation*}
+
+In parallel: two separate springs are both attached to a mass $m$. Using the same notation as before, obviously:
+\begin{equation*}
+	\left\{\begin{gathered}
+		\Delta x_1=\Delta x_2=\Delta x_\text{equivalent} \\
+		F_1=F_2=F_\text{equivalent}
+	\end{gathered}\right\}
+	\implies F_1\Delta x_1=F_2\Delta x_2=F_\text{equivalent}\Delta x_\text{equivalent}
+	\implies k_1=k_2=k_\text{equivalent}
+\end{equation*}
+Springs are in parallel if:
+\begin{itemize}
+	\item All springs experience the same $\Delta x$.
+	\item The total force applied to the mass is distributed among the individual springs.
+	\item Each spring has a direct connection to the mass.
+\end{itemize}
+
+\subsection{Simple Harmonic Oscillator}
+
+Suppose the position is defined as, where $A$ is amplitude, or the maximum value of $y$:
+\begin{align*}
+	y&=A \sin\left(\omega t+\varphi_0\right) \\
+	v=\diff yt&=A\omega \cos\left(\omega t+\varphi_0\right) \\
+	a=\diff vt&=-\omega^2 \underbrace{A\sin\left(\omega t+\varphi_0\right)}_{y}
+	=-\omega^2 y
+\end{align*}
+\theorem{Simple harmonic motion position and acceleration}{
+	The position of the simple harmonic oscillator can be expressed as the differential equation:
+	\begin{equation*}
+		\diff[2]{y}{t}=-\omega^2y
+		\qquad
+		\diff[2]{x}{t}=-\omega^2x
+		\qquad
+		\diff[2]{\theta}{t}=-\omega^2\theta
+	\end{equation*}
+}
+\theorem{Period of various systems}{
+	\begin{alignat*}{2}
+		\text{Spring-mass system:}& \qquad T&&=2\pi \sqrt{\frac mk} \\
+		\text{Simple pendulum:}& \qquad T&&=2\pi \sqrt{\frac lg} \\
+		\text{Physical pendulum:}& \qquad T&&=2\pi \sqrt{\frac{I_\text{cm}}{rmg}} \\
+		\text{Torsional pendulum}& \qquad T&&=2\pi \sqrt{\frac {I_\text{obj}}k}
+	\end{alignat*}
+	where:
+	\begin{align*}
+		T&=\text{period} \\
+		m&=\text{mass} \\
+		k&=\text{spring/torsional constant} \\
+		l&=\text{length of the string (simple pendulum)} \\
+		I_\text{cm}&=\text{moment of inertia about the center of mass (physical pendulum)} \\
+		r&=\text{distance from axis of rotation to center of mass (physical pendulum)} \\
+		I_\text{obj}&=\text{moment of inertia of the object (torsional pendulum)}
+	\end{align*}
+}
+
+\subsubsection{Period of Spring-Mass System}
+
+There is a mass $M$ oscillating with amplitude $A$.
+\begin{align*}
+    \Sigma F
+	&=ma \\
+	-kx
+	&=m\cdot \diff[2]{x}{t} \tag{Hooke's law, $\alpha=\mathrm{d}^2\theta/dt^2$} \\
+	&=-m\omega^2x \tag{$\mathrm{d}^2x/dt^2=-\omega^2x$} \\
+	k
+	&=m \left( \frac{2\pi}{T} \right)^2 \tag{$\omega=2\pi/T$} \\
+	\sqrt{\frac km}
+	&=\frac{2\pi}{T} \\
+	\Aboxed{T&=2\pi \sqrt{\frac mk}}
+\end{align*}
+
+\subsubsection{Period of Simple Pendulum}
+Note that arc length $s=l\theta$ where $l$ is the length of the string. A mass is attached to the end of the string and allowed to oscillate. Acceleration is the second derivative of arc length.
+\begin{align*}
+    \Sigma F
+	&=ma \\
+	-mg\sin\theta
+	&=m\cdot \diff[2]st \tag{Restoring force and $\alpha=\mathrm{d}^2s/dt^2$} \\
+	-g\sin\theta
+	&=l\cdot\diff[2]{\theta}{t} \tag{Arc length $s=l\theta$} \\ 
+	&=-l\omega^2\theta \tag{$\mathrm{d}^2\theta/dt^2=-\omega^2\theta$} \\
+	g\theta&=l\omega^2\theta \tag{$\sin\theta\approx\theta$} \\
+	g&=l \left( \frac{2\pi}{T} \right)^2 \tag{$\omega=2\pi/T$} \\
+	\Aboxed{T&=2\pi \sqrt{\frac lg}}
+\end{align*}
+
+\subsubsection{Period of a Physical Pendulum}
+
+A flat physical object of mass $m$ is oscillating. Let $r$ be the distance from the axis of rotation to center of mass. Parallel axis theorem:
+\begin{equation*}
+	I'=I_\text{cm}+Mr^2
+\end{equation*}
+where $I'$ is the moment of inertia of the physical pendulum about the point of rotation.
+
+Starting with Newton's second law for rotation:
+\begin{align*}
+	\Sigma \tau
+	&=I' \alpha \\
+	-rmg\sin\theta
+	&=I'\alpha \tag{Restoring force}\\
+	-rmg\theta
+	&=I'\cdot \diff[2]{\theta}{t} \tag{$\alpha=\mathrm{d}^2\theta/dt^2,\sin\theta\approx\theta$} \\
+	-\frac{rmg\theta}{I'}
+	&=-\omega^2\theta \tag{$\mathrm{d}^2\theta/dt^2=-\omega^2\theta$}\\
+	\omega^2
+	&=\frac{rmg}{I'} \\
+	\frac{2\pi}{T} \tag{$\omega=2\pi/T$}
+	&=\sqrt{\frac{rmg}{I'}} \\
+	\Aboxed{T&=2\pi \sqrt{\frac{I'}{rmg}}}
+\end{align*}
+
+\subsubsection{Torsional Pendulum}
+
+The motion of a torsional pendulum is analagous to that of a spring-mass system.
+
+Hooke's law for rotation: $\tau=-k\Delta \theta$ where $\theta$ is the restoring torque, $k$ is the torsional constant and $\Delta \theta$ is the twisting angle.
+\begin{align*}
+	\Sigma \tau 
+	&=I\alpha \\
+	-k\theta
+	&=I\cdot \diff[2]{\theta}t \tag{$\Sigma\tau=-k\theta,\alpha=\mathrm{d}^2\theta/\mathrm{d}t^2$} \\
+	-\frac{k\theta}{I}
+	&=-\omega^2\theta \tag{$\mathrm{d}^2\theta/\mathrm{d}t^2=-\omega^2\theta$} \\
+	\frac{2\pi}{T}
+	&=\sqrt{\frac kI} \tag{$\omega=2\pi/T$} \\
+	\Aboxed{T&=2\pi \sqrt{\frac Ik}}
+\end{align*}
+where $I$ is the moment of inertia of the hanging rotating mass about the center of mass, and $k$ is the torsion constant (equivalent of spring constant).
+
+\section{Drag}
+
+\definition{\textbf{Drag} is a friction force due to interactions between fluid (gas or liquid) molecules and the object.}
+
+\begin{itemize}
+	\item Drag force is often denoted $D, F_\text{d},F_\text{D}$.
+	\item Drag force $F_\text{D}$ is dependent on the relative speed between the object and the fluid.
+	\item $F_\text{D}$ \textit{imposes} a terminal velocity $v_\text{T}$ on the object, which occurs when the object moves long/fast enough.
+\end{itemize}
+Total mechanical energy is not conserved when there is drag. Negative work is done by the friction and some energy is transferred to thermal energy.
+
+How to solve drag problems:
+\begin{enumerate}
+	\item Draw free-body diagram and include positive direction.
+	\item Write Newton's second law: $\Sigma F=F-F_\text{D}=ma=m(\mathrm{d}v/\mathrm{d}t)$. $F_\text{D}$ is dependent on velocity $v$ so this is a differential equation.
+\end{enumerate}
+
+\subsection{Relationship between velocity and drag}
+
+In small objects traveling at a low velocity, drag force is directly proportional to velocity (negative sign indicates $F_\text{D}$ acts opposite to direction of $v$):
+\begin{equation*}
+	F_\text{D}=-bv
+\end{equation*}
 
 \end{document}
 
