@@ -1183,7 +1183,7 @@ The period is $2\pi/\omega$.
 
 \subsection{Springs In Series and In Parallel}
 
-A spring is like a string in that the tension is constant throughout the spring. If we divide a spring into smaller springs, they will have the same restoring force, which means the smaller springs will have a higher spring constant.
+A spring is like a string in that the tension is constant throughout the spring. If we divide a spring into smaller springs, they will have the same restoring force, which means the smaller springs will have a higher spring constant. Figure 7.1.
 
 In series: Suppose we have two springs attached to each other, the lower attached to a mass $m$ with forces $F_1,F_2$ and spring constant $k_1,k_2$. We have another single spring attached to the same mass $m$ with forces $F_\text{equivalent}$ and spring constant $k_\text{equivalent}$. As before, the forces are all equal: $F_1=F_2=F_\text{equivalent}$. The displacement is also the same: $\Delta x_1+\Delta x_2=\Delta x_\text{equivalent}$. From Hooke's law $F=k\Delta x\implies x=F/k$, and since all the forces are equal:
 \begin{equation*}
@@ -1231,7 +1231,7 @@ Suppose the position is defined as, where $A$ is amplitude, or the maximum value
 		\text{Spring-mass system:}& \qquad T&&=2\pi \sqrt{\frac mk} \\
 		\text{Simple pendulum:}& \qquad T&&=2\pi \sqrt{\frac lg} \\
 		\text{Physical pendulum:}& \qquad T&&=2\pi \sqrt{\frac{I_\text{cm}}{rmg}} \\
-		\text{Torsional pendulum}& \qquad T&&=2\pi \sqrt{\frac {I_\text{obj}}k}
+		\text{Torsional pendulum:}& \qquad T&&=2\pi \sqrt{\frac {I_\text{obj}}k}
 	\end{alignat*}
 	where:
 	\begin{align*}
@@ -1247,7 +1247,7 @@ Suppose the position is defined as, where $A$ is amplitude, or the maximum value
 
 \subsubsection{Period of Spring-Mass System}
 
-There is a mass $M$ oscillating with amplitude $A$.
+There is a mass $M$ oscillating with amplitude $A$. Figure 7.3.1.
 \begin{align*}
     \Sigma F
 	&=ma \\
@@ -1262,7 +1262,7 @@ There is a mass $M$ oscillating with amplitude $A$.
 \end{align*}
 
 \subsubsection{Period of Simple Pendulum}
-Note that arc length $s=l\theta$ where $l$ is the length of the string. A mass is attached to the end of the string and allowed to oscillate. Acceleration is the second derivative of arc length.
+Note that arc length $s=l\theta$ where $l$ is the length of the string. A mass is attached to the end of the string and allowed to oscillate. Acceleration is the second derivative of arc length. Figure 7.3.2.
 \begin{align*}
     \Sigma F
 	&=ma \\
@@ -1278,7 +1278,7 @@ Note that arc length $s=l\theta$ where $l$ is the length of the string. A mass i
 
 \subsubsection{Period of a Physical Pendulum}
 
-A flat physical object of mass $m$ is oscillating. Let $r$ be the distance from the axis of rotation to center of mass. Parallel axis theorem:
+A flat physical object of mass $m$ is oscillating. Figure 7.3.3. Let $r$ be the distance from the axis of rotation to center of mass. Parallel axis theorem:
 \begin{equation*}
 	I'=I_\text{cm}+Mr^2
 \end{equation*}
@@ -1303,7 +1303,7 @@ Starting with Newton's second law for rotation:
 
 \subsubsection{Torsional Pendulum}
 
-The motion of a torsional pendulum is analagous to that of a spring-mass system.
+The motion of a torsional pendulum is analogous to that of a spring-mass system. Figure 7.3.4.
 
 Hooke's law for rotation: $\tau=-k\Delta \theta$ where $\theta$ is the restoring torque, $k$ is the torsional constant and $\Delta \theta$ is the twisting angle.
 \begin{align*}
@@ -1339,9 +1339,170 @@ How to solve drag problems:
 \subsection{Relationship between velocity and drag}
 
 In small objects traveling at a low velocity, drag force is directly proportional to velocity (negative sign indicates $F_\text{D}$ acts opposite to direction of $v$):
+\begin{align*}
+	F_\text{D}&=-bv
+	\intertext{In larger objects with greater velocity, drag is proportional to velocity squared:}
+	F_\text{D}&=-kv^2
+\end{align*}
+In both equations, $b$ and $k$ are constants that depend on the object's size, shape/orientation, surface characteristics (smooth/rough), velocity/density of fluid etc.
+
+If two objects $P$ and $Q$ look identical but $P$ is heavier, then $P$ will accelerate for a longer time before reaching terminal velocity $v_\text{T}$ because its weight force is greater. $F_\text{D}$ is independent of mass but acceleration is influenced.
+
+Terminal velocity $v_\text{T}=\lim_{t\to\infty}v(t)$.
+
+\section{Gravitational Theory}
+
+\theorem{Newton's law of universal gravitation}{
+	\begin{equation*}
+		\lVert F_\text{g} \rVert 
+		=\frac{Gm_1m_2}{r^2}
+	\end{equation*}
+	where
+	\begin{align*}
+		m&=\text{mass (kg)} \\
+		r&=\text{distance between centers of mass (m)} \\
+		F_\text{g}&=\text{force due to gravity (N)} \\
+		G&=\text{gravitational constant (\si{\meter^3/(\kilogram\cdot\second^2)})} \\
+		 &=6.67\cdot 10^{-11}\,\si{\frac{\meter^3}{\kilogram\cdot\second^2}}
+	\end{align*}
+	By Newton's third law, each object exerts a force on the other. The two forces are equal in magnitude but opposite in direction.
+}
+
+By Newton's second law:
 \begin{equation*}
-	F_\text{D}=-bv
+	F_\text{g}=ma=\frac{GMm}{r^2}
+	\implies a=\frac{GM}{r^2}
 \end{equation*}
+is the acceleration due to gravity near the planet's surface: $g=GM/r^2$. At higher distances from the surface, the distance $r$ is greater, so acceleration due to gravity is lower.
+
+The relationship between the gravitational force exerted on an object $F_\text{g}$ and its center of mass's distance to the planet's center of mass $r$ is in Figure 8.1. $F_\text{g}$ is highest on the surface of the planet. From $0$ to the surface, $F_\text{g}$ increases linearly; for higher values, $F_\text{g}$ decreases proportional to $1/r^2$.
+
+\subsection{Orbits}
+
+For high values of $r$ and $h$ (in Figure 8.2), $r\approx h$. Combining centripetal force and gravitational force:
+\begin{equation*}
+	F_\text{g}=\frac{GMm}{r^2}=\frac{mv^2}{r}=F_\text{c}
+	\implies v=\sqrt{\frac{GM}{r}}
+\end{equation*}
+We can also derive Kepler's law:
+\begin{equation*}
+    \frac{r^3}{T^2}=\frac{GM}{4\pi^2}
+\end{equation*}
+
+\subsection{Potential Energy}
+
+Recall the relationship between potential energy and force:
+\begin{equation*}
+    F=-\diff Ux \\
+	\Delta U=-\int F\,\mathrm{d}x
+\end{equation*}
+We have force due to gravity $F_\text{g}$ (negative sign indicates an attractive force):
+\begin{align*}
+	F_\text{g}&=-\frac{GMm}{r^2} \\
+	\Delta U_\text{g}&=-\int \left( -\frac{GMm}{r^2} \right)\mathrm{d}r
+	=-\frac{GMm}{r}
+\end{align*}
+
+\theorem{General potential energy due to gravitation}{
+	The potential energy of a system of two objects from gravitation is:
+	\begin{equation*}
+		U_\text{g}=-\frac{GMm}{r}
+	\end{equation*}
+	where:
+	\begin{align*}
+		U_\text{g}&=\text{potential energy ($\si{\kilogram\cdot\meter^2\per\second^2}=\si{\joule}$)} \\
+		M&=\text{mass of larger object, like the Earth (kg)} \\
+		m&=\text{mass of smaller object (kg)} \\
+		r&=\text{distance between centers of mass (m)} \\
+		G&=\text{gravitational constant (\si{\meter^3/(\kilogram\cdot\second^2)})} \\
+		 &=6.67\cdot 10^{-11}\,\si{\frac{\meter^3}{\kilogram\cdot\second^2}}
+	\end{align*}
+}
+
+The gravitational potential energy of a system with three objects is the sum of the gravitational potential energies of any pair of two objects:
+\begin{equation*}
+	U_{\text{g},\text{system}}=U_{\text{g},1,2}+U_{\text{g},1,3}+U_{\text{g},2,3}
+\end{equation*}
+The total energy of a object orbiting another, denoted $E_\text{T}$, is the sum of its kinetic and (gravitational) potential energies. The velocity of the orbiting object is $v=\sqrt{GM/r}$ (can be found with $F_\text{c}=mv^2/r=GMm/r^2=F_\text{g}$).
+\begin{equation*}
+	E_\text{T}
+	=K+U_\text{g}=\frac12mv^2+\left( -\frac{GMm}{r} \right)
+	=\frac12m \left( \sqrt{\frac{GM}{r}} \right)^2-\frac{GMm}{r}
+	=\frac12 \frac{GMm}{r}-\frac{GMm}{r}
+	=-\frac12 \frac{GMm}{r}
+	=\frac12U_\text{g}
+\end{equation*}
+
+\theorem{Total energy of orbiting object}{
+	The total energy $E_\text{T}$ is exactly half the gravitational potential energy.
+	\begin{equation*}
+		E_\text{T}
+		=-\frac12 \frac{GMm}{r}
+		=\frac12 U_\text{g}
+	\end{equation*}
+}
+
+See Figure 9.1 for graph of potential energy with $U_\text{g}=mgh$ and $U_\text{g}=-GMm/r$.
+
+\subsection{Elliptical Orbits}
+
+Like with circular orbits, $m$ and $M$ are constant. However, the distance between centers of mass $r$ is \textbf{not} constant in an elliptical orbit, so its speed $\lVert v \rVert$, kinetic energy $K=mv^2/2$, and gravitational potential energy $U_\text{g}=-GMm/r$ are also not constant (they are constant for circular orbits). Angular momentum $L=\lVert r\times p \rVert =mvr\sin\theta$ and total energy $E_\text{T}$ are constant for both circular and elliptical orbits. In both, total energy $E_\text{T}<0$.
+\begin{alignat*}{2}
+	M&=\text{constant} &\qquad M&=\text{constant} \\
+	m&=\text{constant} &\qquad m&=\text{constant} \\
+	r&=\text{constant} &\qquad \Aboxed{r&=\text{not constant}} \\
+	\lVert v \rVert &=\text{constant} &\qquad \Aboxed{\lVert v \rVert &=\text{not constant}} \\
+	K&=\text{constant} &\qquad \Aboxed{K&=\text{not constant}} \\
+	U_\text{g}&=\text{constant} &\qquad \Aboxed{U_\text{g}&=\text{not constant}} \\
+	E_\text{T}&=\text{constant} &\qquad E_\text{T}&=\text{constant} \\
+	L&=\text{constant} &\qquad L&=\text{constant}
+\end{alignat*}
+
+\subsection{Escape Velocity}
+
+\definition{The \textbf{escape velocity} is the speed at which an object ``escapes'' the gravitational field.}
+
+For now, we assume the following:
+\begin{itemize}
+	\item The rocket is launched straight upward (they are not).
+	\item No propulsion along the way (there is in an actual rocket).
+	\item At ``infinity'' the rocket is at rest: $v=K_\text{rocket}=0$. The rocket slows down as it travels.
+	\item Negligible drag.
+	\item There are no gravitational effects on the rocket as it travels (there always will be).
+\end{itemize}
+These assumptions do not hold in reality, so the escape velocity we calculate is highly theoretical.
+
+By conservation of energy:
+\begin{align*}
+	K_\text{i}+U_\text{g,i}
+	&=K_\text{f}+U_\text{g,f}
+	\intertext{The ``final'' energies are taken at infinity, where there is no velocity and no effect from gravity.}
+	\frac12mv_0^2-\frac{GMm}{r}&=0 \\
+	v_0&=\sqrt{\frac{2GM}{r}}
+	\intertext{At a certain distance to the center of the Earth $R$, the escape velocity $v_\text{esc}$ is:}
+	v_\text{esc}&=\sqrt{\frac{2GM}{R}}
+\end{align*}
+
+\theorem{Escape velocity}{
+	The escape velocity when orbiting an object of mass $M$ at a distance $R$ from its center of mass is:
+	\begin{equation*}
+		v_\text{sc}=\sqrt{\frac{2GM}{R}}
+	\end{equation*}
+}
+
+\section{Density}
+
+\theorem{Density}{
+	\begin{equation*}
+	    \rho=\frac{M}{V}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\rho&=\text{density (\si{\kilogram/\meter^3})} \\
+		M&=\text{mass (kg)} \\
+		V&=\text{volume (\si{m^3})}
+	\end{align*}
+}
 
 \end{document}
 
