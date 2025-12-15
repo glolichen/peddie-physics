@@ -42,7 +42,7 @@
 \newcommand*{\deriv}[1][x]{\ensuremath{\dfrac{\mathrm{d}}{\mathrm{d}#1}}}
 \newcommand*{\floor}[1]{\ensuremath{\lfloor #1\rfloor}}
 
-\title{\vspace*{-40pt}AP Physics C: Mechanics Notes}
+\title{\vspace*{-40pt}\textsc{AP Physics C: Mechanics Notes}}
 \author{Jayden Li}
 \date{Fall and Winter Trimesters, 2025}
 
@@ -1152,7 +1152,7 @@ If one point of the stick is anchored at one point, linear momentum is not conse
 	\textbf{Simple harmonic motion} is oscillatory motion where there is a restoring force that is directly proportional to the displacement of the oscillator.
 }
 
-In a spring, the storing force is $k\Delta x$, which is directly proportional to displacement.
+In a spring, the restoring storing force is $k\Delta x$, which is directly proportional to displacement.
 
 In a pendulum, the restoring force is $mg\sin\theta$. It is not directly proportional to displacement, so it is not simple harmonic motion. (For small angles, use the small angle approximation $\sin\theta\approx\tan\theta\approx\theta$.)
 
@@ -1185,20 +1185,20 @@ The period is $2\pi/\omega$.
 
 A spring is like a string in that the tension is constant throughout the spring. If we divide a spring into smaller springs, they will have the same restoring force, which means the smaller springs will have a higher spring constant. Figure 7.1.
 
-In series: Suppose we have two springs attached to each other, the lower attached to a mass $m$ with forces $F_1,F_2$ and spring constant $k_1,k_2$. We have another single spring attached to the same mass $m$ with forces $F_\text{equivalent}$ and spring constant $k_\text{equivalent}$. As before, the forces are all equal: $F_1=F_2=F_\text{equivalent}$. The displacement is also the same: $\Delta x_1+\Delta x_2=\Delta x_\text{equivalent}$. From Hooke's law $F=k\Delta x\implies x=F/k$, and since all the forces are equal:
+In series: Suppose we have two springs attached to each other, the lower attached to a mass $m$ with forces $F_1,F_2$ and spring constant $k_1,k_2$. We have another single spring attached to the same mass $m$ with forces $F_\text{equivalent}$ and spring constant $k_\text{equivalent}$. As before, the forces are all equal: $F_1+F_2=F_\text{equivalent}$. The displacement is also the same: $\Delta x_1+\Delta x_2=\Delta x_\text{equivalent}$. From Hooke's law $F=k\Delta x\implies x=F/k$, and since all the forces are equal:
 \begin{equation*}
 	\frac{F_1}{k_1}+\frac{F_2}{k_2}=\frac{F_\text{equivalent}}{k_\text{equivalent}}
 	\implies \boxed{\frac{1}{k_1}+\frac{1}{k_2}=\frac{1}{k_\text{equivalent}}}
 \end{equation*}
 
-In parallel: two separate springs are both attached to a mass $m$. Using the same notation as before, obviously:
+In parallel: two separate springs are both attached to a mass $m$. Using the same notation, and $k=F/\Delta x$:
 \begin{equation*}
 	\left\{\begin{gathered}
-		\Delta x_1=\Delta x_2=\Delta x_\text{equivalent} \\
-		F_1=F_2=F_\text{equivalent}
+		\Delta x=\Delta x_1=\Delta x_2=\Delta x_\text{equivalent} \\
+		F_1+F_2=F_\text{equivalent}
 	\end{gathered}\right\}
-	\implies F_1\Delta x_1=F_2\Delta x_2=F_\text{equivalent}\Delta x_\text{equivalent}
-	\implies k_1=k_2=k_\text{equivalent}
+	\implies \frac{F_1}{\Delta x}+\frac{F_2}{\Delta x}=\frac{F_\text{equivalent}}{\Delta x}
+	\implies \boxed{k_1+k_2=k_\text{equivalent}}
 \end{equation*}
 Springs are in parallel if:
 \begin{itemize}
