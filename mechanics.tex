@@ -2,6 +2,7 @@
 \usepackage[letterpaper,portrait,top=0.4in, left=0.6in, right=0.6in, bottom=1in]{geometry}
 
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{soul}
 \usepackage{graphicx, float}
 \usepackage{suffix}
 \usepackage{soul}
@@ -257,7 +258,7 @@ Must have negative sign. So, we can also have potential energy in terms of force
 	\implies -F_y \,\mathrm{d}y=\mathrm{d}U
 	\implies \Delta U=-\int F_y\,\mathrm{d}y
 \end{equation*}
-\remark*{In nature, objects want to lower their potential energy. (NOTE: lower the number, NOT the magnitude of kinetic energy.)}
+\remark*{In nature, objects want to lower their potential energy. (NOTE: lower the number, \ul{NOT} the magnitude of kinetic energy.)}
 
 \theorem{Potential energy}{
 	The relationship between potential energy and force is, where $x$ is position:
@@ -268,13 +269,13 @@ Must have negative sign. So, we can also have potential energy in terms of force
 	\end{equation*}
 }
 
-In simple harmonic motion, the potential energy-displacement from equilibrium graph is a positive parabola passing through the origin. There is no potential energy at equilibrium ($x=0$) and potential energy is maximized at the highest displacement.
+In simple harmonic motion, the potential energy-displacement from equilibrium graph is a positive parabola passing through the origin. There is no potential energy at equilibrium ($x=0$) and \ul{potential energy is maximized at the highest displacement.}
 
 Total energy is the sum of kinetic energy and potential energy: $K+U$. By conservation of energy, the total energy is constant for all displacement.
 
 \definition{The work done by a \textbf{conservative force} only depends on the initial and final position of the object, not on the path taken.}
 
-A lot of forces are path-dependent. For example, friction depends on the length of the path, so it is not conservative. Forces associated with change in potential energy are conservative.
+A lot of forces are path-dependent. For example, friction depends on the length of the path, so it is not conservative. \ul{Forces associated with change in potential energy are conservative.}
 
 \example{Gravitational potential}{
 	Change in gravitational potential energy is $\Delta U_g=mgy$. We can calculate the force:
@@ -391,9 +392,10 @@ The highest point in the pendulum is reached when the gravitational potential en
 		\begin{itemize}
 			\item Name of graph is ``[value on $y$ axis] vs [value on $x$ axis]'' or ``[value on $y$] wrt [value on $x$]''.
 			\item Line of best fit: equal number of points above and below the line.
-			\item When determining slope of line of best fit, do not choose original values: $\text{Slope}=\Delta y/\Delta x=(y_1-y_0)/(x_1-x_0)$. \textbf{The slope has units.}
+			\item When determining slope of line of best fit, do not choose original values: $\text{Slope}=\Delta y/\Delta x=(y_1-y_0)/(x_1-x_0)$. \ul{The slope has units.}
 		\end{itemize}
 	\item Integrals: must have limits of integration and differential.
+	\item \ul{All quantities have units.}
 \end{itemize}}
 
 \subsection{Equilibrium}
@@ -461,12 +463,12 @@ Is Newton's second law for the center of mass.
 	If only internal forces act on a system, the center of mass does not move: $\Sigma F=Ma_\text{cm}=0 \implies a_\text{cm}=0$.
 }
 
-\remark{Center of mass and internal forces}{
-	If only internal forces act on a system, then the net external force $\Sigma F=0$, so the center of mass does not move. This appears in problems involving two objects in a system, asking for the position of both objects after one moves relative to the other. The center of mass of the system does not change, so we can solve for the positions by setting the center of mass before equal to the center of mass after the movement.
+\theorem{Center of mass and internal forces}{
+	If only internal forces act on a system, then the net external force $\Sigma F=0$, so the \ul{center of mass does not move.} This appears in problems involving two objects in a system, asking for the position of both objects after one moves relative to the other. The center of mass of the system does not change, so we can solve for the positions by setting the center of mass before equal to the center of mass after the movement.
 }
 
 \remark{Center of mass, rotation and translation}{
-	If a force is applied on a free object, it will only translate if the force is in line with the center of mass, and will rotate and translate otherwise.
+	If a force is applied on a free object, it will only translate if the force is in line with the center of mass, and will rotate and translate otherwise, because there is no net torque. The lever arm length is measured from where the force is applied to the pivot, in this case, the center of mass.
 }
 
 \subsection{Density}
@@ -735,7 +737,7 @@ Inertia is related to mass; the greater the mass, the greater the inertia. Newto
 	where $\tau$ is torque, $\alpha$ is angular acceleration and $I$ is the moment of inertia/rotational inertia.
 }
 
-The moment of inertia $I$ is a property of the body that defines its resistance to change in angular velocity about an axis of motion. It takes mass, distribution of mass and position of rotation axis.
+The moment of inertia $I$ is a property of the body that defines its resistance to change in angular velocity about an axis of motion. It takes mass, distribution of mass and position of rotation axis into account.
 
 Suppose we have a point mass of mass $m$, $r$ units away from the axis of rotation. Starting with Newton's second law, multiply by $r$, and recall that linear acceleration $a=\alpha r$:
 \begin{equation*}
@@ -797,7 +799,8 @@ The units of torque is newton meter (\si{\newton\meter}). The units of angular a
 
 \subsection{Extended Objects}
 
-A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its central axis. Its moment of inertia is:
+\theorem{Moments of inertia of certain extended objects}{
+A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its central axis.
 \begin{align*}
     I&=\frac12MR^2 \\
 	\intertext{A rod/stick has length $L$ has negligible thickness and is rotating horizontally about its center.}
@@ -809,6 +812,7 @@ A cylinder with height $H$, radius $R$ and mass $M$ is rotating about its centra
 	\intertext{A ring/hoop is a hollow cylinder without bases, and has height $H$, one radius $R$ (the thickness of the surface is negligible) and mass $M$.}
 	I&=MR^2
 \end{align*}
+}
 
 \subsection{Moment of Inertia of a Uniform Rod}
 
@@ -963,7 +967,7 @@ For a solid sphere, $I_ \text{cm}=2MR^2/5$:
 	=\sqrt{\frac65gH}
 \end{align*}
 }
-The final velocity only depends on the shape of the object. The greater the moment of inertia, the slower the object will be. The more the mass is away from the center of rotation, the less translational kinetic energy there will be at the bottom of the slope. A larger portion of energy is used to rotate the object, because $I$ is greater (recall $\tau=I\alpha\implies \alpha=\tau/I$ is inversely proportional to $I$).
+The final velocity only depends on the shape of the object. \ul{The greater the moment of inertia, the slower translationally the object will be.} The more the mass is away from the center of rotation, the less translational kinetic energy there will be at the bottom of the slope. A larger portion of energy is used to rotate the object, because $I$ is greater (recall $\tau=I\alpha\implies \alpha=\tau/I$ is inversely proportional to $I$).
 
 \subsubsection{Friction and Torque}
 
@@ -989,7 +993,7 @@ Similar procedure for other objects with different moments of inertia $I$.
 \theorem{Rolling linear acceleration}{
 	Static friction exerts a force distance $R$ from the center of the rolling object, producing a torque of $F_sR$. Acceleration down the slope depends on the horizontal net force $\Sigma F_x$, which is the horizontal component of gravity $mg\sin\theta$ minus static friction $F_s$.
 }
-If there is no friction, the object will not roll, and will only slide down the slope.
+If there is no friction, the object \ul{will not roll}, and will only slide down the slope.
 
 \subsection{Determining Moment of Inertia}
 
@@ -1029,7 +1033,7 @@ Improvements:
 	\item Make sure eye level with mass and meter stick to calculate $\Delta y$ more accurately.
 	\item Use automated method of timing.
 	\item Increase $\Delta y$: reduces the error involved with starting and stopping the stopwatch (calculation of $\Delta t$), since error is smaller relative to $\Delta t$.
-	\item \hlc{Increase the number of trials with constant experimental conditions.}
+	\item \ul{Increase the number of trials with constant experimental conditions.}
 	\item Increase the number of experimental conditions (by using more masses).
 \end{itemize}
 
@@ -1124,7 +1128,7 @@ Dimensional analysis on $L=I\omega=mvr\sin\theta$ yields equal units:
 
 \subsubsection{Conservation of Momentum}
 
-In general, linear momentum and angular momentum are both conserved. Kinetic energy is not always conserved.
+In general, linear momentum and angular momentum are \ul{both conserved.} Kinetic energy is \ul{not} always conserved.
 
 If one point of the stick is anchored at one point, linear momentum is not conserved because the anchor exerts a net external force on the ball-stick system. Angular momentum is conserved because the anchor exerts no torque (lever arm length is $0$).
 
@@ -1149,7 +1153,7 @@ If one point of the stick is anchored at one point, linear momentum is not conse
 
 	\textbf{Oscillatory motion} is periodic motion where an object moves back and forth about a mean/equilibrium.
 
-	\textbf{Simple harmonic motion} is oscillatory motion where there is a restoring force that is directly proportional to the displacement of the oscillator.
+	\textbf{Simple harmonic motion} is oscillatory motion where there is a restoring force that is \ul{directly proportional} to the displacement of the oscillator.
 }
 
 In a spring, the restoring storing force is $k\Delta x$, which is directly proportional to displacement.
@@ -1166,10 +1170,12 @@ where $\varphi_0$ is the phase shift, $x_ \text{max}$ is the amplitude or radius
 
 To properly describe uniform circular motion, we need an $x$ as a cosine equation and a $y$ as a sine equation.
 
-The general sine equation is:
-\begin{equation*}
-    y=A\sin(\omega t+\varphi_0)
-\end{equation*}
+\theorem{Sine and cosine equation}{
+The general sine equation and the general cosine equation are:
+\begin{align*}
+    y&=A\sin(\omega t+\varphi_0) \\
+    y&=A\cos(\omega t+\varphi_0)
+\end{align*}
 where:
 \begin{align*}
 	y&=\text{position of oscillator on the $y$-axis (m)} \\
@@ -1179,11 +1185,13 @@ where:
 \end{align*}
 At time $t=0$, $y=A\sin(\omega (0)+\varphi_0)=A\sin\varphi_0$ from which the phase shift $\varphi_0$ can be found.
 
-The period is $2\pi/\omega$.
+The period (time between troughs/peaks) is $2\pi/\omega$.
+}
+
 
 \subsection{Springs In Series and In Parallel}
 
-A spring is like a string in that the tension is constant throughout the spring. If we divide a spring into smaller springs, they will have the same restoring force, which means the smaller springs will have a higher spring constant. Figure 7.1.
+A spring is like a string in that the tension is constant throughout the spring. If we divide a spring into smaller springs, they will have the \ul{same restoring force}, which means the smaller springs will have a higher spring constant. Figure 7.1.
 
 In series: Suppose we have two springs attached to each other, the lower attached to a mass $m$ with forces $F_1,F_2$ and spring constant $k_1,k_2$. We have another single spring attached to the same mass $m$ with forces $F_\text{equivalent}$ and spring constant $k_\text{equivalent}$. As before, the forces are all equal: $F_1+F_2=F_\text{equivalent}$. The displacement is also the same: $\Delta x_1+\Delta x_2=\Delta x_\text{equivalent}$. From Hooke's law $F=k\Delta x\implies x=F/k$, and since all the forces are equal:
 \begin{equation*}
@@ -1328,7 +1336,7 @@ where $I$ is the moment of inertia of the hanging rotating mass about the center
 	\item Drag force $F_\text{D}$ is dependent on the relative speed between the object and the fluid.
 	\item $F_\text{D}$ \textit{imposes} a terminal velocity $v_\text{T}$ on the object, which occurs when the object moves long/fast enough.
 \end{itemize}
-Total mechanical energy is not conserved when there is drag. Negative work is done by the friction and some energy is transferred to thermal energy.
+Total mechanical energy is \ul{not conserved when there is drag.} Negative work is done by the friction and some energy is transferred to thermal energy.
 
 How to solve drag problems:
 \begin{enumerate}
@@ -1352,7 +1360,7 @@ Terminal velocity $v_\text{T}=\lim_{t\to\infty}v(t)$.
 
 \subsection{Graphing}
 
-When there is drag, position, velocity and acceleration are all \underline{exponential}. We drop an object with drag, and that positive is down:
+When there is drag, position, velocity and acceleration are all \ul{exponential}. We drop an object with drag, and that positive is down:
 \begin{itemize}
 	\item Position will increase exponentially (concave up), tends to increasing linearly as it reaches terminal velocity.
 	\item Velocity will increase exponentially (concave down) and flattens out as it reaches terminal velocity.
@@ -1384,9 +1392,9 @@ By Newton's second law:
 	F_\text{g}=ma=\frac{GMm}{r^2}
 	\implies a=\frac{GM}{r^2}
 \end{equation*}
-is the acceleration due to gravity near the planet's surface: $g=GM/r^2$. At higher distances from the surface, the distance $r$ is greater, so acceleration due to gravity is lower.
+is the acceleration due to gravity \ul{near the planet's surface:} $g=GM/r^2$. At higher distances from the surface, the distance $r$ is greater, so acceleration due to gravity is lower.
 
-The relationship between the gravitational force exerted on an object $F_\text{g}$ and its center of mass's distance to the planet's center of mass $r$ is in Figure 8.1. $F_\text{g}$ is highest on the surface of the planet. From $0$ to the surface, $F_\text{g}$ increases linearly; for higher values, $F_\text{g}$ decreases proportional to $1/r^2$.
+The relationship between the gravitational force exerted on an object $F_\text{g}$ and its center of mass's distance to the planet's center of mass $r$ is in Figure 8.1. $F_\text{g}$ is highest on the surface of the planet. \ul{From $0$ to the surface, $F_\text{g}$ increases linearly; for higher values, $F_\text{g}$ decreases proportional to $1/r^2$.}
 
 \subsection{Orbits}
 
@@ -1436,7 +1444,7 @@ The gravitational potential energy of a system with three objects is the sum of 
 \end{equation*}
 The total energy of a object orbiting another, denoted $E_\text{T}$, is the sum of its kinetic and (gravitational) potential energies. 
 
-\underline{In a circular orbit}, the velocity of the orbiting object is $v=\sqrt{GM/r}$ (can be found with $F_\text{c}=mv^2/r=GMm/r^2=F_\text{g}$).
+\ul{In a circular orbit}, the velocity of the orbiting object is $v=\sqrt{GM/r}$ (can be found with $F_\text{c}=mv^2/r=GMm/r^2=F_\text{g}$).
 \begin{equation*}
 	E_\text{T}
 	=K+U_\text{g}=\frac12mv^2+\left( -\frac{GMm}{r} \right)
@@ -1447,7 +1455,7 @@ The total energy of a object orbiting another, denoted $E_\text{T}$, is the sum 
 \end{equation*}
 
 \theorem{Total energy of orbiting object}{
-	The total energy $E_\text{T}$ is exactly half the gravitational potential energy.
+	\ul{In circular orbits only}, the total energy $E_\text{T}$ is exactly half the gravitational potential energy.
 	\begin{equation*}
 		E_\text{T}
 		=-\frac12 \frac{GMm}{r}
@@ -1513,7 +1521,7 @@ Relationship between gravitational force and distance to the center of the Earth
 
 Break down the Earth into infinitely many point masses, each with mass $\mathrm{d}m$. An object of mass $m$ outside the Earth experiences attraction to each of these point masses in that direction and with magnitude $\mathrm{d}F_\text{g}$. Each such attraction to each point mass will cancel each other out, and the final net force is one pointing toward the center of mass. See Figure 9.2. The gravitational force derived from parts of the Earth outside the dotted line will cancel out with each other, and the net force is zero.
 
-When inside the Earth, and for an object inside the Earth, only those parts of the Earth with distance to the center (radius) \underline{less} than that of the object, will exert a net force of attraction. See Figure 9.3.
+When inside the Earth, and for an object inside the Earth, only those parts of the Earth with distance to the center (radius) \ul{less} than that of the object, will exert a net force of attraction. See Figure 9.3.
 
 We can derive the force of gravitation while inside the earth. Assume the Earth is of uniform density, then:
 \begin{equation*}
