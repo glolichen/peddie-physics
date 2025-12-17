@@ -1230,7 +1230,7 @@ Suppose the position is defined as, where $A$ is amplitude, or the maximum value
 	\begin{alignat*}{2}
 		\text{Spring-mass system:}& \qquad T&&=2\pi \sqrt{\frac mk} \\
 		\text{Simple pendulum:}& \qquad T&&=2\pi \sqrt{\frac lg} \\
-		\text{Physical pendulum:}& \qquad T&&=2\pi \sqrt{\frac{I_\text{cm}}{rmg}} \\
+		\text{Physical pendulum:}& \qquad T&&=2\pi \sqrt{\frac{I_\text{rot}}{rmg}} \\
 		\text{Torsional pendulum:}& \qquad T&&=2\pi \sqrt{\frac {I_\text{obj}}k}
 	\end{alignat*}
 	where:
@@ -1239,7 +1239,7 @@ Suppose the position is defined as, where $A$ is amplitude, or the maximum value
 		m&=\text{mass} \\
 		k&=\text{spring/torsional constant} \\
 		l&=\text{length of the string (simple pendulum)} \\
-		I_\text{cm}&=\text{moment of inertia about the center of mass (physical pendulum)} \\
+		I_\text{rot}&=\text{moment of inertia about the axis of rotation (physical pendulum)} \\
 		r&=\text{distance from axis of rotation to center of mass (physical pendulum)} \\
 		I_\text{obj}&=\text{moment of inertia of the object (torsional pendulum)}
 	\end{align*}
@@ -1336,7 +1336,7 @@ How to solve drag problems:
 	\item Write Newton's second law: $\Sigma F=F-F_\text{D}=ma=m(\mathrm{d}v/\mathrm{d}t)$. $F_\text{D}$ is dependent on velocity $v$ so this is a differential equation.
 \end{enumerate}
 
-\subsection{Relationship between velocity and drag}
+\subsection{Relationship Between Velocity and Drag}
 
 In small objects traveling at a low velocity, drag force is directly proportional to velocity (negative sign indicates $F_\text{D}$ acts opposite to direction of $v$):
 \begin{align*}
@@ -1423,7 +1423,9 @@ The gravitational potential energy of a system with three objects is the sum of 
 \begin{equation*}
 	U_{\text{g},\text{system}}=U_{\text{g},1,2}+U_{\text{g},1,3}+U_{\text{g},2,3}
 \end{equation*}
-The total energy of a object orbiting another, denoted $E_\text{T}$, is the sum of its kinetic and (gravitational) potential energies. The velocity of the orbiting object is $v=\sqrt{GM/r}$ (can be found with $F_\text{c}=mv^2/r=GMm/r^2=F_\text{g}$).
+The total energy of a object orbiting another, denoted $E_\text{T}$, is the sum of its kinetic and (gravitational) potential energies. 
+
+\underline{In a circular orbit}, the velocity of the orbiting object is $v=\sqrt{GM/r}$ (can be found with $F_\text{c}=mv^2/r=GMm/r^2=F_\text{g}$).
 \begin{equation*}
 	E_\text{T}
 	=K+U_\text{g}=\frac12mv^2+\left( -\frac{GMm}{r} \right)
@@ -1486,8 +1488,42 @@ By conservation of energy:
 \theorem{Escape velocity}{
 	The escape velocity when orbiting an object of mass $M$ at a distance $R$ from its center of mass is:
 	\begin{equation*}
-		v_\text{sc}=\sqrt{\frac{2GM}{R}}
+		v_\text{esc}=\sqrt{\frac{2GM}{R}}
 	\end{equation*}
+}
+
+\subsection{Orbital Dynamics}
+
+Hohmann transfer orbits: moving object frm lower circular orbit to higher elliptical orbit, to higher circular orbit (intercepting with moon, for example).
+
+\subsection{Newton's Shell Theorem}
+
+Relationship between gravitational force and distance to the center of the Earth: increases linearly when under the surface, decreases proportionally to $1/r^2$ when outside. Why?
+
+Break down the Earth into infinitely many point masses, each with mass $\mathrm{d}m$. An object of mass $m$ outside the Earth experiences attraction to each of these point masses in that direction and with magnitude $\mathrm{d}F_\text{g}$. Each such attraction to each point mass will cancel each other out, and the final net force is one pointing toward the center of mass. See Figure 9.2. The gravitational force derived from parts of the Earth outside the dotted line will cancel out with each other, and the net force is zero.
+
+When inside the Earth, and for an object inside the Earth, only those parts of the Earth with distance to the center (radius) \underline{less} than that of the object, will exert a net force of attraction. See Figure 9.3.
+
+We can derive the force of gravitation while inside the earth. Assume the Earth is of uniform density, then:
+\begin{equation*}
+	\rho_\text{inside}=\frac{M_\text{inside}}{V_\text{inside}}=\frac{M_E}{V_E}=\rho_E
+\end{equation*}
+Since we know the volume of a sphere $V=(4/3)\pi r^3$:
+\begin{equation*}
+	\frac{M_\text{inside}}{\frac43\pi R_\text{inside}^3}=\frac{M_E}{\frac43\pi R_E^3}
+	\implies M_\text{inside}=\frac{R_\text{inside}^3}{R_E^3}M_E
+\end{equation*}
+From $F_\text{g}=GMm/r^2$, where $m$ is the mass of the object, and $r$ is its distance to the center. Note that the object's distance $r$ is the same as the ``inside radius'' $R_\text{inside}$:
+\begin{equation*}
+	F_\text{g}=\frac{GM_\text{inside}m}{r^2}=\frac{Gm}{r^2}M_\text{inside}
+	=\frac{Gm}{r^2}\frac{R_\text{inside}^3}{R_E^3}M_E
+	=\frac{GM_Emr^3}{R_E^3r^2}
+	=\underbrace{\left(\frac{GM_Em}{R_E^3}\right)}_\text{constant}r
+\end{equation*}
+Thus the force and acceleration are proportional to $r$.
+
+\theorem{Newton's shell theorem}{
+	The net gravitational force exerted on an object $m$ outside a specifically symmetric object $M$ can be determined by treating $M$ as a point mass located at its center of mass.
 }
 
 \section{Density}
