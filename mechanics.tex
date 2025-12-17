@@ -1350,6 +1350,17 @@ If two objects $P$ and $Q$ look identical but $P$ is heavier, then $P$ will acce
 
 Terminal velocity $v_\text{T}=\lim_{t\to\infty}v(t)$.
 
+\subsection{Graphing}
+
+When there is drag, position, velocity and acceleration are all \underline{exponential}. We drop an object with drag, and that positive is down:
+\begin{itemize}
+	\item Position will increase exponentially (concave up), tends to increasing linearly as it reaches terminal velocity.
+	\item Velocity will increase exponentially (concave down) and flattens out as it reaches terminal velocity.
+	\item Acceleration decreases exponentially (concave up) and tends to zero as it reaches terminal velocity.
+\end{itemize}
+
+In this case, the net force $\Sigma F=mg-kv=ma\implies mg-kv=m(\mathrm{d}v/\mathrm{d}t)$. This differential equation can be solved by separation of variables, yielding an exponential equation for $v$ with $v=0$ at $t=0$ (this value is obtained by using the correct value of $C$). Solving the differential equation is left as an exercise to the reader.
+
 \section{Gravitational Theory}
 
 \theorem{Newton's law of universal gravitation}{
