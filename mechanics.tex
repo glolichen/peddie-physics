@@ -995,6 +995,48 @@ Similar procedure for other objects with different moments of inertia $I$.
 }
 If there is no friction, the object \ul{will not roll}, and will only slide down the slope.
 
+\subsubsection{Rolling with Slipping}
+
+Condition for pure rolling ($\omega$ is angular velocity, $R$ is radius):
+\begin{equation*}
+	v_\text{cm}=\underbrace{\omega R}_\text{tangential velocity}
+\end{equation*}
+When an object is rolling down an inclined plane, static friction $F_\text{s}$ causes the rotational part of rollling. $F_\text{s}$ does no work so energy is not dissipated. The object will continue rolling even if there is no more friction.
+
+Properties of rolling with slipping:
+\begin{itemize}
+	\item When an object rolls and skips, there is kinetic friction $F_\text{k}$ involved.
+	\item $F_\text{k}$ affects both $v_\text{cm}$ and $\omega$.
+	\item Rollingg with slipping is \textit{transient} (unstable, changes over time) because $F_\text{k}$ will eventually cause $v_\text{cm}$ and $\omega R$ to become equal, at which point the object rolls without slipping.
+	\item Energy \ul{is} dissipated (mechanical energy transferred to heat/thermal energy).
+\end{itemize}
+
+\ul{Bowling ball where the first part of the lane is smooth/have zero friction.} In the first part, the ball only translates: at $t=0,\omega_0=0\implies v_\text{cm}>\omega_0 R$. In the part with friction, there is slipping governed by $\Sigma F_x=ma$:
+\begin{equation*}
+    \Sigma F_x=ma
+	\implies -F_\text{k}=-\mu_\text{k}N=-\mu_\text{k}mg=ma
+	\implies a=-u_kg
+\end{equation*}
+This value of acceleration can be used to calculate $v_\text{cm}$. As time increases, $v_\text{cm}$ decreases. Rolling is governed bt $\Sigma \tau=I\alpha$. Torque is $F_\text{k}R$ (positive because $F_\text{k}R$ causes the rotation).
+\begin{equation*}
+    \Sigma \tau=ma
+	\implies F_\text{k}R=\mu_\text{k}NR=\mu_\text{k}mgR=I\alpha
+	\implies \alpha=\frac{\mu_\text{k}mgR}{I}
+\end{equation*}
+Angular acceleration $\alpha$ can be used to calculate angular velocity. As time increases, $\omega$ and therefore $\omega R$ increases. At some point in this area with friction, $v_\text{cm}=\omega R$ and rolls without slipping.
+
+\ul{Backspin.} The object spins backwards and moves forward, but will change direction and translate backwards while rolling without slipping. As before, $a=-\mu_\text{k}g$ so $v_\text{cm}$ decreases as time increases. In this case, torque is negative; it decreases angular velocity instead of increasing it.
+\begin{equation*}
+	\alpha=-\frac{\mu_\text{k}mgR}{I}
+\end{equation*}
+As time increases, $\omega$ and $\omega R$ decreases. At some point, $v_\text{cm}$ slows down to zero and turns around. It will roll backwards without slipping. This turnaround point occurs when $v_\text{cm}=0 \iff v_\text{cm}=v_0+at=v_0-\mu_\text{k}gt=0$. Angular velocity $\omega$ at this turn around point can be calculated with the $t$ value calculated before and $\alpha$.
+
+\ul{Topspin.} $F_\text{k}$ increases $v_\text{cm}$:
+\begin{equation*}
+	a=\mu_\text{k} g
+	\implies v_\text{cm}=v_0+\mu_\text{k}gt
+\end{equation*}
+
 \subsection{Determining Moment of Inertia}
 
 In Figure 6.8, we have a rotational and a translational part:
@@ -1523,6 +1565,18 @@ Break down the Earth into infinitely many point masses, each with mass $\mathrm{
 
 When inside the Earth, and for an object inside the Earth, only those parts of the Earth with distance to the center (radius) \ul{less} than that of the object, will exert a net force of attraction. See Figure 9.3.
 
+\theorem{Density}{
+	\begin{equation*}
+	    \rho=\frac{M}{V}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\rho&=\text{density (\si{\kilogram/\meter^3})} \\
+		M&=\text{mass (kg)} \\
+		V&=\text{volume (\si{m^3})}
+	\end{align*}
+}
+
 We can derive the force of gravitation while inside the earth. Assume the Earth is of uniform density, then:
 \begin{equation*}
 	\rho_\text{inside}=\frac{M_\text{inside}}{V_\text{inside}}=\frac{M_E}{V_E}=\rho_E
@@ -1543,20 +1597,6 @@ Thus the force and acceleration are proportional to $r$.
 
 \theorem{Newton's shell theorem}{
 	The net gravitational force exerted on an object $m$ outside a specifically symmetric object $M$ can be determined by treating $M$ as a point mass located at its center of mass.
-}
-
-\section{Density}
-
-\theorem{Density}{
-	\begin{equation*}
-	    \rho=\frac{M}{V}
-	\end{equation*}
-	where:
-	\begin{align*}
-		\rho&=\text{density (\si{\kilogram/\meter^3})} \\
-		M&=\text{mass (kg)} \\
-		V&=\text{volume (\si{m^3})}
-	\end{align*}
 }
 
 \end{document}
