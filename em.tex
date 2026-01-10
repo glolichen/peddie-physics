@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[letterpaper,portrait,top=0.4in, left=0.6in, right=0.6in, bottom=1in]{geometry}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{soul}
+\usepackage{graphicx, float}
+\usepackage{suffix}
+\usepackage{soul}
+\usepackage{esdiff}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{mdframed}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage[colorlinks, linkcolor=blue]{hyperref}
+\usepackage[per-mode=symbol]{siunitx}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titling}
+\usepackage{mlmodern}
+
+\newcommand{\alignedintertext}[1]{%
+  \noalign{%
+    \vtop{\hsize=\linewidth#1\par
+    \expandafter}%
+    \expandafter\prevdepth\the\prevdepth
+  }%
+}
+
+\newcommand{\definition}[1]{\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,parbox=false] #1 \end{tcolorbox}}
+
+\newcommand{\theorem}[2]{\begin{tcolorbox}[title={#1},colback=blue!5!white,colframe=blue!75!black,parbox=false] #2 \end{tcolorbox}}
+\WithSuffix\newcommand\theorem*[1]{\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=false] #1 \end{tcolorbox}}
+
+\newcommand{\example}[2]{\begin{tcolorbox}[title={Example: #1},colback=brown!5!white,colframe=brown!75!black,parbox=false] #2 \end{tcolorbox}}
+
+\newcommand{\remark}[2]{\begin{tcolorbox}[title={#1},colback=black!5!white,colframe=black!75!black,parbox=false] #2 \end{tcolorbox}}
+\WithSuffix\newcommand\remark*[1]{\begin{tcolorbox}[colback=black!5!white,colframe=black!75!black,parbox=false] #1 \end{tcolorbox}}
+
+\newcommand{\hlc}[2][yellow]{\sethlcolor{#1}\hl{#2}}
+
+\newcommand*{\deriv}[1][x]{\ensuremath{\dfrac{\mathrm{d}}{\mathrm{d}#1}}}
+\newcommand*{\floor}[1]{\ensuremath{\lfloor #1\rfloor}}
+
+\title{\vspace*{-40pt}\textsc{AP Physics C: Electricity and Magnetism Notes}}
+\author{Jayden Li}
+\date{Winter and Spring Trimesters, 2026}
+
+\begin{document}
+\setstretch{1.25}
+\fontsize{11pt}{12pt}\selectfont
+\setlength{\abovedisplayskip}{\abovedisplayskip/2}
+\setlength{\belowdisplayskip}{\belowdisplayskip/2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\maketitle
+
+\tableofcontents
+% \newpage
+
+\section{Circuit}
+
+\subsection{Circuit Basics}
+
+Equipment:
+\begin{itemize}
+	\item D-cell battery/cells: with positive and negative terminals.
+	\item Battery holder.
+	\item Ammeter (machine labeled ``\ul{A}'').
+	\item Multimeter (can be ammeter, voltmeter or ohmmeter): has ``test leads'' or ``probes.''
+	\item Single pole single throw switch and single pole double throw switch.
+	\item Wires: alligator-alligator wires (alligator clips on both ends), alligator-banana wires, banana-banana wires.
+	\item Sockets (light bulbs screw into the hole).
+	\item Round bulbs and long bulbs.
+\end{itemize}
+
+There are electrons everywhere in the circuit (all metal solids have delocalized electrons). The battery serves as a ``pump'' to move electrons around through the circuit. We can use the voltmeter in the multimeter to measure the ``pump strength.'' 
+
+We can find the potential difference across the battery $\Delta V_\text{battery}$ and across the two light bulbs $\Delta V_{\text{B}_1}$ and $\Delta V_{\text{B}_2}$.
+\begin{align*}
+	\Delta V_\text{battery}&=4.34\,\si{\volt} \\
+	\Delta V_{\text{B}_1}&=1.84\,\si{\volt} \\
+	\Delta V_{\text{B}_2}&=1.83\,\si{\volt}
+\end{align*}
+Since energy is conserved the potential difference of the bulbs should be the same as that of the battery, but it is not. We need to take $\Delta V$ of the wires and switch into account as well. 
+
+\definition{
+	\textbf{Potential difference} ($\Delta V$) is measured in volts (V), and is related to energy.
+
+	\textbf{Flow rate/current} ($I$) measures the number of electrons that pass a certain point per unit of time, and is measured in amperes (A).
+
+	\textbf{Resistance} ($R$) is how difficult it is for electrons to flow through and is measured in ohms ($\Omega$).
+}
+
+The current is equal across the circuit.
+
+\theorem{Ohm's Law}{
+	\begin{equation*}
+	    \Delta V=IR
+	\end{equation*}
+	where:
+	\begin{align*}
+		\Delta V&=\text{potential difference (V)} \\
+		I&=\text{current (A)} \\
+		R&=\text{resistance (\si{\ohm})}
+	\end{align*}
+}
+
+Resistors convert electrical energy to thermal energy. Light bulbs are a special case of resistor that convert electrical energy to thermal and light energy.
+
+\theorem{Resistors in series}{
+	When resistors are connected in series, current is equal across any part of the circuit:
+	\begin{align*}
+		I_\text{bat}&=I_1=I_2=I_3 \\
+		\intertext{Assuming no potential is lost anywhere:}
+		\Delta V_\text{bat}&=\Delta V_1+\Delta V_2+\Delta V_3 \\
+		R_\text{total}&=R_1+R_2+R_3
+	\end{align*}
+}
+
+\theorem{Resistance}{
+	\begin{equation*}
+	    R=\frac{\rho l}{A}
+	\end{equation*}
+	where $\rho$ is the resistivity of the material (\si{\ohm\meter}), $l$ is length (m) and $A$ is cross-sectional area (\si{\meter^2}).
+}
+
+To connect a parallel circuit, multiple junctions need to be made. A junction is where three or more wires are connected.
+
+\theorem{Resistors in parallel}{
+	The currents are different at different parts of the circuit:
+	\begin{align*}
+		I_\text{bat}&=I_1+I_2+I_3 \\
+		\Delta V_\text{bat}&=\Delta V_1=\Delta V_2=\Delta V_3 \\
+		\frac{1}{R_\text{total}}&=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
+	\end{align*}
+	Similar to springs in parallel.
+}
+From $I=\Delta V/R$ and $\Delta V_\text{bat}=\Delta V_1=\Delta V_2=\Delta V_3$:
+\begin{equation*}
+	I_\text{bat}=I_1+I_2+I_3
+	\implies \frac{\Delta V_\text{bat}}{R_\text{total}}=\frac{\Delta V_1}{R_1}+\frac{\Delta V_2}{R_2}+\frac{\Delta V_3}{R_3}
+	\implies \boxed{\frac{1}{R_\text{total}}=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}
+\end{equation*}
+
+\remark{Electron Sea Model}{
+	In metals, atoms form metallic bonds: each metal atom releases its valence electrons, which then form a sea of delocalized electrons. These electrons are then attracted to multiple atoms. These bonds are very strong and lead to high melting points for metals.
+
+	Delocalized electrons can move in a direction caused by an electric force.
+}
+
+Electrons flow from the negative terminal to the positive terminal. Conventional current is the direction in which positive charges flow, and is opposite to the direction electrons flow.
+
+Ohmmeters are connected when there are no charges flowing; voltmeter and ammeter need the circuit to be active. Ammeter is connected in a circuit; voltmeter and ohmmeter measure across a circuit component (with a multimeter). In reality, these devices will modify the circuit when they are attached. An ammeter actually has a very small resistance, but we assume it has \ul{zero resistance}. Also assume that a voltmeter has \ul{infinite resistance}.
+
+If two components are on different paths to the battery, they have the same potential difference (parallel).
+
+\subsection{Circuit Analysis}
+
+A \textbf{combination circuit} is one which is not purely series or purely parallel. We can analyze such a circuit by calculating the total/equivalent resistance.
+
+\end{document}
+
