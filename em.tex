@@ -86,7 +86,7 @@ We can find the potential difference across the battery $\Delta V_\text{battery}
 Since energy is conserved the potential difference of the bulbs should be the same as that of the battery, but it is not. We need to take $\Delta V$ of the wires and switch into account as well. 
 
 \definition{
-	\textbf{Potential difference} ($\Delta V$) is measured in volts (V), and is related to energy.
+	\textbf{Potential difference} ($\Delta V$) is measured in volts (V), and is related to energy. In Ye Olde Times, it is denoted $V$ or emf (electromotive force), and $\Delta V_\text{bat}$ is denoted $\varepsilon$.
 
 	\textbf{Flow rate/current} ($I$) measures the number of electrons that pass a certain point per unit of time, and is measured in amperes (A).
 
@@ -126,7 +126,11 @@ Resistors convert electrical energy to thermal energy. Light bulbs are a special
 	where $\rho$ is the resistivity of the material (\si{\ohm\meter}), $l$ is length (m) and $A$ is cross-sectional area (\si{\meter^2}).
 }
 
-To connect a parallel circuit, multiple junctions need to be made. A junction is where three or more wires are connected.
+\definition{A \textbf{junction/node} is a point where three or more wires are connected.
+
+A \textbf{branch} connects two nodes.}
+
+To connect a parallel circuit, multiple junctions need to be made. 
 
 \theorem{Resistors in parallel}{
 	The currents are different at different parts of the circuit:
@@ -150,15 +154,51 @@ From $I=\Delta V/R$ and $\Delta V_\text{bat}=\Delta V_1=\Delta V_2=\Delta V_3$:
 	Delocalized electrons can move in a direction caused by an electric force.
 }
 
-Electrons flow from the negative terminal to the positive terminal. Conventional current is the direction in which positive charges flow, and is opposite to the direction electrons flow.
+Electrons flow from the negative terminal to the positive terminal. Conventional current is the direction in which positive charges flow, and is opposite to the direction electrons flow. The direction electrons flow is marked $e^-$ and conventional current is marked $I$. The ``long'' end of the battery symbol is positive.
 
 Ohmmeters are connected when there are no charges flowing; voltmeter and ammeter need the circuit to be active. Ammeter is connected in a circuit; voltmeter and ohmmeter measure across a circuit component (with a multimeter). In reality, these devices will modify the circuit when they are attached. An ammeter actually has a very small resistance, but we assume it has \ul{zero resistance}. Also assume that a voltmeter has \ul{infinite resistance}.
 
 If two components are on different paths to the battery, they have the same potential difference (parallel).
 
-\subsection{Circuit Analysis}
+\definition{A \textbf{combination circuit} is one which is not purely series or purely parallel. We can analyze such a circuit by calculating the total/equivalent resistance.}
 
-A \textbf{combination circuit} is one which is not purely series or purely parallel. We can analyze such a circuit by calculating the total/equivalent resistance.
+\theorem{Power}{
+	\begin{equation*}
+	    P
+		=I\Delta V
+		=I^2R
+		=\frac{\Delta V^2}{R}
+	\end{equation*}
+	where:
+	\begin{align*}
+		P&=\text{power (W)} \\
+		I&=\text{current (A)} \\
+		\Delta V&=\text{potential difference (V)} \\
+		R&=\text{resistance (\si{\ohm})}
+	\end{align*}
+	The sum of power in each resistors equals the power in the battery.
+}
+
+Resistors dissipate energy by converting electrical energy to thermal energy at a rate equal to $P=I\Delta V=\ldots$
+
+\remark{Light bulb ratings}{
+	Suppose a light bulb is rated at $p\,\si{\watt}$ and $v\,\si{\volt}$. $p$ relates to the brightness of the light bulb, and $v$ is the ideal conditions of the light bulb. From here, we can find the current and resistance of the light bulb.
+
+	Light bulb assumptions:
+	\begin{itemize}
+	    \item The brightness of a light bulb is directly proportional to the power.
+		\item The resistance of a light bulb is constant.
+	\end{itemize}
+}
+
+\remark{Electric bills}{
+	The house is billed by energy used in kWh, which is actually a unit of energy.
+	\begin{equation*}
+		1\,\text{kWh}=3.6\times10^6\,\si{\joule}
+	\end{equation*}
+}
+
+In a short circuit, a path with small/virtually zero resistance forms, adding a parallel path. The overall/equivalent resistance drops even though $\Delta V_\text{bat}$ is constant, increasing the current and therefore the power. A circuit breaker/fuse will trip/melt and open the circuit when current is higher than a certain limit.
 
 \end{document}
 
