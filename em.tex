@@ -61,8 +61,6 @@
 
 \section{Circuit}
 
-\subsection{Circuit Basics}
-
 Equipment:
 \begin{itemize}
 	\item D-cell battery/cells: with positive and negative terminals.
@@ -140,6 +138,14 @@ To connect a parallel circuit, multiple junctions need to be made.
 		\frac{1}{R_\text{total}}&=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
 	\end{align*}
 	Similar to springs in parallel.
+
+	A shortcut: if the total equivalent resistance of a parallel circuit is $R_T$ and the current entering the circuit is $I_T$, the current through branch $i$ is. Since the circuit is parallel $R_T$ is less than the individual $R_i$'s.
+	\begin{equation*}
+	    I_i
+		=I_T\cdot \frac{\frac{1}{R_i}}{\sum_k \frac{1}{R_k}}
+		=I_T\cdot \frac{\frac{1}{R_i}}{\frac{1}{R_T}}
+		=I_T\cdot \frac{R_T}{R_i}
+	\end{equation*}
 }
 From $I=\Delta V/R$ and $\Delta V_\text{bat}=\Delta V_1=\Delta V_2=\Delta V_3$:
 \begin{equation*}
@@ -182,7 +188,7 @@ If two components are on different paths to the battery, they have the same pote
 Resistors dissipate energy by converting electrical energy to thermal energy at a rate equal to $P=I\Delta V=\ldots$
 
 \remark{Light bulb ratings}{
-	Suppose a light bulb is rated at $p\,\si{\watt}$ and $v\,\si{\volt}$. $p$ relates to the brightness of the light bulb, and $v$ is the ideal conditions of the light bulb. From here, we can find the current and resistance of the light bulb.
+	Suppose a light bulb is rated at $p\,\si{\watt}$ and $v\,\si{\volt}$. $p$ relates to the brightness of the light bulb. From the formula $P=(\Delta V)^2/R$, we can determine the resistance of the light bulb: $R=v^2/p$.
 
 	Light bulb assumptions:
 	\begin{itemize}
@@ -199,6 +205,37 @@ Resistors dissipate energy by converting electrical energy to thermal energy at 
 }
 
 In a short circuit, a path with small/virtually zero resistance forms, adding a parallel path. The overall/equivalent resistance drops even though $\Delta V_\text{bat}$ is constant, increasing the current and therefore the power. A circuit breaker/fuse will trip/melt and open the circuit when current is higher than a certain limit.
+
+\subsection{Internal Resistance}
+
+In an ideal battery, there is no resistance: $R=0$. In practice, a battery contains chemical reactions to generate a potential difference/current, and as the products of the reaction increase, the internal resistance increase.
+
+In a circuit diagram, a resistor is placed to either side of the symbol for a bettery. Sometimes, a dotted line includes these components. The potential difference of the battery and its internal resistance is $\Delta V_\text{T}$ (V).
+\theorem{Potential difference and internal resistance of battery}{
+	\begin{equation*}
+		\Delta V_\text{T}=\varepsilon-Ir
+	\end{equation*}
+	where:
+	\begin{align*}
+		\Delta V_\text{T}&=\text{terminal potential difference (includes internal resistance) (V)} \\
+		\varepsilon&=\text{potential difference of ideal battery (V)} \\
+		I&=\text{current through battery (A)} \\
+		r&=\text{internal resistance ($\Omega$)}
+	\end{align*}
+}
+
+When batteries are connected in series, the ideal potential difference ($\varepsilon$) increases, but internal resistance also increases. The actual increase in terminal potential difference ($\Delta V_\text{T}$) might be quite low, and a lot of thermal energy is produced.
+
+\ul{If batteries are connected in parallel}, there is no increase in potential difference. But the current in the branches where batteries are connected is reduced as batteries are added in parallel, which reduces internal resistance and $\Delta V$ due to internal resistance $Ir$. The battery also lasts longer.
+
+\ul{Potential difference opposing each other}: positive terminals are adjacent to each other. The battery with a lower potential difference is being ``charged,'' until the batteries have the same potential difference.
+
+\theorem{Kirchhoff's Laws}{
+	\begin{enumerate}
+		\item Junction/node law (law of conservation of charges): at any junction (place where 3 or more wires are connected together), the sum of all currents flowing into the junction equals the sum of all currents flowing out of the junction. Charges are conserved.
+		\item Loop law: around \ul{any} loop in the circuit, the sum of all $\Delta V$ changes must equal zero. In conventional current: the battery produces a positive $\Delta V$, resistors and light bulbs produce a negative $\Delta V$. The sum of all components equals $0$. Opposite of using flow of electrons as direction.
+	\end{enumerate}
+}
 
 \end{document}
 
