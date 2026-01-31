@@ -210,7 +210,7 @@ In a short circuit, a path with small/virtually zero resistance forms, adding a 
 
 In an ideal battery, there is no resistance: $R=0$. In practice, a battery contains chemical reactions to generate a potential difference/current, and as the products of the reaction increase, the internal resistance increase.
 
-In a circuit diagram, a resistor is placed to either side of the symbol for a bettery. Sometimes, a dotted line includes these components. The potential difference of the battery and its internal resistance is $\Delta V_\text{T}$ (V).
+In a circuit diagram, a resistor is placed to either side of the symbol for a battery. Sometimes, a dotted line includes these components. The potential difference of the battery and its internal resistance is $\Delta V_\text{T}$ (V).
 \theorem{Potential difference and internal resistance of battery}{
 	\begin{equation*}
 		\Delta V_\text{T}=\varepsilon-Ir
@@ -236,6 +236,153 @@ When batteries are connected in series, the ideal potential difference ($\vareps
 		\item Loop law: around \ul{any} loop in the circuit, the sum of all $\Delta V$ changes must equal zero. In conventional current: the battery produces a positive $\Delta V$, resistors and light bulbs produce a negative $\Delta V$. The sum of all components equals $0$. Opposite of using flow of electrons as direction.
 	\end{enumerate}
 }
+
+\definition{The \textbf{ground} is where potential is zero volts. It is an ideal infinite source or sink of charge that can absorb unlimited charge without changing its potential of zero. It has both positive and negative charges.}
+
+\subsection{Ideal Assumptions}
+
+\begin{itemize}
+	\item An ideal wire has \ul{zero} resistance.
+	\item An ideal ammeter has \ul{zero} resistance.
+	\item An ideal voltmeter has \ul{infinite} resistance.
+	\item An ideal battery has \ul{zero} internal resistance.
+	\item An ideal resistor is ohmic: it follows Ohm's law in that potential difference ($\Delta V$) is directly proportional to current ($I$), with the slope being resistance $R$.
+
+	A light bulb is \ul{not ohmic}: its temperature will increase, increasing its resistance.
+\end{itemize}
+
+\subsection{Charge}
+
+Current is the flow of charged particles, the charge ($q,Q$) being measured in coulombs (C). One coulomb is the amount of charge delivered by a current of one ampere per second.
+\begin{equation*}
+	\left[ \si{\ampere}=\frac{\si{\coulomb}}{\si{\second}} \right]
+	\iff
+	\left[ \si{\coulomb}=\si{\ampere\cdot\second} \right]
+\end{equation*}
+An electron has a charge of $-1.6\times 10^{-19}\,\si{\coulomb}$, and the charge of a proton has the same magnitude but opposite sign: $+1.6\times 10^{-19}\,\si{\coulomb}$.
+
+\theorem{Charge and current}{
+	\begin{equation*}
+	    I=\frac{Q}{t}=\diff qt
+	\end{equation*}
+	where:
+	\begin{align*}
+		I&=\text{current (A)} \\
+		Q&=\text{charge (C)} \\
+		t&=\text{time (s)}
+	\end{align*}
+	This is helpful in non-steady state circuits where current is not constant and changes over time.
+}
+
+\section{Electrostatics}
+
+\theorem{Coulomb's law}{
+	\begin{equation*}
+	    F=\frac{kq_1q_2}{r^2}
+		\qquad k=\frac{1}{4\pi \varepsilon_0}
+	\end{equation*}
+	where:
+	\begin{align*}
+		F&=\text{electrostatic force (N)} \\
+		k&=\text{Coulomb constant} \\
+		 &=8.99\cdot 10^9\,\si{\newton\meter^2/\coulomb^2} \\
+		\varepsilon_0&=\text{permittivity of free space (\si{\coulomb^2/\newton\meter^2})} \\
+		&=8.85\cdot10^{-12}\,\si{\coulomb^2/\newton\meter^2} \\
+		q_1,q_2&=\text{charge (C)} \\
+		r&=\text{distance between particles (m)}
+	\end{align*}
+}
+
+There are positive and negative charges. The magnitude of the force is:
+\begin{equation*}
+	\lVert F_E \rVert =\frac{k \left|q_1\right| \left|q_2\right|}{r^2}
+\end{equation*}
+from which the direction of the force can be figured out by logic: opposite charges attract.
+
+\definition{A \textbf{Van de Graaff generator} generates electrostatic energy by using a belt to transport electrons to a spherical dome. Electrons try to spread out as much as possible and are position on the dome's surface.}
+
+\theorem{Constants (on equation sheet)}{
+	The mass of an electron is:
+	\begin{align*}
+		m_e&=9.11\cdot 10^{-31}\,\si{\kilo\gram}
+		\intertext{The elementary charge is the smallest possible charge, and is equal to the magnitude of the charge of a proton or electron.}
+		Q_e&=1.60\times 10^{-19}\,\si{\coulomb}
+		\intertext{The gravitational constant from Mechanics is:}
+		G&=6.67\times 10^{-11}\,\si{\newton\meter^2\per\kilo\gram^2}
+	\end{align*}
+	SI prefixes: $10^{-3}$ milli (m), $10^{-6}$ micro ($\mu$), $10^{-9}$ nano (n), $10^{-12}$ pico (p).
+}
+
+For two electrons spaced 1 millimeter apart, we can calculate $F_E=k \left|q_1\right|\left|q_2\right|/r^2$ and $F_G=Gm_1m_2/r^2$. It turns out that $F_E$ is about $4\cdot 10^{42}$ times greater than $F_G$. So the gravitational force can often be ignored because it is so weak compared to electric force.
+
+Electric force is a vector quantity, whose direction can be indicated with $+/-$ sign or with $\hat i,\hat j,\hat k$.
+
+\remark{Electrostatics vs circuits}{
+	In electrostatics, charges are not moving (hence ``static''). In a circuit, which for our purposes is direct current (DC), charges are flowing through the circuit and are not stationary.
+}
+
+\subsection{Atomic Structure}
+
+Matter is made of atoms, ions and molecules, which are in turn made of protons (with positive charge), electrons (with negative charge) and neutrons (with no charge).
+
+The mass of an electron is \ul{significantly lower} than the mass of a proton or neutron:
+\begin{equation*}
+	(m_e=9.11\cdot 10^{-31}\,\si{\kilo\gram})\ll m_p=m_n=1.67\times10^{-27}\,\si{\kilo\gram}
+\end{equation*}
+Charge is quantized: the magnitude of charge on a proton or electron is the elementary charge:
+\begin{equation*}
+	\left|Q_e\right|=\left|Q_p\right|=1.6\cdot10^{-19}\,\si{\coulomb}
+\end{equation*}
+There is \ul{no} unit of charge smaller than the elementary charge, and all possible charges is a multiple of it:
+\begin{equation*}
+	\left|Q\right|=n \left( 1.6\cdot10^{-19} \right)\si{\coulomb} \qquad n\in\mathbb Z^+
+\end{equation*}
+\definition{An object being ``charged'' indicates the sign of the \ul{net} charge, which is either positive or negative.
+\begin{itemize}
+	\item Positively charged: the object is deficient of electrons (has \ul{less} electrons than protons).
+	\item Negatively charged: the object is in excess of electrons (has \ul{more} electrons than protons).
+\end{itemize}}
+The mass of excess electrons in a negatively charged object or the mass of electrons removed in a positively charged object is negligible, because the mass of an electron is so low.
+
+\theorem*{
+	Charges on a metal/conductive sphere (solid or hollow) will always be on the surface of the sphere, because charges tend to maximize distance between each other. Thus, the \ul{net charge is always on the surface}.
+}
+
+\theorem*{
+	In an insulator, there is no free flow of charges. Charges are stationary on the surface of the object.
+}
+
+\subsection{Charging}
+
+\textbf{Charging by friction.} Different objects (insulators) have a different tendency to gain or lose net charge when rubbed with another object. Some will gain electrons while some will lose electrons.
+\begin{itemize}
+	\item Glass and human hair will lose electrons and become more positive.
+	\item Nylon and wood will gain electrons and become more negative.
+\end{itemize}
+
+\textbf{Charging by conduction.} This can be used for both insulators and conductors. It involves the movement of charges to/from a neutral conductor from/to a charged object by contact.
+
+\textbf{Charging by induction.} 
+\begin{enumerate}
+	\item Start with a charged object (``rod'') and a neutral conductor (``sphere'').
+	\item When the rod is brought \ul{near} (not necessarily contacting) the sphere, free electrons will rush towards/away from the rod. The sphere becomes \ul{polarized.}
+	\item Connect the sphere to ground.
+	\item Electrons from ground will rush towards the sphere, and displace the positively charged particles.
+	\begin{center}
+		\ul{OR}
+	\end{center}
+	Electrons from the sphere will rush towards ground, leaving only positively charged particles.
+	\item When the ground wire is removed from the sphere and the rod is moved away, the sphere remains charged.
+\end{enumerate}
+This can be used to charge the sphere with either positive charge or negative charge. It would depend on the charge of the rod we start with.
+\begin{itemize}
+	\item Negatively charged rod $\to$ positively charged sphere.
+	\item Positively charged rod $\to$ negatively charged sphere.
+\end{itemize}
+
+\subsection{Field Model}
+
+The field model is related to \ul{non-contact forces}, which are gravity, electric force and magnetic force. The field model describes the alteration of space.
 
 \end{document}
 
