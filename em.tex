@@ -200,7 +200,7 @@ Resistors dissipate energy by converting electrical energy to thermal energy at 
 \remark{Electric bills}{
 	The house is billed by energy used in kWh, which is actually a unit of energy.
 	\begin{equation*}
-		1\,\text{kWh}=3.6\times10^6\,\si{\joule}
+		1\,\text{kWh}=3.6\cdot10^6\,\si{\joule}
 	\end{equation*}
 }
 
@@ -259,7 +259,7 @@ Current is the flow of charged particles, the charge ($q,Q$) being measured in c
 	\iff
 	\left[ \si{\coulomb}=\si{\ampere\cdot\second} \right]
 \end{equation*}
-An electron has a charge of $-1.6\times 10^{-19}\,\si{\coulomb}$, and the charge of a proton has the same magnitude but opposite sign: $+1.6\times 10^{-19}\,\si{\coulomb}$.
+An electron has a charge of $-1.6\cdot 10^{-19}\,\si{\coulomb}$, and the charge of a proton has the same magnitude but opposite sign: $+1.6\cdot 10^{-19}\,\si{\coulomb}$.
 
 \theorem{Charge and current}{
 	\begin{equation*}
@@ -278,7 +278,7 @@ An electron has a charge of $-1.6\times 10^{-19}\,\si{\coulomb}$, and the charge
 
 \theorem{Coulomb's law}{
 	\begin{equation*}
-	    F=\frac{kq_1q_2}{r^2}
+	    F_E=\frac{kq_1q_2}{r^2}
 		\qquad k=\frac{1}{4\pi \varepsilon_0}
 	\end{equation*}
 	where:
@@ -306,9 +306,9 @@ from which the direction of the force can be figured out by logic: opposite char
 	\begin{align*}
 		m_e&=9.11\cdot 10^{-31}\,\si{\kilo\gram}
 		\intertext{The elementary charge is the smallest possible charge, and is equal to the magnitude of the charge of a proton or electron.}
-		Q_e&=1.60\times 10^{-19}\,\si{\coulomb}
+		Q_e&=1.60\cdot 10^{-19}\,\si{\coulomb}
 		\intertext{The gravitational constant from Mechanics is:}
-		G&=6.67\times 10^{-11}\,\si{\newton\meter^2\per\kilo\gram^2}
+		G&=6.67\cdot 10^{-11}\,\si{\newton\meter^2\per\kilo\gram^2}
 	\end{align*}
 	SI prefixes: $10^{-3}$ milli (m), $10^{-6}$ micro ($\mu$), $10^{-9}$ nano (n), $10^{-12}$ pico (p).
 }
@@ -327,7 +327,7 @@ Matter is made of atoms, ions and molecules, which are in turn made of protons (
 
 The mass of an electron is \ul{significantly lower} than the mass of a proton or neutron:
 \begin{equation*}
-	(m_e=9.11\cdot 10^{-31}\,\si{\kilo\gram})\ll m_p=m_n=1.67\times10^{-27}\,\si{\kilo\gram}
+	(m_e=9.11\cdot 10^{-31}\,\si{\kilo\gram})\ll m_p=m_n=1.67\cdot10^{-27}\,\si{\kilo\gram}
 \end{equation*}
 Charge is quantized: the magnitude of charge on a proton or electron is the elementary charge:
 \begin{equation*}
@@ -351,6 +351,25 @@ The mass of excess electrons in a negatively charged object or the mass of elect
 \theorem*{
 	In an insulator, there is no free flow of charges. Charges are stationary on the surface of the object.
 }
+
+\subsection{Polarization}
+
+\definition{\textbf{Polarization} is a separation of positive and negative charges within an object. This is done by shifting the statistical distribution of electrons to one side of an object (as explained by quantum mechanics, electron orbitals, etc.). It does \ul{not} create charge, and will still have the same net charge as before.}
+
+A charged object can induce polarization in nearby neutral objects. Once the neutral object is polarized, like charges repel and are now further apart, meaning opposite charges are now closer together. Therefore, the two objects will attract.
+
+In conductors, electrons move more readily. Polarization results in a side with excess electrons (negative) and a side with a deficit in electrons (positive).
+
+In insulators, electrons are not free to move, and polarization occurs by changing the shape of electron clouds/orbitals. The electron cloud becomes asymmetrically shaped, and the ``center of electrons/charge'' is not at the atomic nucleus. The individual atoms become polarized.
+
+Polar molecules (have a dipole moment) can orient themselves in an electric field due to attraction.
+
+Polarization explains a number of real-world occurances, such as:
+\begin{itemize}
+	\item Balloons stick to a wall because the balloon is negative charged (has high affinity for electrons), and the wall molecules polarize.
+	\item Water streams bend because water molecules reorient toward a charged object.
+	\item Small pieces of paper jump toward a balloon because the negatively charged balloon surface polarizes it.
+\end{itemize}
 
 \subsection{Charging}
 
@@ -380,9 +399,139 @@ This can be used to charge the sphere with either positive charge or negative ch
 	\item Positively charged rod $\to$ negatively charged sphere.
 \end{itemize}
 
+\textbf{Electroscopes.} An electroscope is a device used to detect charge. It consists of a large model knob connected via a stem to two metal leaves. If a charged object is brought near the knob, electrons will move towards/away from the leaves, causing them to move upwards (since the leaves become charged and repeal each other).
+
 \subsection{Field Model}
 
 The field model is related to \ul{non-contact forces}, which are gravity, electric force and magnetic force. The field model describes the alteration of space.
+
+\setlength{\columnsep}{0.6in}
+\setlength{\columnseprule}{0.4pt}
+\begin{minipage}{\textwidth}
+\begin{multicols*}{2}
+	\begin{center}
+		\ul{\textbf{Gravity}}
+	\end{center}
+
+	In a gravitational field, all masses are attracted to the center (of mass $M$) by a force given by the law of universal gravitation:
+	\begin{equation*}
+	    F_G=\frac{GMm}{r^2}
+	\end{equation*}
+	The gravitational field strength $g$ is:
+	\begin{equation*}
+	    g=\frac{GM}{r^2}
+	\end{equation*}
+	and has units $\si{\meter/\second^2}=\si{\newton/\kilo\gram}$. $g$ is a vector quantity depending on the distance vector $r$ and the location of the test mass. The force exerted on a mass $m$ is:
+	\begin{equation*}
+	    F=gm \implies \Sigma F=ma
+	\end{equation*}
+	Field lines all point towards the mass $M$. The field is \ul{radially symmetric} and the field lines point \ul{radially inward}. On the Earth's surface, field lines point down and is uniform at $g=9.81\,\si{\meter/\second^2}$.
+	
+	\vfill\null\columnbreak
+
+	\begin{center}
+		\ul{\textbf{Electricity}}
+	\end{center}
+	In an electric field, charges are either attracted to or repelled from the central charge ($Q$), given by:
+	\begin{equation*}
+		F_E=\frac{kQq}{r^2}
+	\end{equation*}
+	\newline The electric field strength $E$ is:
+	\begin{equation*}
+		E=\frac{kQ}{r^2}
+	\end{equation*}
+	and has units $\si{\newton/\coulomb}$. $E$ is a vector quantity depending on the distance vector $r$ and the location of the test charge. The force exerted on a charge $q$ is:
+	\begin{equation*}
+		\Sigma F=Eq
+	\end{equation*}
+	Field lines are more complex because there are both attractive and repulsive force. The direction of field lines are the direction of $F_E$ on a \ul{positive charge}. When close to $Q$, the field lines are approximately straight and are uniform.
+\end{multicols*}
+\end{minipage}
+
+\subsection{Electric Fields}
+
+\definition{A \textbf{capacitor} is made of two plates with opposite charge. If the distance between the places is small, it can be thought of as being uniform.}
+
+\definition{A field is \textbf{uniform} if the electric force on a test charge is the same (in both direction and magnitude) at all points in space. A field is \textbf{nonuniform} if it is not.}
+
+Properties of electric fields:
+\begin{itemize}
+	\item Electric field is always a vector quantity around the source charge ($Q$). At any location, the direction of the electric field is \ul{tangent} to field lines. Field lines can be curved.
+
+	\item Field lines are \ul{perpendicular} to conducting surfaces.
+
+	\item Field lines point in the direction of a force on a \ul{positive}
+
+	\item The density/spacing of field lines indicate the relative strength of the field. Denser lines/lower distance between lines indicate a stronger electric field. If the strength of the electric field $E=kQ/r^2$ doubles, the number of lines doubles.
+
+	\item Field lines do not cross each other, as this would indicate two different electric field values/forces at the same point (the electric field is not a function).
+
+	\item Electric field strength $E$ is a vector quantity.
+\end{itemize}
+
+\theorem{Electric field strength}{
+	The strength of an electric field created by a point charge with charge $Q$ from a certain distance $r$ is:
+	\begin{equation*}
+	    \lVert E \rVert =\frac{k \left|Q\right|}{r^2}
+	\end{equation*}
+	The units for electric field strength $E$ is either newton per coulomb (\si{\newton\per\coulomb}) or volt per meter (\si{\volt\per\meter}). This is not dependent on the strength of any test charge. The force acting on a test charge of charge $q$ is:
+	\begin{equation*}
+	    \lVert F_E \rVert =E \left|q\right|=\frac{k \left|Q\right| \left|q\right|}{r^2}
+	\end{equation*}
+}
+
+In a uniform gravitational field, change in potential energy is:
+\begin{equation*}
+    \Delta U_g=mg\Delta h
+\end{equation*}
+where $g$ is the gravitational field strength, which is $9.81\,\si{\meter/\second^2}$ on the surface of the Earth.
+
+\theorem{Gravitational potential}{
+	Gravitational potential is gravitational potential energy per unit mass:
+	\begin{equation*}
+		V=\frac{U_g}{m}=\frac{mgh}{m}=gh
+	\end{equation*}
+	and is measured \si{\meter^2\per\second^2} or \si{\joule\per\kilogram}.
+}
+This concept can be similarly used for electric potential.
+\theorem{Electric potential and potential energy, uniform field}{
+	In a uniform electric field (between two charged plates) of strength $E$, the electric potential energy $U_E$ of a charge $q$ at a distance $x$ to the plate of opposite charge from $q$ is:
+	\begin{equation*}
+	    \Delta U_E=qEx
+	\end{equation*}
+	Electric potential is potential energy per unit charge:
+	\begin{equation*}
+	    V=\frac{U_E}{q}=\frac{qEx}{q}=Ex=\frac{kQ}{x}
+	\end{equation*}
+	Change in potential energy associated with a change in potential is:
+	\begin{equation*}
+		\left|\Delta U_E\right|=\Delta|q\underbrace{Ex}_{V}|=\Delta \left|qV\right|=\left|q\right|\left|\Delta V\right|
+	\end{equation*}
+}
+
+\definition{\textbf{Equipotential lines/surfaces} are liens/surfaces on which electric potential is constant. They are described in terms of the electric potential on all points on the line/surface measured in volts (V). They behavior similarly to contours.}
+
+\begin{itemize}
+	\item Potential is \ul{highest} when close to a charge, and decreases as distance $r,x$ increases.
+	\item Positive point charges have positive potential and negative point charges have negative potential. For both positive and negative charges, electric potential at infinite distance is $0\,\si{\volt}$.
+	\item Positive charges move from high to low potential values.
+	\item Electric field lines/surfaces are perpendicular to equipotential lines.
+	\item Field strength is inversely proportional is inversely proportional to the spacing between field lines.
+	\item Electric field is a vector quantity, and electric potential is a scalar quantity.
+\end{itemize}
+
+If a point $P$ is affected by multiple charges, the electric potential at $P$ is the sum of the electric potential created by each charge:
+\begin{equation*}
+    V_i=\frac{k \left|Q_i\right|}{x_i}
+	\qquad
+	V_P=\sum_i V_i
+\end{equation*}
+
+Electric potential is measured in volts (V). From this equation:
+\begin{equation*}
+	\left[ \si{\volt}=\si{\frac{\newton\per\coulomb}{\meter} }=\si{\frac{\joule\meter}{\coulomb\meter}}=\si{\frac{\joule}{\coulomb}}\right]
+\end{equation*}
+If the potential difference $\Delta V$ is known, change in electric potential energy $\Delta U_E$ can be found. Kinetic energy $K$ can also be found: since energy is conserved, $\Delta K=-\Delta U_E$.
 
 \end{document}
 
