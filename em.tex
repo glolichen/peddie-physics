@@ -33,6 +33,9 @@
 \newcommand{\theorem}[2]{\begin{tcolorbox}[title={#1},colback=blue!5!white,colframe=blue!75!black,parbox=false] #2 \end{tcolorbox}}
 \WithSuffix\newcommand\theorem*[1]{\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,parbox=false] #1 \end{tcolorbox}}
 
+\newcommand{\defitheorem}[2]{\begin{tcolorbox}[title={#1},colback=violet!5!white,colframe=violet!75!black,parbox=false] #2 \end{tcolorbox}}
+\WithSuffix\newcommand\defitheorem*[1]{\begin{tcolorbox}[colback=violet!5!white,colframe=violet!75!black,parbox=false] #1 \end{tcolorbox}}
+
 \newcommand{\example}[2]{\begin{tcolorbox}[title={Example: #1},colback=brown!5!white,colframe=brown!75!black,parbox=false] #2 \end{tcolorbox}}
 
 \newcommand{\remark}[2]{\begin{tcolorbox}[title={#1},colback=black!5!white,colframe=black!75!black,parbox=false] #2 \end{tcolorbox}}
@@ -59,7 +62,7 @@
 \tableofcontents
 % \newpage
 
-\section{Circuit}
+\section{Circuits}
 
 Equipment:
 \begin{itemize}
@@ -121,7 +124,12 @@ Resistors convert electrical energy to thermal energy. Light bulbs are a special
 	\begin{equation*}
 	    R=\frac{\rho l}{A}
 	\end{equation*}
-	where $\rho$ is the resistivity of the material (\si{\ohm\meter}), $l$ is length (m) and $A$ is cross-sectional area (\si{\meter^2}).
+	where:
+	\begin{align*}
+	    \rho&=\text{resistivity of material (\si{\ohm\meter})} \\
+		l&=\text{length (m)} \\
+		A&=\text{cross-sectional area (\si{m^2})}
+	\end{align*}
 }
 
 \definition{A \textbf{junction/node} is a point where three or more wires are connected.
@@ -168,7 +176,7 @@ If two components are on different paths to the battery, they have the same pote
 
 \definition{A \textbf{combination circuit} is one which is not purely series or purely parallel. We can analyze such a circuit by calculating the total/equivalent resistance.}
 
-\theorem{Power}{
+\defitheorem{Power}{
 	\begin{equation*}
 	    P
 		=I\Delta V
@@ -200,7 +208,7 @@ Resistors dissipate energy by converting electrical energy to thermal energy at 
 \remark{Electric bills}{
 	The house is billed by energy used in kWh, which is actually a unit of energy.
 	\begin{equation*}
-		1\,\text{kWh}=3.6\cdot10^6\,\si{\joule}
+		1\,\text{kWh}=3.6\times 10^6\,\si{\joule}
 	\end{equation*}
 }
 
@@ -259,7 +267,7 @@ Current is the flow of charged particles, the charge ($q,Q$) being measured in c
 	\iff
 	\left[ \si{\coulomb}=\si{\ampere\cdot\second} \right]
 \end{equation*}
-An electron has a charge of $-1.6\cdot 10^{-19}\,\si{\coulomb}$, and the charge of a proton has the same magnitude but opposite sign: $+1.6\cdot 10^{-19}\,\si{\coulomb}$.
+An electron has a charge of $-1.6\times 10^{-19}\,\si{\coulomb}$, and the charge of a proton has the same magnitude but opposite sign: $+1.6\times 10^{-19}\,\si{\coulomb}$.
 
 \theorem{Charge and current}{
 	\begin{equation*}
@@ -285,9 +293,9 @@ An electron has a charge of $-1.6\cdot 10^{-19}\,\si{\coulomb}$, and the charge 
 	\begin{align*}
 		F&=\text{electrostatic force (N)} \\
 		k&=\text{Coulomb constant} \\
-		 &=8.99\cdot 10^9\,\si{\newton\meter^2/\coulomb^2} \\
+		 &=8.99\times 10^9\,\si{\newton\meter^2/\coulomb^2} \\
 		\varepsilon_0&=\text{permittivity of free space (\si{\coulomb^2/\newton\meter^2})} \\
-		&=8.85\cdot10^{-12}\,\si{\coulomb^2/\newton\meter^2} \\
+		&=8.85\times 10^{-12}\,\si{\coulomb^2/\newton\meter^2} \\
 		q_1,q_2&=\text{charge (C)} \\
 		r&=\text{distance between particles (m)}
 	\end{align*}
@@ -304,16 +312,16 @@ from which the direction of the force can be figured out by logic: opposite char
 \theorem{Constants (on equation sheet)}{
 	The mass of an electron is:
 	\begin{align*}
-		m_e&=9.11\cdot 10^{-31}\,\si{\kilo\gram}
+		m_e&=9.11\times 10^{-31}\,\si{\kilo\gram}
 		\intertext{The elementary charge is the smallest possible charge, and is equal to the magnitude of the charge of a proton or electron.}
-		Q_e&=1.60\cdot 10^{-19}\,\si{\coulomb}
+		Q_e&=1.60\times 10^{-19}\,\si{\coulomb}
 		\intertext{The gravitational constant from Mechanics is:}
-		G&=6.67\cdot 10^{-11}\,\si{\newton\meter^2\per\kilo\gram^2}
+		G&=6.67\times 10^{-11}\,\si{\newton\meter^2\per\kilo\gram^2}
 	\end{align*}
 	SI prefixes: $10^{-3}$ milli (m), $10^{-6}$ micro ($\mu$), $10^{-9}$ nano (n), $10^{-12}$ pico (p).
 }
 
-For two electrons spaced 1 millimeter apart, we can calculate $F_E=k \left|q_1\right|\left|q_2\right|/r^2$ and $F_G=Gm_1m_2/r^2$. It turns out that $F_E$ is about $4\cdot 10^{42}$ times greater than $F_G$. So the gravitational force can often be ignored because it is so weak compared to electric force.
+For two electrons spaced 1 millimeter apart, we can calculate $F_E=k \left|q_1\right|\left|q_2\right|/r^2$ and $F_G=Gm_1m_2/r^2$. It turns out that $F_E$ is about $4\times 10^{42}$ times greater than $F_G$. So the gravitational force can often be ignored because it is so weak compared to electric force.
 
 Electric force is a vector quantity, whose direction can be indicated with $+/-$ sign or with $\hat i,\hat j,\hat k$.
 
@@ -327,15 +335,15 @@ Matter is made of atoms, ions and molecules, which are in turn made of protons (
 
 The mass of an electron is \ul{significantly lower} than the mass of a proton or neutron:
 \begin{equation*}
-	(m_e=9.11\cdot 10^{-31}\,\si{\kilo\gram})\ll m_p=m_n=1.67\cdot10^{-27}\,\si{\kilo\gram}
+	(m_e=9.11\times 10^{-31}\,\si{\kilo\gram})\ll m_p=m_n=1.67\times 10^{-27}\,\si{\kilo\gram}
 \end{equation*}
 Charge is quantized: the magnitude of charge on a proton or electron is the elementary charge:
 \begin{equation*}
-	\left|Q_e\right|=\left|Q_p\right|=1.6\cdot10^{-19}\,\si{\coulomb}
+	\left|Q_e\right|=\left|Q_p\right|=1.6\times 10^{-19}\,\si{\coulomb}
 \end{equation*}
 There is \ul{no} unit of charge smaller than the elementary charge, and all possible charges is a multiple of it:
 \begin{equation*}
-	\left|Q\right|=n \left( 1.6\cdot10^{-19} \right)\si{\coulomb} \qquad n\in\mathbb Z^+
+	\left|Q\right|=n \left( 1.6\times 10^{-19} \right)\si{\coulomb} \qquad n\in\mathbb Z^+
 \end{equation*}
 \definition{An object being ``charged'' indicates the sign of the \ul{net} charge, which is either positive or negative.
 \begin{itemize}
@@ -480,26 +488,28 @@ Properties of electric fields:
 	\end{equation*}
 }
 
+\subsection{Electrical Potential and Potential Energy}
+
 In a uniform gravitational field, change in potential energy is:
 \begin{equation*}
     \Delta U_g=mg\Delta h
 \end{equation*}
 where $g$ is the gravitational field strength, which is $9.81\,\si{\meter/\second^2}$ on the surface of the Earth.
 
-\theorem{Gravitational potential}{
-	Gravitational potential is gravitational potential energy per unit mass:
+\defitheorem{Gravitational potential}{
+	\textbf{Gravitational potential} is gravitational potential energy per unit mass:
 	\begin{equation*}
 		V=\frac{U_g}{m}=\frac{mgh}{m}=gh
 	\end{equation*}
 	and is measured \si{\meter^2\per\second^2} or \si{\joule\per\kilogram}.
 }
 This concept can be similarly used for electric potential.
-\theorem{Electric potential and potential energy, uniform field}{
-	In a uniform electric field (between two charged plates) of strength $E$, the electric potential energy $U_E$ of a charge $q$ at a distance $x$ to the plate of opposite charge from $q$ is:
+\defitheorem{Electric potential and potential energy in a uniform field}{
+	In a uniform electric field (between two charged plates) of strength $E$, the \textbf{electric potential energy} $U_E$ of a charge $q$ at a distance $x$ to the plate of opposite charge from $q$ is:
 	\begin{equation*}
 	    \Delta U_E=qEx
 	\end{equation*}
-	Electric potential is potential energy per unit charge:
+	\textbf{Electric potential} is potential energy per unit charge:
 	\begin{equation*}
 	    V=\frac{U_E}{q}=\frac{qEx}{q}=Ex=\frac{kQ}{x}
 	\end{equation*}
@@ -509,7 +519,7 @@ This concept can be similarly used for electric potential.
 	\end{equation*}
 }
 
-\definition{\textbf{Equipotential lines/surfaces} are liens/surfaces on which electric potential is constant. They are described in terms of the electric potential on all points on the line/surface measured in volts (V). They behavior similarly to contours.}
+\definition{\textbf{Equipotential lines/surfaces} are lines/surfaces on which electric potential is constant. They are described in terms of the electric potential on all points on the line/surface measured in volts (V). They behavior similarly to contours.}
 
 \begin{itemize}
 	\item Potential is \ul{highest} when close to a charge, and decreases as distance $r,x$ increases.
@@ -532,6 +542,257 @@ Electric potential is measured in volts (V). From this equation:
 	\left[ \si{\volt}=\si{\frac{\newton\per\coulomb}{\meter} }=\si{\frac{\joule\meter}{\coulomb\meter}}=\si{\frac{\joule}{\coulomb}}\right]
 \end{equation*}
 If the potential difference $\Delta V$ is known, change in electric potential energy $\Delta U_E$ can be found. Kinetic energy $K$ can also be found: since energy is conserved, $\Delta K=-\Delta U_E$.
+
+\subsection{Energy}
+
+In mechanics, the unit for energy is the joule (J), which is defined as:
+\begin{equation*}
+	\left[ \si{J}=\si{\newton\meter}=\si{\frac{\kilo\gram\meter^2}{\second^2}} \right]
+\end{equation*}
+Energy can also be measured in electron-volts (eV). The change in energy of a proton or electron (with the same charge $q=1.6\times 10^{-19}\,\si{\coulomb}$) is given by:
+\begin{equation*}
+    \left|\Delta U_E\right|
+	=\left|q\right|\cdot \Delta V
+	=1.6\times 10^{-19}\cdot 1
+	=1.6\times 10^{-19}\,\si{\joule}
+\end{equation*}
+\definition{A \textbf{electron-volt} is equal to the kinetic energy gained by an elementary charge (proton or electron) as it accelerates across a potential difference of 1 V.
+\begin{equation*}
+	1\,\si{\electronvolt}=1.9\times 10^{-19}\,\si{\joule}
+\end{equation*}}
+
+The energy of assembly is the energy needed to construct a system of point charges.
+\begin{enumerate}
+	\item The energy it takes to add the first point charge is zero, because there is zero potential initially and zero potential with only one charge.
+	\item The change in energy to add a second charge is:
+		\begin{equation*}
+		    \Delta E=q\Delta V=q_2 \left( \frac{kq_1}{d}-0 \right)=\frac{kq_1q_2}{d}
+		\end{equation*}
+		The second charge starts at ``infinity'' so it has a potential of $0$.
+	\item The change in energy to add a third chage is:
+		\begin{equation*}
+		    \Delta E=q_3 \left( \frac{kq_1}{d}+\frac{kq_2}{d}-0 \right)=\frac{kq_3(q_1+q_2)}{d}
+		\end{equation*}
+\end{enumerate}
+The total energy to construct the system is:
+\begin{equation*}
+	\text{Total Energy of Assembly}=\frac{kq_1q_2}{d}+\frac{kq_1q_3}{d}+\frac{kq_2q_3}{d}
+\end{equation*}
+\theorem{Electric potential energy of a system}{
+	The total potential energy of a system, which, \ul{like gravitational energy}, is the sum of the potential energies generated by each combination of two charges. The actual charges are substituted, not only their magnitudes.
+	\begin{equation*}
+		U_E=\sum \frac{kq_1q_2}{r}
+	\end{equation*}
+	Two like charges tend to move apart because they have high potential energy when held together, and moving away reduces potential energy. Two opposite charges attract because they have lower potential energy (negative sign, but high magnitude) when close together.
+
+	Electric potential energy $U_E$ equals the total energy of assembly.
+}
+
+\subsection{Electrostatics and Circuits}
+
+When a circuit is open electrons are moving in random directions at $10^6\,\si{\meter/\second}$.
+
+When a circuit is closed, the \ul{net movement} of electrons is in a certain direction (direction of electron flow, opposite of conventional current). There are electrons moving in the opposite direction still. The speed of the net movement (``drift speed'') is around $10^{-5}$ to $10^{-4}$ \si{\meter\per\second}. Individual electrons are much faster though.
+
+\theorem{Current}{
+	Current (in Ohm's law as $I=\Delta V/R$) is the net flow of charge per unit time and is measured in amperes (A) or coulombs per second (\si{C/s}):
+	\begin{equation*}
+	    I=\frac{Q}{t}=\frac{\Delta Q}{\Delta t}=\diff qt
+	\end{equation*}
+	Current can also be defined as:
+	\begin{equation*}
+	    I=Nev_dA
+	\end{equation*}
+	where:
+	\begin{align*}
+		N&=\text{conduction electron density (number of electron carriers per unit volume)} \\
+		e&=\text{elementary charge (\si{\coulomb})} \\
+		 &=1.6\times10^{-19}\,\si{\coulomb} \\
+		v_d&=\text{drift velocity (\si{\meter/\second})} \\
+		A&=\text{cross-sectional area (\si{\m^2})}
+	\end{align*}
+}
+
+Current $I=\Delta V/R$ is measured in amperes (A): $\left[ \si{A}=\si{\V/\ohm} \right]$.
+
+Power $P=I\Delta V=I^2R=\Delta V^2/R$ is measured in watts (W): $\left[ \si{\watt}=\si{\joule/\second} \right]$.
+
+Resistivity $R=\rho l/A$ is measured in ohms ($\si{\ohm}$): $\left[ \si{\ohm}=\si{\volt/\ampere} \right]$.
+
+\defitheorem{Conductivity}{
+	Conductivity $\sigma$ measures a material's ability to conduct electricity:
+	\begin{equation*}
+	    \sigma=\frac{1}{\rho}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\sigma&=\text{Conductivity (\si{1/\ohm\meter})} \\
+		\rho&=\text{Resistivity (\si{\ohm\meter})}
+	\end{align*}
+}
+
+\definition{
+	\textbf{Drift velocity} $v_d$ is the average displacement traveled by charge carriers per unit time, and as a measure of velocity is measured in \si{\meter/\second}.
+}
+
+\defitheorem{Current density}{
+	Current density is the current per unit area and is a vector quantity.
+	\begin{align*}
+		\vec J
+		&=\frac{I}{A}
+		\intertext{Current can be expressed as an integral of current density:}
+		I
+		&=\int \vec J\,\mathrm{d}A
+		\stackrel?=\vec JA
+		\intertext{Electric field strength is:}
+		\vec E&=\rho \vec J
+	\end{align*}
+	where:
+	\begin{align*}
+		J&=\text{current density (\si{A/m^2=\si{(C/s)/m^2}})} \\
+		I&=\text{current (A)} \\
+		A&=\text{cross-sectional area (\si{m^2})} \\
+		E&=\text{electric field strength (\si{N/C=V/m})}
+	\end{align*}
+	$J$ and $E$ are vector quantities (even though from $J=I/A$, it does not appear as such!).
+}
+
+\subsection{Continuous Charge Distribution}
+
+An infinite number of infinitesimally small point charges (with charge $\mathrm{d}q$) are distributed throughout an object. We want to determine the net electric field $E_\text{net}$ at a location $P$.
+
+\subsubsection{Thin rod, perpendicular point of interest}
+
+We want to find the net electric field at a point $P$ located on the perpendicular bisector of the rod (the line from $P$ to the center of the rod forms a right angle with the rod).
+
+The rod has a total charge $+q$, and $P$ is at a perpendicular distance $y$ from the rod. Every section of the rod, each with charge $\mathrm{d}q$ and with $\mathrm{d}x$, has an effect on the rod. Charges from sections on both sides (both on the left and right) of the rod will cancel out with each other, so the net electric field is \ul{directly away} from the rod.
+
+\defitheorem{Linear charge density}{
+	The linear charge density $\lambda$ of the rod is:
+	\begin{equation*}
+	    \lambda=\frac qL=\diff qx
+		\iff
+		\mathrm{d}q=\lambda \,\mathrm{d}x
+	\end{equation*}
+}
+From the definition of electric field, the electric field created by the rod section is:
+\begin{equation*}
+    E=\frac{kQ}{r^2}
+	\implies
+	\mathrm{d}E=\frac{k \,\mathrm{d}q}{r^2}=\frac{kq \,\mathrm{d}x}{r^2}
+\end{equation*}
+We only care about the vertical component of the charge on $P$ by each rod section (horizontal components cancel out). The vertical component is:
+\begin{equation*}
+	\mathrm{d}E_\text{vertical}
+	=\mathrm{d}E\cos\theta
+	=\frac{kq \cos\theta}{r^2}\,\mathrm{d}x
+\end{equation*}
+Integrating this over the rod (for each section) gives the net electric field. Distance $r$ can be expressed in terms of $x$ and $y$ components of distance: $r=\sqrt{x^2+y^2}$.
+\begin{align*}
+	E_\text{net}
+	&=\int \mathrm{d}E_\text{vertical}
+	=\int \frac{k\lambda\cos\theta}{r^2}\,\mathrm{d}x
+	=k\lambda \int \frac{\cos\theta}{r^2}\,\mathrm{d}x
+	=k\lambda \int_{-L/2}^{L/2}\frac{1}{(x^2+y^2)^{3/2}}\,\mathrm{d}x \\
+	&=\Big[ \text{ ... trig. substitutions ... } \Big]
+	=k\lambda y \left[\frac{x}{y^2 \sqrt{x^2+y^2}}\right]_{-L/2}^{L/2}
+	=\boxed{\frac{2k\lambda L}{y\sqrt{L^2+4y^2}}}
+\end{align*}
+where:
+\begin{align*}
+	k&=\text{Coulomb constant} \\
+	\lambda&=\text{linear charge density (uniform/constant)} \\
+	y&=\text{distance between rod and $P$} \\
+	L&=\text{length of rod}
+\end{align*}
+\textbf{Special case 1.} If $P$ is very far from the rod, then $y\gg L$ and $L/y\to 0$. Also, recall that $\lambda=q/L \implies q=\lambda L$.
+\begin{equation*}
+    E
+	=\frac{2k\lambda L}{y \sqrt{\cancelto0L^2+4y^2}}
+	=\frac{2k\lambda L}{2y^2}
+	=\boxed{\frac{kq}{y^2}}
+\end{equation*}
+\textbf{Special case 2.} If the rod is infinitely long, then $L\gg y$
+\begin{equation*}
+	E
+	=\frac{2k\lambda L}{y \sqrt{L^2+\cancelto0{4y^2}}}
+	=\frac{2k\lambda \cancel L}{y\cancel L}
+	=\boxed{\frac{2k\lambda}{y}}
+\end{equation*}
+
+\theorem{Electric field due to infinitely long rod}{
+	The electric field due to an infinitely long rod with charge density $\lambda$ on a point a distance $r$ away is:
+	\begin{equation*}
+	    E=\frac{2k\lambda}{r}
+	\end{equation*}
+	Electric field strength $E$ is directly proportional to the inverse of distance $1/r$.
+}
+
+\subsubsection{Thin rod, colinear point of interest}
+
+A point $P$ is located on the same line in space as the rod of length $L$ and charge density $\lambda$, at a distance $a$ from the closest end. (If the rod were to be infinite distance, $P$ would be on the rod.)
+
+As before, linear charge density gives $\mathrm{d}q=\lambda \,\mathrm{d}x$ and electric field strength $E=kQ/r^2$.
+\begin{equation*}
+	\mathrm{d}E
+	=\frac{k \,\mathrm{d}q}{r^2}
+	=\frac{k\lambda \,\mathrm{d}x}{r^2}
+	=\frac{k\lambda}{x^2} \,\mathrm{d}x
+\end{equation*}
+The total charge is the integral of $\mathrm{d}E$ over the rod, which is bounded by $a\leq x\leq a+L$.
+\begin{align*}
+    E
+	&=\int_{a}^{a+L}\mathrm{d}E
+	=\int_{a}^{a+L}\frac{k\lambda}{x^2}\,\mathrm{d}x
+	=k\lambda \left[-\frac 1x\right]_{a}^{a+L}
+	=-k\lambda \left( \frac{1}{a+L}-\frac{1}{a} \right) \\
+	&=-k\lambda\cdot \frac{a-(a+L)}{a(a+L)}
+	=k\lambda\cdot \frac{(a+L)-a}{a(a+L)}
+	=\boxed{\frac{k\lambda L}{a(a+L)}}
+\end{align*}
+
+\textbf{Special case.} If $P$ is infinitely far away from the rod, then $a\gg L$. Recall that $k\lambda L=q$.
+\begin{equation*}
+    E
+	=\frac{k\lambda L}{a(a+\cancelto0L)}
+	=\frac{k\lambda L}{a^2}
+	=\frac{kq}{a^2}
+\end{equation*}
+This behaves the same as a point charge (for which $E=kq/r^2$).
+
+\subsubsection{Semicircular arc}
+
+Unlike the previous cases, the semicircular arc is negatively charged with net charge $-q$. It has radius $r$. $P$ is a point at the center of the semicircle. $\mathrm{d}E$ is the electric field on $P$ by a section of the arc with charge $\mathrm{d}q$. The same section on the other side of the arc will cancel out its horizontal component. So, like before, the net electric field on $P$ points straight up.
+
+The charge on the semicircular arc is distributed along the arc as if it were one dimensional. The charge density $\lambda$ is still $q/L$, where $L$ is the length of the arc. $s$ is the arc length, and $\mathrm{d}s$ is the length of the arc section.
+\begin{equation*}
+    L=\frac12 2\pi r=\pi r
+	\implies \lambda=\frac{q}{L}=\frac{q}{\pi r}=\diff qs
+	\implies
+	\mathrm{d}q
+	=\lambda \,\mathrm{d}s
+\end{equation*}
+Arc length $s=r\theta \implies \mathrm{d}s=r \,\mathrm{d}\theta$. The vertical component of the charge from the section is:
+\begin{equation*}
+	\mathrm{d}E_\text{vertical}
+	=\mathrm{d}E\sin\theta
+	=\frac{k \,\mathrm{d}q}{r^2}\sin\theta
+	=\frac{k \lambda\sin\theta}{r^2}\,\mathrm{d}s
+	=\frac{k \lambda\sin\theta}{r^2}r\,\mathrm{d}\theta
+	=\frac{k \lambda\sin\theta}{r}\,\mathrm{d}\theta
+\end{equation*}
+Integrating this over the arc gives the net electric field. Because this is a semicircular arc, $0\leq \theta\leq \pi$, which are the bounds of integration.
+\begin{align*}
+	E 
+	&=\int_{0}^{\pi}\mathrm{d}E_\text{vertical}
+	=\int_{0}^{\pi}\frac{k\lambda \sin\theta}{r}\,\mathrm{d}\theta
+	=\frac{k\lambda}{r}\int_{0}^{\pi}\sin\theta\,\mathrm{d}\theta
+	=\frac{k\lambda}{r}\left[-\cos\theta\right]_{0}^{\pi} \\
+	&=-\frac{k\lambda}{r}\left( \cos\pi-\cos0 \right)
+	=-\frac{k\lambda}{r}\left( -1-1 \right)
+	=-(-2)\frac{k\lambda}{r}
+	=\boxed{\frac{2k\lambda}{r}}
+\end{align*}
 
 \end{document}
 
