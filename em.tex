@@ -661,6 +661,10 @@ Resistivity $R=\rho l/A$ is measured in ohms ($\si{\ohm}$): $\left[ \si{\ohm}=\s
 
 An infinite number of infinitesimally small point charges (with charge $\mathrm{d}q$) are distributed throughout an object. We want to determine the net electric field $E_\text{net}$ at a location $P$.
 
+\theorem{$\ll$ and $\gg$}{
+	If $a\ll b\iff b\gg a$, then $a$ is small compared to $b$. Then any sum $a+b$ can be considered to be only $b$.
+}
+
 \subsubsection{Thin rod, perpendicular point of interest}
 
 We want to find the net electric field at a point $P$ located on the perpendicular bisector of the rod (the line from $P$ to the center of the rod forms a right angle with the rod).
@@ -756,7 +760,7 @@ The total charge is the integral of $\mathrm{d}E$ over the rod, which is bounded
     E
 	=\frac{k\lambda L}{a(a+\cancelto0L)}
 	=\frac{k\lambda L}{a^2}
-	=\frac{kq}{a^2}
+	=\boxed{\frac{kq}{a^2}}
 \end{equation*}
 This behaves the same as a point charge (for which $E=kq/r^2$).
 
@@ -793,6 +797,353 @@ Integrating this over the arc gives the net electric field. Because this is a se
 	=-(-2)\frac{k\lambda}{r}
 	=\boxed{\frac{2k\lambda}{r}}
 \end{align*}
+In general, the electric field of any circular arc is:
+\begin{equation*}
+	E=\frac{k\lambda}{r}\Big[\sin\theta\Big]_{-\theta}^{\theta}
+\end{equation*}
+where $[-\theta,\theta]$ are the bounds of the arc.
+
+\subsubsection{Circle of charge}
+
+The effect of a circle of charge on a point lying on the line through the center of the circle, and forming a right angle with the circle. The distance between the center of the circle and the point is $z$ and the circle has radius $R$.
+
+A small section of the circle of charge has charge $\mathrm{d}q$ and arc length $\mathrm{d}s$. $r$ is the distance between the section and the point of interest, forming an angle $\theta$.
+
+Linear charge density of the charge section is:
+\begin{equation*}
+    \lambda=\frac qL=\diff qs
+	\implies \mathrm{d}q=\lambda \,\mathrm{d}s
+\end{equation*}
+The electric field from the charge section is:
+\begin{equation*}
+	E=\frac{kq}{r^2}
+	\implies
+    \mathrm{d}E
+	=\frac{k \,\mathrm{d}q}{r^2}
+	=\frac{k\lambda \,\mathrm{d}s}{r^2}
+\end{equation*}
+The vertical components of $\mathrm{d}E$ cancel, so we are only interested in the horizontal component. From the diagram, $r$ is the hypotenuse: $r^2=R^2+z^2$ and $\cos\theta=z/R$.
+\begin{equation*}
+	\mathrm{d}E_\text{horizontal}
+	=\mathrm{d}E\cos\theta
+	=\frac{k\lambda \,\mathrm{d}s}{r^2}\cos\theta
+	=\frac{k\lambda \,\mathrm{d}s}{z^2+R^2}\cdot \frac{z}{r}
+	=\frac{k\lambda \,\mathrm{d}s}{z^2+R^2}\cdot \frac{z}{(z^2+R^2)^{1/2}}
+	=\frac{k\lambda z \,\mathrm{d}s}{(z^2+R^2)^{3/2}}
+\end{equation*}
+The net charge is the integral of $\mathrm{d}E_\text{horizontal}$, but everything is constant except $\mathrm{d}s$. We integrate over the circumference of the circle: $0\leq s\leq 2\pi R$.
+\begin{equation*}
+    E
+	=\int \frac{k\lambda z}{(z^2+R^2)^{3/2}}\,\mathrm{d}s
+	=\frac{k\lambda z}{(z^2+R^2)^{3/2}}\int_0^{2\pi R} \mathrm{d}s
+	=\frac{k\lambda z}{(z^2+R^2)^{3/2}}\cdot2\pi R
+	=\boxed{\frac{kqz}{(z^2+R^2){3/2}}}
+\end{equation*}
+\textbf{Special case 1.} If $P$ is at the center of the circle of charge, then $z=0\implies E=0$.
+
+\textbf{Special case 2.} If $P$ is very far from the ring, $z\gg R$.
+\begin{equation*}
+	E
+	=\frac{kqz}{(z^2+\cancelto0{R^2})^{3/2}}
+	=\frac{kqz}{z^3}
+	=\frac{kq}{z^2}
+\end{equation*}
+When the distance is high compared to the radius of the circle, the ring of charge becomes a point charge.
+
+\subsubsection{Solid sphere or hollow shell}
+
+The sphere/shell has radius $R$.
+
+\textbf{Inside.} When inside the shell, sphere or \ul{any} conductor, the net electric charge is $0$.
+
+\textbf{On the surface.} The net electric field is:
+\begin{equation*}
+	E=\frac{kQ}{R^2}
+\end{equation*}
+
+\textbf{Away from the surface}. The net electric field is:
+\begin{equation*}
+	E=\frac{kQ}{r^2}
+\end{equation*}
+where $r$ is the distance from the point of interest to the center of the sphere/shell.
+
+When on/away from the surface, entire sphere/shell can be thought of as being \ul{collapsed into a point charge}.
+
+\subsection{Gauss's Law}
+
+We can consider electric field lines/vectors as a flowing fluid (such as a gas or liquid).
+
+\definition{
+	An \textbf{area vector} is a vector representing a surface:
+	\begin{itemize}
+		\item Its length is proportional to the magnitude of the area.
+		\item Perpendicular to the surface area it represents (assuming the surface is small enough to be a plane).
+		\item Since electric field $E$ is perpendicular to a conducting surface, $E$ at a point is a \ul{scalar multiple} of $\mathrm{d}A$.
+	\end{itemize}
+}
+\defitheorem{Flux}{
+	\textbf{Flux} ($\Phi$) is the flow of a fluid through a cross-sectional area (CSA, A).
+	\begin{equation*}
+	    \Phi=\mathbf v\cdot \mathbf A=vA\cos\theta
+	\end{equation*}
+	where:
+	\begin{align*}
+		\mathbf v&=\text{velocity of liquid} \\
+		A&=\text{cross-sectional area vector} \\
+		v=\lVert \mathbf v \rVert &=\text{speed of liquid (\si{m/s})} \\
+		A=\lVert \mathbf A \rVert &=\text{cross-sectional area (\si{m})} \\
+		\theta&=\text{angle between flow vector and area vector (\si{\radian})}
+	\end{align*}
+	Flux is the volume flow rate and is measured in \si{m^3/s}. Flux is a scalar.
+}
+
+\defitheorem{Electric flux}{
+	\textbf{Electric flux} is the amount of electric field passing through a surface area. Electric flux is given by:
+	\begin{equation*}
+		\Phi_E=\mathbf E\cdot\mathbf A=EA\cos\theta
+	\end{equation*}
+	where:
+	\begin{align*}
+		\mathbf E&=\text{electric field} \\
+		A&=\text{cross-sectional area vector} \\
+		E=\lVert \mathbf E \rVert &=\text{strength/magnitude of electric field (\si{N/C}, \si{V/m})} \\
+		A=\lVert \mathbf A \rVert &=\text{cross-sectional area (\si{m})} \\
+		\theta&=\text{angle between electric field vector and area vector (\si{\radian})}
+	\end{align*}
+	Suppose we know the electric field $\mathrm{d}\mathbf E$ created by a small section of a surface with area vector $\mathrm{d}\mathbf{A}$.
+	\begin{align*}
+		\mathrm{d}E
+		&=\mathbf E\cdot \mathrm{d}\mathbf A
+		\intertext{We integrate the electric field over the surface for the total electric field. We integrate over a surface, so we use the \textbf{surface integral}.}
+		E
+		&=\oint \mathbf E\cdot\mathrm{d}\mathbf A
+	\end{align*}
+	If $Q_\text{enc}=0$, electric flux $\Phi_E=0$ even if electric fields puncture the surface. Charges outside the Gaussian surface have an equal number of field lines that puncture into and out of the surface.
+}
+
+\definition{
+	A \textbf{Gaussian surface} is a \ul{closed} surface.
+}
+
+We find an equation for flux as a function of the charge enclosed in a Gaussian surface. Consider a point charge:
+
+\begin{enumerate}
+	\item Construct a spherical Gaussian surface of radius $r$ around the charge $+q$.
+	\item Consider a small surface on the sphere with area vector $\mathrm{d}\mathbf A$. Let $\mathrm d\mathbf E$ be the electric field at the surface.
+	\item Using equations for electric flux:
+		\begin{equation*}
+		    \Phi_E
+			=EA\cos\theta
+			=\frac{kQ}{\cancel{r^2}}(4\pi \cancel{r^2})
+			=\frac{1}{\cancel{4\pi}\varepsilon_0}(\cancel{4\pi} Q)
+			=\boxed{\frac{Q_\text{enc}}{\varepsilon_0}}
+		\end{equation*}
+		``enc'' represents the charge enclosed by the Gaussian surface.
+\end{enumerate}
+\theorem{Point charge in Gaussian surface}{
+	The electric flux of a charge $Q_\text{enc}$ enclosed in \ul{any} Gaussian surface is:
+	\begin{equation*}
+		\Phi_E=\frac{Q_\text{enc}}{\epsilon_0}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\Phi_E&=\text{electric flux} \\
+		Q_\text{enc}&=\text{enclosed charge (C)} \\
+		\varepsilon_0&=\text{vacuum permittivity (\si{C^2/Nm^2})} \\
+		&=8.85\times 10^{-12}\,\si{C^2/Nm^2}
+	\end{align*}
+}
+
+\defitheorem{Surface and volume charge density}{
+	\begin{equation*}
+	    \sigma=\frac{Q}{A} \qquad
+	    \rho=\frac{Q}{V}
+	\end{equation*}
+	where:
+	\begin{align*}
+		Q&=\text{total charge (C)} \\
+		A&=\text{area (\si{m^2})} \\
+		V&=\text{volume (\si{m^3})} \\
+		\sigma&=\text{surface charge density (\si{C/m^2})} \\
+		\rho&=\text{volume charge density (\si{C/m^3})}
+	\end{align*}
+}
+
+Electric field can be found by solving for $E$ in:
+\begin{equation*}
+	\Phi_E=\frac{Q_\text{enc}}{\varepsilon_0}=EA\cos\theta
+\end{equation*}
+
+\subsubsection{Thin rod}
+
+\subsubsection{Cylinder}
+
+\subsubsection{Plane}
+
+\subsubsection{Capacitor}
+
+A capacitor is composed of two conducting and charged planes very close to each other. Net charge is inside the capacitor between the two planes.
+
+We choose a cylinder starting on one plane and ending in between the two planes as the Gaussian surface. Consider one touching the left plane. For the right end cap, area vector is in the same direction as electric field:
+\begin{equation*}
+    \Phi_E=EA\cos\theta=EA
+\end{equation*}
+At the left end cap, electric field is zero because it is inside the plane. Electric field inside a conductor is zero.
+\begin{equation*}
+    \Phi_E=\cancelto0EA\cos\theta=0
+\end{equation*}
+In the sheath, $E$ and $A$ are orthogonal:
+\begin{equation*}
+	\Phi_E=EA\cancelto0{cos\theta}=0
+\end{equation*}
+The total flux for the Gaussian surface is $\Phi_E=EA$. Surface charge density $\sigma$ is $Q_\text{enc}$ divided by the area of the end cap: $\sigma=Q_\text{enc}/A$. Equating this with $\Phi_E=Q_\text{enc}/\varepsilon_0$:
+\begin{equation*}
+	\Phi_E=\frac{Q_\text{enc}}{\varepsilon_0}=EA
+	\implies
+	E=\frac{Q_\text{enc}}{A\varepsilon}=\boxed{\frac{\sigma}{\varepsilon_0}}
+\end{equation*}
+When outside the capacitor, choose a Gaussian surface as a surface partially outside the capacitor and intersecting one plate. $E=0$ both inside the conducting plane and outside the capacitor, so the total flux $\Phi_E=0\implies E=0$.
+
+\subsubsection{Insulting sphere}
+
+A charge is uniformly distributed throughout an insulating sphere of radius $R$.
+
+\textbf{Inside the sphere.} To consider electric field inside the sphere, use a smaller sphere with radius $r$ as the Gaussian surface. At all points on the smaller sphere, the electric field points out normal to its surface. $\mathrm{d}A$ is always in the same direction as the electric field.
+\begin{equation*}
+    \Phi_E=EA\cos\theta=EA
+\end{equation*}
+The portion of charge enclosed in the Gaussian sphere is $r^3/R^3$.
+\begin{equation*}
+	\Phi_E=\frac{Q_\text{enc}}{\varepsilon_0}=\frac{r^3Q}{R^3\varepsilon_0}
+\end{equation*}
+$A$ is the surface area of the sphere: $A=4\pi r^2$. Combining these:
+\begin{equation*}
+    EA=\frac{r^3Q}{R^3\varepsilon_0}
+	\implies
+	E=\frac{r^3Q}{(R^3\varepsilon_0)(4\pi r^2)}
+	=\boxed{\frac{Qr}{4\pi R^3\varepsilon_0}
+	=\frac{kQr}{R^3}}
+\end{equation*}
+The net electric field inside the sphere is directly proportional to the radius of the smaller sphere. When $r=R$:
+\begin{equation*}
+    E=\frac{kQR}{R^3}
+	=\frac{kQ}{R^2}
+\end{equation*}
+is the electric field due to a point charge.
+
+\textbf{Outside the sphere.} Choose a larger sphere of radius $r$ as the Gaussian surface. As before, unit vector is in the same direction as the electric field. $A$ is the surface area of the Gaussian sphere: $A=4\pi r^2$.
+\begin{equation*}
+	\left\{\begin{aligned}
+		\Phi_E&=EA\cos\theta=EA \\
+		\Phi_E&=\frac{Q_\text{enc}}{\varepsilon_0}=\frac{Q}{\varepsilon_0}
+	\end{aligned}\right\}
+	\implies E=\frac{Q}{4\pi r^2\varepsilon_0}=\boxed{\frac{kQ}{r^2}}
+\end{equation*}
+
+\subsubsection{Shell with thickness}
+
+The shell has inner radius $R_A$ and outer radius $R_B$.
+
+The shell is initially neutral. A charge $+q$ is added to the center of the shell (in the cavity); the inside of the shell becomes negatively charged, and since the shell remains neutral, the outside becomes positively charged.
+
+In all cases, $\mathrm{d}A$ is parallel to $E$: $\cos\theta=1$.
+
+\textbf{Inside the cavity ($0<r<R_A$).} 
+Only the point charge $+q$ is enclosed: $Q_\text{enc}=q$.
+\begin{equation*}
+	\left\{\begin{aligned}
+		\Phi_E&=EA\cos\theta=EA \\
+		\Phi_E&=\frac{Q_\text{enc}}{\varepsilon_0}=\frac{q}{\varepsilon_0}
+	\end{aligned}\right\}
+	\implies E=\frac{q}{4\pi r^2\varepsilon_0}=\boxed{\frac{kq}{r^2}}
+\end{equation*}
+
+\textbf{Inside the surface ($R_A<r<R_B$).}
+Negative charges are located at the inner surface ($R_A$), with magnitude equal to $q$. So the enclosed charge $Q_\text{enc}=0$.
+\begin{equation*}
+	\left\{\begin{aligned}
+		\Phi_E&=EA\cos\theta=EA \\
+		\Phi_E&=\frac{Q_\text{enc}}{\varepsilon_0}=0
+	\end{aligned}\right\}
+	\implies E=\boxed{0}
+\end{equation*}
+
+\textbf{Outside the shell ($r\geq R_B$).}
+The point charge and the net neutrally charged shell is enclosed. The charge of the shell is $0$. So the total enclosed charge is $Q_\text{enc}=q$.
+\begin{equation*}
+	E=\frac{Q}{4\pi r^2\varepsilon_0}=\boxed{\frac{kq}{r^2}}
+\end{equation*}
+
+\textbf{Graph of $E$ against $r$.} $E$ is proportional to $1/r^2$ at all points except when $R_A<r<R_B$, where $E=0$.
+\begin{equation*}
+    E=\begin{cases}
+		0 & R_A<r<R_B \\
+		kq/r^2 & 0<r<R_A \text{ or } r>R_B
+    \end{cases}
+\end{equation*}
+
+\subsection{Irregularly Shaped Objects in Electrostatic Equilibrium}
+
+When an object has a ``weird'' shape, charges are not distributed uniformly on it. Electrons want to be far apart from each other.
+\begin{itemize}
+	\item When the radius of curvature is large (\textit{The Lord Amar of Hightstowne} reference), electrons are able to move a higher distance apart, resulting in \ul{lower} surface charge density $\sigma$ and therefore a \ul{weaker} electric field $E$.
+	\item When the radius of curvature is low, electrons are \ul{not} able to move a higher distance apart (there is no component of force pushing them along the surface, and the charge cannot leave the surface), resulting in \ul{higher} surface charge density $\sigma$ and therefore a \ul{stronger} electric field $E$.
+\end{itemize}
+
+\subsection{Electrostatic Equilibrium}
+
+\definition{
+	An object is in \textbf{electrostatic equilibrium} if it has a net charge, but the charges on it are not moving.
+}
+When an object is in electrostatic equilibrium, there are no charges moving in or on the surface. There is no net electric field inside the surface: $E=0$. When inside or on the surface, electric potential is a constant and potential difference at all points is $\Delta V=0$.
+
+\theorem{Net charge}{
+	\begin{itemize}
+		\item All net charge reside on the surface, as a result of Coulomb's law.
+		\item Electric field ``just outside'' the surface is perpendicular to the surface.
+	\end{itemize}
+}
+
+\subsection{Electric Field, Charge and Potential}
+
+\theorem{Electric field close to conducting surface}{
+	Electric field at a location close to a conducting surface with surface charge density $\sigma$ is:
+	\begin{equation*}
+	    E=\frac{\sigma}{\varepsilon_0}
+	\end{equation*}
+	where:
+	\begin{align*}
+		E&=\text{electric field (\si{N/C})} \\
+		\sigma&=\text{surface charge density (\si{C/m^2})} \\
+		\varepsilon_0&=\text{permittivity of free space (\si{\coulomb^2/\newton\meter^2})} \\
+		&=8.85\times 10^{-12}\,\si{\coulomb^2/\newton\meter^2}
+	\end{align*}
+}
+
+\theorem{Net charge and potential}{
+	Net charge moves from an area of high potential to an area of low potential.
+	\begin{equation*}
+		V_1=\frac{kQ_1}{r_1} \qquad
+		V_2=\frac{kQ_2}{r_2} \qquad
+		V_1>V_2
+	\end{equation*}
+	Net charge will flow from area 1 to area 2 until potentials are equal ($V_1=V_2$):
+	\begin{equation*}
+		\frac{Q_1}{r_1}
+		=\frac{Q_2}{r_2}
+	\end{equation*}
+}
+
+\theorem{Potential and electric field}{
+	\begin{equation*}
+	    E=\diff Vx \qquad \Delta V=\int E\,\mathrm{d}x
+	\end{equation*}
+	where:
+	\begin{align*}
+		E&=\text{electric field (\si{N/C=V/m})} \\
+		V&=\text{electric potential (\si{V})}
+	\end{align*}
+}
 
 \end{document}
 
