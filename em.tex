@@ -507,7 +507,7 @@ This concept can be similarly used for electric potential.
 \defitheorem{Electric potential and potential energy in a uniform field}{
 	In a uniform electric field (between two charged plates) of strength $E$, the \textbf{electric potential energy} $U_E$ of a charge $q$ at a distance $x$ to the plate of opposite charge from $q$ is:
 	\begin{equation*}
-	    \Delta U_E=qEx
+	    \Delta U_E=qEx=q\Delta V
 	\end{equation*}
 	\textbf{Electric potential} is potential energy per unit charge:
 	\begin{equation*}
@@ -975,10 +975,13 @@ Electric field can be found by solving for $E$ in:
 \end{equation*}
 
 \subsubsection{Thin rod}
+\hl{To do}
 
 \subsubsection{Cylinder}
+\hl{To do}
 
 \subsubsection{Plane}
+\hl{To do}
 
 \subsubsection{Capacitor}
 
@@ -994,7 +997,7 @@ At the left end cap, electric field is zero because it is inside the plane. Elec
 \end{equation*}
 In the sheath, $E$ and $A$ are orthogonal:
 \begin{equation*}
-	\Phi_E=EA\cancelto0{cos\theta}=0
+	\Phi_E=EA\cancelto0{\cos\theta}=0
 \end{equation*}
 The total flux for the Gaussian surface is $\Phi_E=EA$. Surface charge density $\sigma$ is $Q_\text{enc}$ divided by the area of the end cap: $\sigma=Q_\text{enc}/A$. Equating this with $\Phi_E=Q_\text{enc}/\varepsilon_0$:
 \begin{equation*}
@@ -1136,14 +1139,92 @@ When an object is in electrostatic equilibrium, there are no charges moving in o
 
 \theorem{Potential and electric field}{
 	\begin{equation*}
-	    E=\diff Vx \qquad \Delta V=\int E\,\mathrm{d}x
+	    E=-\diff Vx \qquad \Delta V=-\int E\,\mathrm{d}x
 	\end{equation*}
 	where:
 	\begin{align*}
 		E&=\text{electric field (\si{N/C=V/m})} \\
-		V&=\text{electric potential (\si{V})}
+		V&=\text{electric potential (\si{V})} \\
+		x&=\text{distance (m)}
 	\end{align*}
+	\begin{itemize}
+		\item Positively charged objects move from high to low potential.
+		\item Negatively charged objects move from low to high potential.
+	\end{itemize}
 }
+Exactly the same relationship between force $F$ and potential energy $E$ from mechanics. Objects attempt to minimize their potential/potential energy (not its magnitude).
+
+\example{Potential and electric field of point charge}{
+	The electric field created by a point charge $Q$ at a distance $r$ is:
+	\begin{equation*}
+	    E=\frac{kQ}{r^2}
+	\end{equation*}
+	Potential difference is between a point with no potential (infinity) and the point of interest $r$.
+	\begin{equation*}
+	    \Delta V=-\int_{\infty}^{r}\frac{kQ}{r^2}\,\mathrm{d}r
+		=-kQ \left[-\frac{1}{r}\right]_{\infty}^{r}
+		=kQ \left( \frac1r-0 \right)
+		=\frac{kQ}{r}
+	\end{equation*}
+}
+
+\theorem*{
+	The electric potential at a point due to multiple point charges is equal to the \ul{sum} of the electric potential due to individual charges.
+	\begin{equation*}
+		V_\text{total}=\sum V_i
+	\end{equation*}
+}
+
+The derivations below are left as an exercise to the reader.
+
+\subsubsection{Arc}
+
+The electric potential of an arc is:
+\begin{equation*}
+	V=k\lambda\Big[\theta\Big]_{\theta_1}^{\theta_2}
+\end{equation*}
+where $\lambda$ is the linear charge density and $\theta_1,\theta_2$ are the bounds of the arc. For a full circle:
+\begin{equation*}
+    V
+	=k\lambda(2\pi-0)
+	=2\pi k\lambda
+	=2\pi k \left( \frac{Q}{L} \right)
+	=2\pi k \left( \frac{Q}{2\pi R} \right)
+	=\frac{kQ}{R}
+\end{equation*}
+
+\subsubsection{Ring}
+
+\begin{align*}
+    V
+	&=\int_{0}^{2\pi}\frac{k}{d}\,\mathrm{d}q
+	=\frac{k\lambda R}{d}\int_{0}^{2\pi}\,\mathrm{d}\theta
+	=\frac{kQ}{d}
+	\intertext{where $\lambda=Q/L=Q/2\pi R$ is linear charge density and $d=\sqrt{R^2+x^2}$ is diagonal distance to the charge section.}
+	V&=\frac{kQ}{\sqrt{R^2+x^2}}
+\end{align*}
+where $x$ is the horizontal distance between the point of interest and the ring.
+
+\subsubsection{Finite rod}
+
+The electric potential due to a finite rod of length $L$ is at a distance $a$ is:
+\begin{equation*}
+	V
+	=\int_{0}^{L}\frac{k\lambda}{L+a-x}\,\mathrm{d}x
+	=k\lambda \Big[-\ln(L+a-x)\Big]_{0}^{L}
+	=k\lambda (-\ln(a)+\ln(L+a))
+	=\boxed{k\lambda \ln\left(\frac{L+a}{a}\right)}
+\end{equation*}
+
+\subsubsection{At perpendicular bisector of finite rod}
+
+The electric potential at a distance $D$ from the center of the rod of length $L$ is:
+\begin{equation*}
+    V
+	=k \int_{-L/2}^{L/2}\frac{\lambda}{\sqrt{x^2+D^2}}\,\mathrm{d}x
+	=k \int_{0}^{L}\frac{\lambda}{\sqrt{(x-L/2)^2+D^2}}\,\mathrm{d}x
+\end{equation*}
+
 
 \end{document}
 
