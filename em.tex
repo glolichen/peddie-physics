@@ -837,7 +837,7 @@ The net charge is the integral of $\mathrm{d}E_\text{horizontal}$, but everythin
 	=\int \frac{k\lambda z}{(z^2+R^2)^{3/2}}\,\mathrm{d}s
 	=\frac{k\lambda z}{(z^2+R^2)^{3/2}}\int_0^{2\pi R} \mathrm{d}s
 	=\frac{k\lambda z}{(z^2+R^2)^{3/2}}\cdot2\pi R
-	=\boxed{\frac{kqz}{(z^2+R^2){3/2}}}
+	=\boxed{\frac{kqz}{(z^2+R^2)^{3/2}}}
 \end{equation*}
 \textbf{Special case 1.} If $P$ is at the center of the circle of charge, then $z=0\implies E=0$.
 
@@ -867,7 +867,9 @@ The sphere/shell has radius $R$.
 \end{equation*}
 where $r$ is the distance from the point of interest to the center of the sphere/shell.
 
-When on/away from the surface, entire sphere/shell can be thought of as being \ul{collapsed into a point charge}.
+\theorem*{
+	When on/away from the surface, entire sphere/shell can be thought of as being \ul{a point charge}.
+}
 
 \subsection{Gauss's Law}
 
@@ -1007,7 +1009,7 @@ The total flux for the Gaussian surface is $\Phi_E=EA$. Surface charge density $
 \end{equation*}
 When outside the capacitor, choose a Gaussian surface as a surface partially outside the capacitor and intersecting one plate. $E=0$ both inside the conducting plane and outside the capacitor, so the total flux $\Phi_E=0\implies E=0$.
 
-\subsubsection{Insulting sphere}
+\subsubsection{Insulating sphere}
 
 A charge is uniformly distributed throughout an insulating sphere of radius $R$.
 
@@ -1109,6 +1111,9 @@ When an object is in electrostatic equilibrium, there are no charges moving in o
 
 \subsection{Electric Field, Charge and Potential}
 
+\theorem{Inside a conductor}{
+	When inside a conductor (both hollow and solid) at electrostatic equilibrium, the electric field is always 0 and electric potential is constant.
+}
 \theorem{Electric field close to conducting surface}{
 	Electric field at a location close to a conducting surface with surface charge density $\sigma$ is:
 	\begin{equation*}
@@ -1168,13 +1173,6 @@ Exactly the same relationship between force $F$ and potential energy $E$ from me
 	\end{equation*}
 }
 
-\theorem*{
-	The electric potential at a point due to multiple point charges is equal to the \ul{sum} of the electric potential due to individual charges.
-	\begin{equation*}
-		V_\text{total}=\sum V_i
-	\end{equation*}
-}
-
 The derivations below are left as an exercise to the reader.
 
 \subsubsection{Arc}
@@ -1199,9 +1197,9 @@ where $\lambda$ is the linear charge density and $\theta_1,\theta_2$ are the bou
     V
 	&=\int_{0}^{2\pi}\frac{k}{d}\,\mathrm{d}q
 	=\frac{k\lambda R}{d}\int_{0}^{2\pi}\,\mathrm{d}\theta
-	=\frac{kQ}{d}
+	=\boxed{\frac{kQ}{d}}
 	\intertext{where $\lambda=Q/L=Q/2\pi R$ is linear charge density and $d=\sqrt{R^2+x^2}$ is diagonal distance to the charge section.}
-	V&=\frac{kQ}{\sqrt{R^2+x^2}}
+	V&=\boxed{\frac{kQ}{\sqrt{R^2+x^2}}}
 \end{align*}
 where $x$ is the horizontal distance between the point of interest and the ring.
 
@@ -1225,6 +1223,115 @@ The electric potential at a distance $D$ from the center of the rod of length $L
 	=k \int_{0}^{L}\frac{\lambda}{\sqrt{(x-L/2)^2+D^2}}\,\mathrm{d}x
 \end{equation*}
 
+\subsection{Superposition}
+
+\theorem{Superposition}{
+	The electric potential at a point due to multiple point charges is equal to the \ul{sum} of the electric potential due to individual charges.
+	\begin{equation*}
+		V_\text{total}=\sum V_i
+	\end{equation*}
+}
+
+\subsection{Electrostatic shielding}
+
+\definition{A neutral conducting shell will maintain a net charge of zero and electric field $E=0$, even when placed close to a charge. The shell will be polarized but its net charge remains zero. This is a \textbf{Faraday cage}.}
+
+\section{Capacitors}
+
+When a capacitor is neutral, it has the same number of positive and negative charges on both plates. The potential difference $\Delta V$ across the plates is zero.
+
+When the capacitor is charged, electrons are moved between the plates. Electrons move in the direction the battery's emf makes them move.
+
+As the potential difference across the capacitor increases, it becomes harder to move charges across the capacitor. Charging is complete when the battery's potential difference equals the potential difference across the capacitor. In the end, there is a $+Q$ charge on one plate and a $-Q$ charge on the other.
+\begin{equation*}
+	\Delta V_\text{battery}=\Delta V_\text{capacitor}
+\end{equation*}
+
+\subsection{Capacitors in Circuits}
+
+In a circuit with a battery, resistor and capacitor wired in series:
+\begin{itemize}
+	\item \textbf{$\Delta V_\text{capacitor}$ vs time graph.} When charging, $\Delta V_\text{capacitor}$ increases with an asymptote at $\Delta V_\text{battery}$ and is concave down. When discharging, it decreases with an asymptote at $0$ and is concave up.
+
+	\item \textbf{Current vs time graph.} When both charging and discharging, current decreases and is concave up.
+
+	\item \textbf{Net charge vs time graph.} Same/directly proportional to $\Delta V_\text{capacitor}$ vs time graph.
+
+	\item \textbf{$\Delta V_\text{resistor}$ vs time graph.} Same/directly proportional to $\Delta V_\text{capacitor}$ vs time graph.
+\end{itemize}
+Each graph is \ul{exponential}.
+
+The time it takes to charge the capactor to potential difference $\Delta V_\text{battery}$ depends on:
+\begin{itemize}
+	\item The current through the circuit and therefore the resistance of the resistor.
+	\item The area of the capacitor (greater area means there are more charges on the plates).
+\end{itemize}
+
+\subsection{??}
+
+\definition{
+	A \textbf{capacitor} consists of two neutral conductors separated by a distance $d$ and a \textbf{dielectric} (insulator).
+}
+Energy is required to move charges from one conductor (often a metal plate) to another.
+
+Since the two plates are both neutral initially (with net charge $0\,\si{C}$), at any time, their net charges are equal in magnitude. Let $\left|Q\right|$ be the magnitude of the net charge.
+
+\textbf{Charging.} At time $t=0$, both plates are neutral and $\left|Q\right|=0$. The capacitor is equivalent to a closed switch (or just wire). At time $t=\infty$, the potential difference of the capacitor is equal to that of the battery. The capacitor is equivalent to a open switch.
+
+A capacitor is \ul{not} a battery:
+\begin{itemize}
+	\item Both provide a potential difference $\Delta V$ and have positive and negative terminals.
+	\item Both store energy, but a battery stores chemical potential energy, while a capacitor contains an electric field and therefore stores electric potential energy.
+	\item Difference: a battery provides a (approximately) constant $\Delta V$. The $\Delta V$ and current of a capacitor changes.
+\end{itemize}
+
+\subsection{Capacitance}
+
+\defitheorem{Capacitance}{
+	 \textbf{Capacitance} is the slope of a graph of $\Delta V_\text{capacitor}$ against the magnitude of charge $\left|Q\right|$:
+	\begin{equation*}
+		C
+		=\frac{\Delta \left|Q\right|}{\Delta \left|\Delta V_\text{capacitor}\right|}
+		=\frac{Q}{V}
+	\end{equation*}
+	where:
+	\begin{align*}
+		Q&=\text{charge (C)} \\
+		V&=\text{potential difference (V)}
+	\end{align*}
+	Capacitance is fixed by the geometry of the the capacitor. The unit for capacitance is the \textbf{farad} (\si{F}), which is defined as a coulombs per volt (\si{C/V}).
+
+	Capacitance is also given by:
+	\begin{equation*}
+	    C=\frac{\kappa \varepsilon_0 A}{d}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\kappa
+		&=\text{dielectric constant (unitless)} \\
+		\varepsilon_0
+		&=\text{permittivity of free space (\si{\coulomb^2/\newton\meter^2})} \\
+		&=8.85\times 10^{-12}\,\si{\coulomb^2/\newton\meter^2} \\
+		A&=\text{area (\si{m^2})} \\
+		d&=\text{distance between plates (m)}
+	\end{align*}
+}
+The dielectric constant depends on the material used to insulate the two plates (which is called the dielectric).
+
+Recall that $\Delta U_\text{E}=q\Delta V$:
+\theorem{Energy of capacitor}{
+	The area under the $\Delta V_\text{capacitor}$ vs $\left|Q\right|$ graph is the energy stored by the capacitor:
+	\begin{equation*}
+		U_\text{capacitor}
+		=\frac12 Q\Delta V
+		=\frac{Q^2}{2C}
+		=\frac12 C(\Delta V)^2
+	\end{equation*}
+	where:
+	\begin{align*}
+		U_\text{capacitor}&=\text{energy stored by capacitor (J)}
+	\end{align*}
+}
 
 \end{document}
 
