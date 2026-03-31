@@ -1126,6 +1126,7 @@ When an object is in electrostatic equilibrium, there are no charges moving in o
 		\varepsilon_0&=\text{permittivity of free space (\si{\coulomb^2/\newton\meter^2})} \\
 		&=8.85\times 10^{-12}\,\si{\coulomb^2/\newton\meter^2}
 	\end{align*}
+	This especially works for capacitors.
 }
 
 \theorem{Net charge and potential}{
@@ -1238,6 +1239,10 @@ The electric potential at a distance $D$ from the center of the rod of length $L
 
 \section{Capacitors}
 
+\definition{
+	A \textbf{capacitor} consists of two neutral conductors separated by a distance $d$ and a \textbf{dielectric} (insulator).
+}
+
 When a capacitor is neutral, it has the same number of positive and negative charges on both plates. The potential difference $\Delta V$ across the plates is zero.
 
 When the capacitor is charged, electrons are moved between the plates. Electrons move in the direction the battery's emf makes them move.
@@ -1267,17 +1272,16 @@ The time it takes to charge the capactor to potential difference $\Delta V_\text
 	\item The area of the capacitor (greater area means there are more charges on the plates).
 \end{itemize}
 
-\subsection{??}
-
-\definition{
-	A \textbf{capacitor} consists of two neutral conductors separated by a distance $d$ and a \textbf{dielectric} (insulator).
-}
 Energy is required to move charges from one conductor (often a metal plate) to another.
 
 Since the two plates are both neutral initially (with net charge $0\,\si{C}$), at any time, their net charges are equal in magnitude. Let $\left|Q\right|$ be the magnitude of the net charge.
 
-\textbf{Charging.} At time $t=0$, both plates are neutral and $\left|Q\right|=0$. The capacitor is equivalent to a closed switch (or just wire). At time $t=\infty$, the potential difference of the capacitor is equal to that of the battery. The capacitor is equivalent to a open switch.
+\subsection{Charging}
 
+\begin{itemize}
+	\item At time $t=0$, both plates are neutral and $\left|Q\right|=0$. The capacitor is equivalent to a closed switch/wire.
+	\item At time $t=\infty$, the potential difference of the capacitor is equal to that of the battery. The capacitor is equivalent to a open switch.
+\end{itemize}
 A capacitor is \ul{not} a battery:
 \begin{itemize}
 	\item Both provide a potential difference $\Delta V$ and have positive and negative terminals.
@@ -1292,12 +1296,12 @@ A capacitor is \ul{not} a battery:
 	\begin{equation*}
 		C
 		=\frac{\Delta \left|Q\right|}{\Delta \left|\Delta V_\text{capacitor}\right|}
-		=\frac{Q}{V}
+		=\frac{Q}{\Delta V}
 	\end{equation*}
 	where:
 	\begin{align*}
 		Q&=\text{charge (C)} \\
-		V&=\text{potential difference (V)}
+		\Delta V&=\text{potential difference (V)}
 	\end{align*}
 	Capacitance is fixed by the geometry of the the capacitor. The unit for capacitance is the \textbf{farad} (\si{F}), which is defined as a coulombs per volt (\si{C/V}).
 
@@ -1331,6 +1335,69 @@ Recall that $\Delta U_\text{E}=q\Delta V$:
 	\begin{align*}
 		U_\text{capacitor}&=\text{energy stored by capacitor (J)}
 	\end{align*}
+}
+
+\theorem{Dielectric constant}{
+	\begin{equation*}
+	    \kappa=\frac{\varepsilon}{\varepsilon_0}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\kappa
+		&=\text{dielectric constant (unitless)} \\
+		\varepsilon
+		&=\text{permittivity of dielectric material (\si{\coulomb^2/\newton\meter^2})} \\
+		\varepsilon_0
+		&=\text{permittivity of free space (\si{\coulomb^2/\newton\meter^2})} \\
+		&=8.85\times 10^{-12}\,\si{\coulomb^2/\newton\meter^2}
+	\end{align*}
+}
+
+\subsection{RC Circuit}
+
+\definition{An \textbf{RC circuit} is a circuit with a resistor and a capacitor.}
+
+\definition{An \textbf{eqiuvalent capacitor} is a capacitor that has equal capacitance, total charge and potential difference as the original circuit.}
+
+\theorem{Capacitors in parallel}{
+	\begin{align*}
+		C_\text{eq}
+		&=\sum_i C_i \\
+		\Delta V_\text{eq}
+		&=\Delta V_i \\
+		Q_\text{eq}
+		&=\sum_i Q_i
+	\end{align*}
+	where:
+	\begin{align*}
+		C
+		&=\text{capacitance (F)} \\
+		Q
+		&=\text{charge (C)} \\
+		\Delta V
+		&=\text{potential difference (V)}
+	\end{align*}
+}
+
+\theorem{Capacitors in series}{
+	\begin{align*}
+		C_\text{eq}
+		&=\sum_i \frac1{C_i} \\
+		\Delta V_\text{eq}
+		&=\sum_i \Delta V_i \\
+		Q_\text{eq}
+		&=Q_i
+	\end{align*}
+	where:
+	\begin{align*}
+		C
+		&=\text{capacitance (F)} \\
+		Q
+		&=\text{charge (C)} \\
+		\Delta V
+		&=\text{potential difference (V)}
+	\end{align*}
+	The charge of each capacitor $Q_i$ are equal, because the wires and plates in the middle are shielded by the outermost plates.
 }
 
 \end{document}
