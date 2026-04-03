@@ -1292,7 +1292,7 @@ A capacitor is \ul{not} a battery:
 \subsection{Capacitance}
 
 \defitheorem{Capacitance}{
-	 \textbf{Capacitance} is the slope of a graph of $\Delta V_\text{capacitor}$ against the magnitude of charge $\left|Q\right|$:
+	 \textbf{Capacitance} is the ability of an object to store charge. It is the slope of a graph of $\Delta V_\text{capacitor}$ against the magnitude of charge $\left|Q\right|$:
 	\begin{equation*}
 		C
 		=\frac{\Delta \left|Q\right|}{\Delta \left|\Delta V_\text{capacitor}\right|}
@@ -1326,14 +1326,17 @@ Recall that $\Delta U_\text{E}=q\Delta V$:
 \theorem{Energy of capacitor}{
 	The area under the $\Delta V_\text{capacitor}$ vs $\left|Q\right|$ graph is the energy stored by the capacitor:
 	\begin{equation*}
-		U_\text{capacitor}
+		U_\text{c}
 		=\frac12 Q\Delta V
 		=\frac{Q^2}{2C}
 		=\frac12 C(\Delta V)^2
 	\end{equation*}
 	where:
 	\begin{align*}
-		U_\text{capacitor}&=\text{energy stored by capacitor (J)}
+		U_\text{c}&=\text{energy stored by capacitor (J)} \\
+		Q&=\text{charge (C)} \\
+		\Delta V&=\text{potential difference (V)} \\
+		C&=\text{capacitance (F)}
 	\end{align*}
 }
 
@@ -1381,7 +1384,7 @@ Recall that $\Delta U_\text{E}=q\Delta V$:
 
 \theorem{Capacitors in series}{
 	\begin{align*}
-		C_\text{eq}
+		\frac{1}{C_\text{eq}}
 		&=\sum_i \frac1{C_i} \\
 		\Delta V_\text{eq}
 		&=\sum_i \Delta V_i \\
@@ -1399,6 +1402,172 @@ Recall that $\Delta U_\text{E}=q\Delta V$:
 	\end{align*}
 	The charge of each capacitor $Q_i$ are equal, because the wires and plates in the middle are shielded by the outermost plates.
 }
+
+\subsection{Distance between Plates}
+
+In an RC circuit, $\Delta V$ is constant, but in an isolated capacitor, $Q$ is constant.
+
+In both cases, the electric field between the two plates is:
+\begin{equation*}
+    E
+	=\frac{\sigma}{\varepsilon_0}
+	=\frac{Q}{\varepsilon_0A}
+	\qquad
+	\Delta V=Ed
+\end{equation*}
+In an RC circuit, $\Delta V$ is constant, so electric field strength $E$ decreases. In an isolated capacitor, $Q$ is constant so $E=Q/\varepsilon_0A$ is constant, so $\Delta V$ increases with distance.
+
+\subsection{Charge Redistribution}
+
+When two capacitors are connected, charges will redistribute between the two capacitors. When redistribution is complete:
+\begin{equation*}
+    \Delta V_1=\Delta V_2
+	\implies \frac{Q_1'}{C_1}=\frac{Q_2'}{C_2}
+\end{equation*}
+where $\Delta V$ is potential difference, $Q'$ is charge \ul{after} redistribution and $C$ is capacitance. The total amount of charge does not change. If where $Q_i$ are the charges before redistribution:
+\begin{equation*}
+    \sum Q_i=\sum Q_i'
+\end{equation*}
+Potential energy $U_c=Q\Delta V/2$ decreases during redistribution, as enregy is dissipated as thermal energy.
+
+\subsection{Kirchoff's Rules}
+
+A capacitor provides a potential difference that is counted when using Kirchoff's loop rule. Potential \ul{drops} from the positively charged plate to the negatively charged plate:
+\begin{equation*}
+    \left|\Delta V\right|
+	=\frac{Q}{C}
+\end{equation*}
+
+\theorem{RC circuit charging}{
+	Suppose a battery of potential difference $\Delta V_1$ is connected to a resistor with resistance $R$ and a capacitor. Then the charge $Q$ on each plate of the capacitor is given by the differential equation:
+	\begin{equation*}
+		\frac{Q_0}{RC}-\diff Qt-\frac{Q}{RC}=0
+	\end{equation*}
+	Solving the differential equation:
+	\begin{align*}
+		\frac{t}{RC}&=\ln\left(Q-Q_0\right)-\ln Q \\
+		\Aboxed{Q&=Q_0\cdot\left(1-\exp\left(\frac{-t}{RC}\right)\right)} \\
+		I&=\diff Qt=\underbrace{\frac{Q_0}{RC}}_{I_0}\exp\left(\frac{-t}{RC}\right)
+	\end{align*}
+	where:
+	\begin{align*}
+		Q_0&=\text{max value of $Q$ (when capacitor is fully charged) (C)} \\
+		Q&=\text{charge on capacitor at time $t$ (C)} \\
+		I=\diff Qt&=\text{current/rate of change of $Q$ (A)} \\
+		C&=\text{capacitance (F)} \\
+		t&=\text{time (s)}
+	\end{align*}
+}
+
+When a capacitor is discharging, a capacitor with potential difference $\Delta V_C$ is connected to a resistor with resistance $R$. 
+
+Since the circuit is discharging and $Q$ is decreasing, current is the rate of discharge:
+\begin{equation*}
+    I=-\diff Qt
+\end{equation*}
+
+\theorem{RC circuit discharging}{
+	The charge $Q$ at time $t$ is given by the differential equation:
+	\begin{equation*}
+	    \Delta V_C-IR=0
+		\implies \frac{Q}{RC}+\diff Qt=0
+	\end{equation*}
+	Gives the final result:
+	\begin{align*}
+		Q&=Q_0\exp\left(\frac{-t}{RC}\right) \\
+		I=-\diff Qt&=\underbrace{\frac{Q_0}{RC}}_{I_0} \exp \left( \frac{-t}{RC} \right)
+	\end{align*}
+}
+
+\subsection{Time Constant}
+
+\defitheorem{Time constant}{
+	The \textbf{time constant} ($\tau$) of an RC circuit is defined as the the product of resistance and capacitance:
+	\begin{equation*}
+	    \tau=RC
+	\end{equation*}
+	where:
+	\begin{align*}
+		\tau&=\text{time constant (s)} \\
+		R&=\text{resistance (\si{\ohm})} \\
+		C&=\text{capacitance (F)}
+	\end{align*}
+}
+
+The product $RC$ has units of seconds. From $C=Q/\Delta V$, a farad is a coulomb per volt (C/V) and from $R=V/I$, an ohm is a volt per ampere (V/A).
+\begin{equation*}
+    \left[ 
+		\si{F\cdot\ohm}
+		=\frac{\si{C}}{\si{V}}\cdot \frac{\si{V}}{\si{A}}
+		=\frac{\si{C}}{\si{A}}
+		=\frac{\si{C}}{\si{C/s}}
+		=\si{s}
+	\right]
+\end{equation*}
+Using the capacitor charging and discharging equations:
+\begin{align*}
+	Q&=Q_0\cdot \left( 1-\exp \left( \frac{-t}{RC} \right) \right) \\
+	Q&=Q_0\exp \left( \frac{-t}{RC} \right)
+\end{align*}
+\textbf{Charging.} At time $t=\tau=RC$, the charge on a capacitor is:
+\begin{equation*}
+	Q
+	=Q_0\cdot \left( 1-\exp \left( \frac{-RC}{RC} \right) \right)
+	=Q_0(1-e^{-1})
+	\approx 0.632Q_0
+\end{equation*}
+At the time constant, the capacitor is approximately $63.2\%$ charged.
+
+\textbf{Discharging.} At time $t=\tau=RC$, the charge on a capacitor is:
+\begin{equation*}
+	Q
+	=Q_0\exp \left( \frac{-RC}{RC} \right)
+	=Q_0e^{-1}
+	\approx 0.368Q_0
+\end{equation*}
+At the time constant, the capacitor is approximately $36.8\%$ charged. If the capacitor was full at $t=0$, it has lost $63.2\%$ of charge.
+
+\theorem{Time constant with multiple resistors and capacitors}{
+	\begin{equation*}
+		\tau=R_\text{eq}C_\text{eq}
+	\end{equation*}
+	where:
+	\begin{align*}
+		\tau&=\text{time constant (s)} \\
+		R_\text{eq}&=\text{equivalent resistance (\si{\ohm})} \\
+		C_\text{eq}&=\text{equivalent capacitance (F)}
+	\end{align*}
+}
+
+\subsection{Additional Circuit Equations}
+
+RC circuits are transient circuits, meaning the behavior (potential differences, currents, etc) of the circuit changes over time. Circuits done previously in part 1 where $I,\Delta V_B,R,P$ are constant are called \textbf{steady state circuits}.
+
+Since $I$ is flow rate of charge, the total charge moved through any circuit (including transient circuits) is the integral of current.
+\theorem{Current and charge}{
+	\begin{align*}
+		I&=\diff Qt \\
+		\Delta Q&=\int I\,\mathrm{d}t
+	\end{align*}
+	where:
+	\begin{align*}
+		I&=\text{current (A)} \\
+		Q&=\text{charge (C)}
+	\end{align*}
+}
+Similarly, power is change in energy over time, so change in energy is the integral of power.
+\theorem{Power and energy}{
+	\begin{align*}
+		P&=I\Delta V=\diff Et \\
+		\Delta E&=\int P\,\mathrm{d}t
+	\end{align*}
+	where:
+	\begin{align*}
+		P&=\text{power (W)} \\
+		E&=\text{energy (J)}
+	\end{align*}
+}
+
 
 \end{document}
 
