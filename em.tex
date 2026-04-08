@@ -945,7 +945,7 @@ We find an equation for flux as a function of the charge enclosed in a Gaussian 
 \theorem{Point charge in Gaussian surface}{
 	The electric flux of a charge $Q_\text{enc}$ enclosed in \ul{any} Gaussian surface is:
 	\begin{equation*}
-		\Phi_E=\frac{Q_\text{enc}}{\epsilon_0}
+		\Phi_E=\frac{Q_\text{enc}}{\varepsilon_0}
 	\end{equation*}
 	where:
 	\begin{align*}
@@ -1266,7 +1266,7 @@ In a circuit with a battery, resistor and capacitor wired in series:
 \end{itemize}
 Each graph is \ul{exponential}.
 
-The time it takes to charge the capactor to potential difference $\Delta V_\text{battery}$ depends on:
+The time it takes to charge the capacitor to potential difference $\Delta V_\text{battery}$ depends on:
 \begin{itemize}
 	\item The current through the circuit and therefore the resistance of the resistor.
 	\item The area of the capacitor (greater area means there are more charges on the plates).
@@ -1303,7 +1303,7 @@ A capacitor is \ul{not} a battery:
 		Q&=\text{charge (C)} \\
 		\Delta V&=\text{potential difference (V)}
 	\end{align*}
-	Capacitance is fixed by the geometry of the the capacitor. The unit for capacitance is the \textbf{farad} (\si{F}), which is defined as a coulombs per volt (\si{C/V}).
+	Capacitance is fixed by the geometry of the capacitor. The unit for capacitance is the \textbf{farad} (\si{F}), which is defined as a coulombs per volt (\si{C/V}).
 
 	Capacitance is also given by:
 	\begin{equation*}
@@ -1360,7 +1360,7 @@ Recall that $\Delta U_\text{E}=q\Delta V$:
 
 \definition{An \textbf{RC circuit} is a circuit with a resistor and a capacitor.}
 
-\definition{An \textbf{eqiuvalent capacitor} is a capacitor that has equal capacitance, total charge and potential difference as the original circuit.}
+\definition{An \textbf{equivalent capacitor} is a capacitor that has equal capacitance, total charge and potential difference as the original circuit.}
 
 \theorem{Capacitors in parallel}{
 	\begin{align*}
@@ -1403,6 +1403,12 @@ Recall that $\Delta U_\text{E}=q\Delta V$:
 	The charge of each capacitor $Q_i$ are equal, because the wires and plates in the middle are shielded by the outermost plates.
 }
 
+\remark*{
+	Charge can be thought of as current and $\Delta V$ as $\Delta V$ in a regular circuit. The relationship of individual charges and potential differences are the same as with circuits.
+
+	Charge splits at junctions at a ratio equal to $C_\text{eq}/C_i$, similar to currents in circuits.
+}
+
 \subsection{Distance between Plates}
 
 In an RC circuit, $\Delta V$ is constant, but in an isolated capacitor, $Q$ is constant.
@@ -1417,6 +1423,12 @@ In both cases, the electric field between the two plates is:
 \end{equation*}
 In an RC circuit, $\Delta V$ is constant, so electric field strength $E$ decreases. In an isolated capacitor, $Q$ is constant so $E=Q/\varepsilon_0A$ is constant, so $\Delta V$ increases with distance.
 
+\theorem*{
+	In an isolated capacitor, charge remains constant w.r.t. distance between plates.
+
+	In a capacitor connected to a battery, potential difference remains constant w.r.t. distance between plates.
+}
+
 \subsection{Charge Redistribution}
 
 When two capacitors are connected, charges will redistribute between the two capacitors. When redistribution is complete:
@@ -1428,7 +1440,7 @@ where $\Delta V$ is potential difference, $Q'$ is charge \ul{after} redistributi
 \begin{equation*}
     \sum Q_i=\sum Q_i'
 \end{equation*}
-Potential energy $U_c=Q\Delta V/2$ decreases during redistribution, as enregy is dissipated as thermal energy.
+Potential energy $U_c=Q\Delta V/2$ decreases during redistribution, as energy is dissipated as thermal energy.
 
 \subsection{Kirchoff's Rules}
 
@@ -1482,7 +1494,7 @@ Since the circuit is discharging and $Q$ is decreasing, current is the rate of d
 \subsection{Time Constant}
 
 \defitheorem{Time constant}{
-	The \textbf{time constant} ($\tau$) of an RC circuit is defined as the the product of resistance and capacitance:
+	The \textbf{time constant} ($\tau$) of an RC circuit is defined as the product of resistance and capacitance:
 	\begin{equation*}
 	    \tau=RC
 	\end{equation*}
@@ -1551,7 +1563,7 @@ Since $I$ is flow rate of charge, the total charge moved through any circuit (in
 	\end{align*}
 	where:
 	\begin{align*}
-		I&=\text{current (A)} \\
+		% I&=\text{current (A)} \\
 		Q&=\text{charge (C)}
 	\end{align*}
 }
@@ -1567,6 +1579,65 @@ Similarly, power is change in energy over time, so change in energy is the integ
 		E&=\text{energy (J)}
 	\end{align*}
 }
+
+\subsection{Cylindrical Capacitors}
+
+Let $r_1$ be the inner radius and $r_2$ be the outer radius. From Gauss's law, the electric field inside a cylindrical capacitor is:
+\begin{equation*}
+    E=\frac{Q}{2\pi rL \varepsilon_0}
+\end{equation*}
+where $r_1\leq r\leq r_2$ is the radius of the Gaussian surface and $L$ is its length. The potential difference the capacitor provides is:
+\begin{equation*}
+    \Delta V
+	=-\int_{a}^{b}E\,\mathrm{d}r
+	=\frac{Q}{2\pi L\varepsilon_0}\ln \frac{b}{a}
+\end{equation*}
+The capacitance is:
+\begin{equation*}
+    C
+	=\frac{Q}{\Delta V}
+	=\frac{Q}{\frac{Q}{2\pi L\varepsilon_0}\ln(a/b)}
+	=\frac{2\pi L\varepsilon_0}{\ln(b/a)}
+\end{equation*}
+The capacitance depends only on geometry and not on the charge on the plates $Q$.
+
+To charge a cylindrical capacitor:
+\begin{enumerate}
+	\item Start with neutral cylindrical shell.
+	\item Charge inner cylinder with positive charges.
+	\item Connect outer shell to ground, causing negative charges to move onto it.
+\end{enumerate}
+
+\subsection{Spherical Capacitors}
+
+The electric field between the outer and inner ``plates'' is, using a Gaussian surface of radius $r$:
+\begin{equation*}
+    E=\frac{Q}{4\pi r^2\varepsilon_0}
+\end{equation*}
+The potential difference between two distances $r$ is:
+\begin{equation*}
+    \Delta V
+	=-\int_{a}^{b}E\,\mathrm{d}r
+	=\frac{Q}{4\pi \varepsilon_0}\left( \frac{1}{a}-\frac{1}{b} \right)
+\end{equation*}
+The capacitance is:
+\begin{equation*}
+    C
+	=\frac{Q}{\Delta V}
+	=4\pi\varepsilon_0 \left( \frac1a-\frac1b \right)
+\end{equation*}
+
+\subsection{Dielectrics}
+
+The dielectric is an insulator placed in the space between the plates of a capacitor.
+\begin{equation*}
+	C=\frac{\kappa\varepsilon_0 A}{d}
+\end{equation*}
+A more insulating dielectric increases the dielectric constant (relative permittivity) $\kappa$, increasing the capacitance.
+
+The dielectric also prevents contact between the plates, which would result in a short circuit.
+
+\textbf{Isolated capacitor.} The side of the dielectric facing the negative side becomes slightly positive and the side facing the positive side becomes slightly negative.
 
 
 \end{document}
