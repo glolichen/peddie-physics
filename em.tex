@@ -1639,6 +1639,162 @@ The dielectric also prevents contact between the plates, which would result in a
 
 \textbf{Isolated capacitor.} The side of the dielectric facing the negative side becomes slightly positive and the side facing the positive side becomes slightly negative.
 
+The dielectric is polarized by the capacitor plates, and has an electric field of its own antiparallel to that of the capacitor. It is much weaker, so the electric field of the capacitor is \ul{weakened} (fewer electric field lines).
+
+Different materials polarize more/less easily, resulting in a different change in electric field strength. The dielectric constant $\kappa$ changes.
+\begin{equation*}
+    C=\frac{\kappa \varepsilon_0 A}{d}=\frac{Q}{\Delta V}
+\end{equation*}
+Higher dielectric constant $\kappa$ results in higher capacitance and lower potential difference (lower electric field).
+
+Doing work on the capacitor (such as inserting a dielectric in between it) increases potential energy $U_c$.
+
+\theorem{Dielectric}{
+	\begin{equation*}
+	    \kappa=\frac{C_d}{C_0} \qquad
+	\end{equation*}
+	where:
+	\begin{align*}
+		\kappa&=\text{dielectric constant (unitless)} \\
+		C_d&=\text{capacitance with dielectric (F)} \\
+		C_0&=\text{capacitance without dielectric (F)}
+	\end{align*}
+	This can be derived from the equation for capacitance $C=\kappa\varepsilon_0A/d$.
+}
+
+In an isolated capacitor, charge remains the same. The dielectric constant is a ratio of capacitance. It can also be expressed in terms of electric field and potential difference:
+\begin{equation*}
+	\kappa
+	=\frac{Q/\Delta V_d}{Q/\Delta V_0}
+	=\frac{\Delta V_0}{\Delta V_d}=\frac{E_0}{E_d} \qquad
+\end{equation*}
+
+\textbf{Connected to circuit.} Adding a dielectric will initially reduce its $E$ and $\Delta V$. A capacitor connected to a battery maintains its $\Delta V$ as more charges are pumped to the plates. The original $E$ and $\Delta V$ are reestablished.
+
+$Q$, $\kappa$ and $C$ will increase, and potential energy $U_c$ increases. $d$, $A$, $\Delta V$ and $E$ are constant.
+
+A capacitor stores more energy for a given $\Delta V$ when it has higher capacitance/with a dielectric (In an isolated capacitor, $\Delta V$ is not fixed). The dielectric is attracted when inserted as energy is drawn from the battery. Removing the dielectric causes the capacitor to discharge (decrease in capacitance) and recharges the battery.
+
+Increasing $\kappa$ increases the slope of a $\Delta V$ vs $Q$ graph.
+
+\subsubsection{Partially Filled}
+
+A dielectric that only fills a fraction of the space between two capacitor places.
+
+\textbf{Case 1.} Half of the capacitor is filled with a dielectric parallel to the plates, the other half is a vacuum.This is equivalent to two capacitors connected in series: one filled by the dielectric material, the other a vacuum with proportion, each with distance $d/2$. The capacitances are $C_1$ for the vacuum, $C_2$ for the dielectric:
+\begin{align*}
+	C_2&=\frac{k\varepsilon_0 A}{d/2}=2\kappa C_0 \\
+	C_1&=\frac{\varepsilon_0 A}{d/2}=2C_0
+\end{align*}
+The equivalent capacitance is:
+\begin{equation*}
+	C_\text{eq}
+	=\left( \frac{1}{C_1}+\frac{1}{C_2} \right)^{-1}
+	=\left( \frac{2k}{k+1} \right)C_0
+\end{equation*}
+where $C_0$ is the capacitance over a vacuum with area $A$ and distance $d$.
+\begin{equation*}
+    C_0=\frac{\varepsilon_0 A}{d}
+\end{equation*}
+
+\textbf{Case 2.} Half of the capacitor is filled orthogonal to the plates. This is the same as case 1 but the two capacitors are connected in parallel.
+\begin{equation*}
+	C_\text{eq}=C_1+C_2=\left( \frac{1+\kappa}{2} \right)C_0
+\end{equation*}
+
+\textbf{Case 3.} The capacitor is filled by a metal slab of thickness $a$. Since the metal is a conductor charges will completely separate to the surface. This is equivalent to only two capacitors, both filled with vacuums; the metal plate becomes just a wire. The distances for both capacitors is half the space without the metal plate: $(d-a)/2$.
+\begin{align*}
+	C_1&=C_2=\frac{\varepsilon_0A}{(d-a)/2}=\frac{2\varepsilon_0A}{d-a} \\
+	C_\text{eq}&=\left( \frac{1}{C_1}+\frac{1}{C_2} \right)^{-1}=\frac{\varepsilon_0A}{d-a}
+\end{align*}
+
+\section{Magnetism}
+
+Moving charges (current or individual charges  moving) create magnetic fields. There are charges moving in permanent magnets as well.
+
+While electric charges can be isolated, magnetic monopoles do not exist (always a north and south pole).
+
+Magnetic field lines always point from the north to the south pole. There are magnetic field lines inside the material as well. The symbol $B$ refers to a magnetic field. In a simplified field diagram:
+\begin{itemize}
+	\item Field lines are parallel just outside the material.
+	\item Sometimes there is a loop from the north to south pole as well.
+\end{itemize}
+To draw magnetic field lines in 3D: ``X'''s indicate a magnetic field directly into the page, while dots indicate one directly out of the page.
+
+\theorem{Magnetic force}{
+	\begin{equation*}
+	    F_B=q\cdot \mathbf{v}\times \mathbf{B}=\left|q\right|vB\sin\theta
+	\end{equation*}
+	where:
+	\begin{align*}
+		F_B=F_M&=\text{magnitude of magnetic force on charged particle (N)} \\
+		q&=\text{charge (C)} \\
+		\mathbf v&=\text{velocity of charged particle (\si{m/s})} \\
+		\mathbf B&=\text{magnetic field (T)} \\
+		v=\lVert \textbf{v} \rVert&= \text{speed of charged particle (\si{m/s})} \\
+		B=\lVert \textbf{B} \rVert&= \text{magnitude of magnetic field (T)}
+	\end{align*}
+	An uncharged or stationary particle is not affected by magnetic force: $q=0,v=0\implies F_B=0\,{N}$. If the particle moves parallel/antiparallel to magnetic field lines, then $\sin\theta=0\implies F_B=0\,\si{N}$. Magnitude is maximized when $\theta=90^\circ\implies\sin\theta=1$.
+
+	A negative charge will move in the opposite/left handed direction $-q\cdot \mathbf{v}\times\mathbf{B}=q\cdot\mathbf{B}\times\mathbf{v}$.
+}
+
+The unit for magnetic field is the tesla (T), which is equivalent to:
+\begin{equation*}
+	\left[ \si{T}
+	=\frac{\si{N}}{\si{C\cdot m/s}}
+	=\frac{\si{N}}{\si{(A\cdot s)\cdot m/s}}
+	=\frac{\si{N}}{\si{A\cdot m}} \right]
+\end{equation*}
+
+Charged particles move in magnetic fields. Charged particles include:
+\begin{itemize}
+	\item Proton ($p$)
+	\item Electron ($e^-,\beta^-$)
+	\item Positron (electron with positive charge $e^+,\beta^+$)
+	\item Neutron ($n$)
+	\item Helium-nucleus ($_2^4$He)
+\end{itemize}
+Protons, electrons, positrons have magnitude of the fundamental charge $\pm 1.6\times 10^{-19}\,\si{C}$. The helium nucleus has twice the charge $+3.2\times 10^{-19}\,\si{C}$ while neutrons are neutral. A positron has the mass of an electron but the charge of a proton.
+
+\subsection{Applications of Magnetic Fields}
+
+\textbf{Deflection of charges by magnetic fields.} To determine the direction of movement of charged particles, use the right hand rule. The direction of magnetic force is orthogonal to both the magnetic field $B$ and the velocity of $+$ charges $v$, and is parallel to $v\times B$. Charges move in a \ul{circular} arc; $F_B$ (force from magnetic field) changes the direction of particles but not the speed.
+
+When the magnetic force is not perpendicular with the velocity, the particle moves in a helix.
+
+\textbf{Charged particles in magnetic fields.} When a charge is placed in a magnetic field such that its velocity is perpendicular to magnetic field lines, it moves in uniform circular motion (at constant speed). In this case:
+\begin{equation*}
+    \Sigma F=ma
+	\implies q\cdot\mathbf{v}\times\mathbf{B}=qvB\cancelto1{\sin\theta}=\frac{mv^2}{r}
+	\implies \boxed{qB=\frac{mv}{r}}
+\end{equation*}
+\textbf{Mass spectrometer/spectrograph.} 
+There are usually four parts of a mass spectrometer:
+\begin{enumerate}
+	\item A molecular sample is injected and vaporized.
+	\item The molecules are ionized and obtain a (usually $+1$) charge.
+	\item Linear accelerator: ionized particles are accelerated to high speeds.
+	\item There is a magnetic force here that deflects the particles towards a deflector. The mass of the ions change the position on the detector they hit, where distance $r=mv/qB$.
+\end{enumerate}
+
+\subsection{Magnetism due to Wires}
+
+\theorem{Direction and magnitude of magnetic field due to wires}{
+	The magnetic field around a wire are concentric circles. The direction of the circular magnetic fields are given by the curled fingers of the right hand where the thumb is in the direction of conventional current (opposite of electron flow).
+	\begin{equation*}
+		B=\frac{\mu_0 I}{2\pi r}
+	\end{equation*}
+	where:
+	\begin{align*}
+		B&=\text{magnitude of electric field (T)} \\
+		\mu_0&=\text{vacuum permeability (\si{Tm/A})} \\
+			 &=4\pi\times 10^{-7}\,\si{Tm/A} \\
+		I&=\text{current (A)} \\
+		r&=\text{perpendicular distance from wire (m)}
+	\end{align*}
+}
+
 
 \end{document}
 
