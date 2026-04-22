@@ -1592,14 +1592,14 @@ where $r_1\leq r\leq r_2$ is the radius of the Gaussian surface and $L$ is its l
 	=-\int_{a}^{b}E\,\mathrm{d}r
 	=\frac{Q}{2\pi L\varepsilon_0}\ln \frac{b}{a}
 \end{equation*}
-The capacitance is:
+This integral is evaluated from areas of low potential to areas of high potential. The capacitance is:
 \begin{equation*}
     C
 	=\frac{Q}{\Delta V}
 	=\frac{Q}{\frac{Q}{2\pi L\varepsilon_0}\ln(a/b)}
 	=\frac{2\pi L\varepsilon_0}{\ln(b/a)}
 \end{equation*}
-The capacitance depends only on geometry and not on the charge on the plates $Q$.
+The capacitance depends only on geometry and not on the charge on the plates $Q$. If the order of bounds of the integral for $\Delta V$ is switched, it is important to ensure $C$ is a positive value.
 
 To charge a cylindrical capacitor:
 \begin{enumerate}
@@ -1753,7 +1753,7 @@ Charged particles move in magnetic fields. Charged particles include:
 	\item Electron ($e^-,\beta^-$)
 	\item Positron (electron with positive charge $e^+,\beta^+$)
 	\item Neutron ($n$)
-	\item Helium-nucleus ($_2^4$He)
+	\item Helium nucleus ($_2^4$He)
 \end{itemize}
 Protons, electrons, positrons have magnitude of the fundamental charge $\pm 1.6\times 10^{-19}\,\si{C}$. The helium nucleus has twice the charge $+3.2\times 10^{-19}\,\si{C}$ while neutrons are neutral. A positron has the mass of an electron but the charge of a proton.
 
@@ -1795,6 +1795,98 @@ There are usually four parts of a mass spectrometer:
 	\end{align*}
 }
 
+\subsection{Electromagnetic Induction}
+
+Induction is used in:
+\begin{itemize}
+	\item Generators and motors (mechanical energy $\longleftrightarrow$ electrical energy).
+	\item Microphones and speakers (sound energy $\longleftrightarrow$ electrical energy).
+	\item Transformers, rail guns and oven/cooktop/``induction stoves.''
+\end{itemize}
+
+\textbf{Potential difference induced by magnetic field.} When a neutral conductor is placed in a magnetic field, it is polarized as electrons are moved by $F_B=q\cdot \mathbf v\times\mathbf B$. The polarization leads to an electric force $F_E$ pointing in the \ul{opposite} direction to $F_B$. $F_E$ and $F_B$ will equilibrate.
+\begin{equation*}
+    F_E=F_B
+	\implies \cancel q E=\cancel q\cdot\mathbf v\times\mathbf B
+	\implies E=\mathbf v\times\mathbf B
+\end{equation*}
+The potential difference between the polarized ends of the conductor is:
+\begin{equation*}
+    \Delta V=Ed=l\cdot \mathbf v\times \mathbf B =Blv
+\end{equation*}
+where $\Delta V=\varepsilon$ is the potential difference established across conductor as a result of relative movement between a conductor and the magnetic field, and $l$ is the length of the conductor. $B$ is the magnitude (strength) of the electric field: $B=\lVert \mathbf B \rVert $. $v$ is the relative speed between the conductor and the magnetic field. The latest equality $\Delta V=Blv$ is only true when velocity $v$ and magnetic field $B$ are orthogonal: $\lVert \mathbf v\times\mathbf B\rVert=vB$.
+
+Relative motion between a conductor and a magnetic field \ul{induces} a potential difference in the conductor.
+
+\textbf{Rail system.} A rail system consists of a conductor, a magnetic field and two \textbf{rails}. The rails are attached to the conductor and joined by a resistor with resistance $R$. The rails are stationary and conductive.
+
+The potential difference induced by the magnetic field creates a current through the rails and the resistor.
+
+This system is a generator: the movement/mechanical energy of the conductor through the magnetic field induces a potential difference and generates an electric current.
+\begin{equation*}
+    I=\frac{\Delta V}{R}=\frac{Blv}{R}
+\end{equation*}
+The induced current flows in a direction that opposes the motion of the rod and magnetic force. The magnetic force on the current in the wire has magnitude $F_B=IlB$.
+
+\theorem{Lenz's law}{
+	Induced current always flows in such a way to oppose the change that caused it.
+}
+
+Recall from power $P=Fv$, the power of the applied force (force moving the conductor across the field) is:
+\begin{equation*}
+    P
+	=F_Av
+	=F_Bv
+	=(IlB)v
+	=\frac{Blv}{R}(lB)v
+	=\frac{B^2l^2v^2}{R}
+\end{equation*}
+By conservation of energy, applied force equals magnetic force: $F_A=F_B$. The power of the electrical current through the rails is:
+\begin{equation*}
+	P 
+	=I^2R
+	=\left( \frac{Blv}{R} \right)^2 R
+	=\frac{B^2l^2v^2}{R}
+\end{equation*}
+
+\theorem{Magnetic flux}{
+	\begin{equation*}
+	    \Phi_B
+		=\oint B\cdot \mathrm{d}A
+		=BA\cos\theta
+	\end{equation*}
+	where:
+	\begin{align*}
+		\Phi_B&=\text{magnetic flux ($\si{Tm^2}=\si{Vs}$)} \\
+		B&=\text{magnitude of magnetic field (T)} \\
+		A&=\text{area (\si{m^2})} \\
+		\theta&=\text{angle between area vector and magnetic field}
+	\end{align*}
+}
+
+\textbf{Faraday's law.} Monitor the magnetic flux $\Phi_B$ inside the loop of a rail system.
+\begin{equation*}
+    \Phi_B
+	=BA\cos\theta
+	=BA
+\end{equation*}
+$A$ is the area of the current loop: through the rail, into the resistor, through the other rail, and back through the conductor. The directed area vector of this loop is parallel to the magnetic field, so $\theta=0$. As time increases, the area bound by the loop increases.
+
+The change in flux with respect to time is:
+\begin{equation*}
+    \frac{\Delta \Phi_B}{\Delta t}
+	=\frac{\Delta(Bls)}{\Delta t}
+	=Bl\cdot \frac{\Delta s}{\Delta t}
+	=Blv
+	=\Delta V
+\end{equation*}
+where $s$ is the length/width of the loop (the distance between the resistor and the conductor).
+\theorem{Faraday's law}{
+	\begin{equation*}
+		\Delta V=-N \cdot \diff{\Phi_B}{t}
+	\end{equation*}
+	$N$ is the number of turns in the loop.
+}
 
 \end{document}
 
