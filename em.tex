@@ -1563,7 +1563,7 @@ Since $I$ is flow rate of charge, the total charge moved through any circuit (in
 	\end{align*}
 	where:
 	\begin{align*}
-		% I&=\text{current (A)} \\
+		I&=\text{current (A)} \\
 		Q&=\text{charge (C)}
 	\end{align*}
 }
@@ -1714,12 +1714,14 @@ Moving charges (current or individual charges  moving) create magnetic fields. T
 
 While electric charges can be isolated, magnetic monopoles do not exist (always a north and south pole).
 
-Magnetic field lines always point from the north to the south pole. There are magnetic field lines inside the material as well. The symbol $B$ refers to a magnetic field. In a simplified field diagram:
+Outside the magnet, magnetic field lines point from the north to the south pole. There are magnetic field lines inside the material as well in such a way to make them closed loops (this means that \ul{inside} a bar magnet, the lines are from south to north). The symbol $B$ refers to a magnetic field. In a simplified field diagram:
 \begin{itemize}
 	\item Field lines are parallel just outside the material.
 	\item Sometimes there is a loop from the north to south pole as well.
 \end{itemize}
 To draw magnetic field lines in 3D: ``X'''s indicate a magnetic field directly into the page, while dots indicate one directly out of the page.
+
+When a magnet is dropped inside a magnetic field, it will orient itself such that the magnetic field lines are aligned/pointing in the same direction.
 
 \theorem{Magnetic force}{
 	\begin{equation*}
@@ -1787,11 +1789,74 @@ There are usually four parts of a mass spectrometer:
 	\end{equation*}
 	where:
 	\begin{align*}
-		B&=\text{magnitude of electric field (T)} \\
+		B&=\text{magnitude of magnetic field (T)} \\
 		\mu_0&=\text{vacuum permeability (\si{Tm/A})} \\
 			 &=4\pi\times 10^{-7}\,\si{Tm/A} \\
 		I&=\text{current (A)} \\
 		r&=\text{perpendicular distance from wire (m)}
+	\end{align*}
+}
+
+\theorem{Magnetic force on current-carrying wire}{
+	The force exerted on a current-carrying wire by a magnetic field is:
+	\begin{equation*}
+	    F_B=l\cdot \mathbf I\times \mathbf B
+	\end{equation*}
+	where:
+	\begin{align*}
+		F_B&=\text{magnetic force (N)} \\
+		\mathbf I&=\text{current (A)} \\
+		l&=\text{length of wire in magnetic field (m)} \\
+		\mathbf B&=\text{magnetic field (T)}
+	\end{align*}
+	The direction of the force can be determined by the right hand rule. $\mathbf I$ is a vector pointing in the direction of conventional current, and length $l$ is a scalar.
+}
+
+\theorem{Force between two parallel wires}{
+	The magnitude of force exerted by two parallel current-carrying wires on each other is:
+	\begin{equation*}
+	    F_B=\frac{\mu_0 I_1 I_2 l}{2\pi r}
+	\end{equation*}
+	where:
+	\begin{align*}
+		F_B&=\text{magnetic force (N)} \\
+		I_1&=\text{current in wire 1 (A)} \\
+		I_2&=\text{current in wire 2 (A)} \\
+		l&=\text{length of wires (m)} \\
+		r&=\text{distance between wires (m)} \\
+		\mu_0&=\text{vacuum permeability (\si{Tm/A})} \\
+			 &=4\pi\times 10^{-7}\,\si{Tm/A}
+	\end{align*}
+	Wires with parallel currents attract each other while wires with anti-parallel currents repel.
+}
+
+\theorem{Magnetic field at center of current-carrying coils}{
+	The magnetic field at the center of a coil/loop is:
+	\begin{equation*}
+	    B=\frac{\mu_0I}{2r}
+	\end{equation*}
+	where:
+	\begin{align*}
+		B&=\text{magnetic field (T)} \\
+		I&=\text{current in coil (A)} \\
+		r&=\text{radius of coil (m)} \\
+		\mu_0&=\text{vacuum permeability (\si{Tm/A})} \\
+			 &=4\pi\times 10^{-7}\,\si{Tm/A}
+	\end{align*}
+}
+
+\theorem{Solenoid}{
+	A solenoid (multiple coils of wire) behaves as an electromagnet: a magnet where the north pole is the end where conventional current enters (``+''), and the south pole is where conventional current exits (``-''). The strength of the magnetic field is:
+	\begin{equation*}
+	    B=\mu_0 nI
+	\end{equation*}
+	where:
+	\begin{align*}
+		B&=\text{magnetic field (T)} \\
+		n&=\text{number of coils per unit length (\si{m^{-1}})} \\
+		I&=\text{current (A)} \\
+		\mu_0&=\text{vacuum permeability (\si{Tm/A})} \\
+			 &=4\pi\times 10^{-7}\,\si{Tm/A}
 	\end{align*}
 }
 
