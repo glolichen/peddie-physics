@@ -7,6 +7,7 @@
 \usepackage{suffix}
 \usepackage{soul}
 \usepackage{esdiff}
+\usepackage{esint}
 \usepackage{multicol}
 \usepackage{cancel}
 \usepackage{mdframed}
@@ -1951,6 +1952,106 @@ where $s$ is the length/width of the loop (the distance between the resistor and
 		\Delta V=-N \cdot \diff{\Phi_B}{t}
 	\end{equation*}
 	$N$ is the number of turns in the loop.
+}
+
+\subsection{Biot-Savart Law}
+
+\theorem{Biot-Savart law}{
+	The Biot-Savart law is used to find the magnetic field caused by a constant current.
+	\begin{align*}
+	    \mathrm{d}\vec B
+		&=\frac{\mu_0}{4\pi}\cdot I\cdot \frac{\mathrm{d}\hat l\times \hat r}{r^2} \\
+	    \mathrm{d}B
+		&=\frac{\mu_0}{4\pi}\cdot I\cdot \frac{\mathrm{d}l\sin\theta}{r^2}
+	\end{align*}
+	where:
+	\begin{align*}
+		I&=\text{current (A)} \\
+		\mathrm{d}l&=\text{small wire segment in the direction of current} \\
+		\hat r&=\text{unit vector from wire segment to point of interest} \\
+		r&=\text{distance from wire segment to point of interest (m)} \\
+		\theta&=\text{angle between $\mathrm{d}l$ and $\hat r$} \\
+		\mu_0
+		&=\text{vacuum permeability (\si{Tm/A})} \\
+		&=4\pi\times 10^{-7}\,\si{Tm/A}
+	\end{align*}
+}
+
+\section{Induction}
+
+An \textbf{inductor} is a ``little'' solenoid. When current flows, a magnetic field is established in the inductor. If the current is changed, the magnetic flux is changed as well.
+
+When the switch is closed, by Faraday's law and Lenz's law, a potential difference is induced in the inductor that opposes the change (of closing the switch) and of the potential difference from the battery. This induced potential difference in the inductor is called ``self-induced'' or ``back emf/$\Delta V$''.
+
+Inductors (temporarily) resist changes in current. At time $t=0$, the current is zero since the inductor acts like a battery with opposite polarity. As time $t\to\infty$, the current approaches as if there were no inductor: $I=\Delta V/R$, and the current is steady.
+
+The graph of $\Delta V$ against time is increasing and concave down.
+
+Energy is stored in the inductor but the inductor does not have any resistance.
+
+In a solenoid, there is a magnetic field is in the same direction as current. The flux for a single loop is:
+\begin{equation*}
+    \Phi_B=BA\cos\theta=BA
+\end{equation*}
+If the inductor has $n$ loops, the flux is $n\Phi_B$. This is proportional to current $I$.
+\begin{equation*}
+    N\Phi_B=LI
+\end{equation*}
+$L$ is the \textit{inductance}.
+
+\theorem{Inductance}{
+	Inductance $L$ is the proportionality constant between the flux of the inductance and current.
+	\begin{equation*}
+	    n\Phi_B=LI 
+		\qquad
+		L
+		=\frac{n\Phi_B}{I}
+		=\frac{nBA\cos\theta}{I}
+	\end{equation*}
+	where:
+	\begin{align*}
+		n&=\text{number of loops in inductor} \\
+		\Phi_B&=\text{magnetic flux (\si{T\cdot m^2})} \\
+		B&=\text{magnetic field (B)} \\
+		A&=\text{area (\si{m^2})} \\
+		I&=\text{current (A)}
+	\end{align*}
+	The unit of inductance is the henry (H).
+	\begin{equation*}
+		\left[ \frac{\si{T\cdot m^2}}{\si{A}}=\si{H} \right]
+	\end{equation*}
+}
+
+The magnetic field of a solenoid is:
+\begin{equation*}
+    B=\mu_0 nI
+\end{equation*}
+So inductance equals:
+\begin{equation*}
+    L=\frac{nBA\cos\theta}{I}=\frac{\mu_0 n^2 A}{l}
+\end{equation*}
+where $n$ is the number of loops, $A$ is the cross-sectional area and $l$ is the length of the inductor.
+
+\textbf{Induced potential difference and inductance.} By Faraday's law, the change in magnetic flux with respect to time is the potential difference $\Delta V$.
+\begin{equation*}
+    LI=n\Phi_B
+	\implies L\cdot \frac{\Delta I}{\Delta t}=n \cdot \frac{\Delta \Phi_B}{\Delta t}
+	\implies
+	\Delta V_\text{induced}=-L\cdot \frac{\Delta I}{\Delta t}=-L\cdot \diff It
+\end{equation*}
+The negative sign indicates that the induced potential difference opposes the change in current. The faster the current changes, the greater the induced current is. After a long time, the inductor acts just like a wire since the change in current over time approaches zero.
+
+\theorem{Energy stored in inductor}{
+	The magnetic potential energy stored in an inductor is:
+	\begin{equation*}
+	    U_L=\frac12LI^2
+	\end{equation*}
+	where:
+	\begin{align*}
+		U_L&=\text{magnetic potential energy (J)} \\
+		L&=\text{inductance (H)} \\
+		I&=\text{current (I)}
+	\end{align*}
 }
 
 \end{document}
