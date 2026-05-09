@@ -2054,5 +2054,38 @@ The negative sign indicates that the induced potential difference opposes the ch
 	\end{align*}
 }
 
+\subsection{LR Circuits}
+
+Recall that in an RC circuit the energy stored in the capacitor is $U_C=Q^2/2C=C(\Delta V)^2/2$. Current decreases/concave up, potential different across the capacitor increases/concave down. Similar for discharging.
+
+A resistor-inductor circuit is like an RC circuit but with an inductor instead. When the resistor and inductor is connected to the battery, the inductor resists the battery's current. This is called \textbf{energizing}. Current increases over time.
+
+At time $t=0$, an inductor acts as a battery acting opposite the battery. As time $t\to\infty$, the inductor acts as a wire with no resistance. When energizing, current increases/concave down; $\Delta V$ across the inductor decreases/concave up.
+
+When \textbf{de-energizing}, current decreases over time, because there is a magnetic field inside the inductor's coils. It will provide a current in the same direction as before the switch is moved. Over time, the potential energy stored in the inductor is converted to thermal energy. Current decreases/concave up, $\Delta V$ across the inductor increases/concave down.
+
+\subsection{LC Circuit}
+
+Imagine a circuit with an open switch, charged capacitor and inductor. When the switch is closed, there will be a growing magnetic field in the inductor pointing in the direction of the current given by the capacitor. There is a maximum amount of current flowing through the inductor when the capacitor plates are neutral. Now the inductor will function as a battery and keep pushing current in the same direction, which will charge the capacitor in the \ul{opposite} direction as it starts (the negative capacitor plate is now positive), until the capacitor is fully charged and there is no magnetic field in the inductor. If there is no resistance, this cycle will continue forever.
+
+The time it takes for the capacitor to discharge and then fully recharge with the same initial polarity (the circuit returns to the exact same state) is the period $T$.
+
+\theorem{Period of LC circuit}{
+	\begin{equation*}
+	    \omega=\frac{1}{\sqrt{LC}}
+		\iff T=2\pi \sqrt{LC}
+	\end{equation*}
+	where:
+	\begin{align*}
+		L&=\text{inductance (H)} \\
+		C&=\text{capacitance (T)} \\
+		\omega&=\text{angular frequency (rad/s)} \\
+		T&=\text{period (s)}
+	\end{align*}
+	$\omega$ is the angular frequency. $\omega=2\pi f$ where $f$ is frequency, and $T=1/f$.
+}
+
+LC circuits is equivalent to simple harmonic motion, such as in a spring-mass system.
+
 \end{document}
 
